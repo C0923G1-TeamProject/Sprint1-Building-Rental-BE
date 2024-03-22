@@ -1,4 +1,6 @@
 package com.example.buildingrentalbe.repository;
 
-public interface IAccountRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IAccountRepository extends JpaRepository {
 }
