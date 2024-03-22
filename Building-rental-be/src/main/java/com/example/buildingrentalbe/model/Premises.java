@@ -15,13 +15,16 @@ public class Premises {
     private String description;
 
     @ManyToOne
+    @JoinColumn(name = "id_type_premises")
+    private TypePremises typePremises;
+    @ManyToOne
     @JoinColumn(columnDefinition = "id_premises_status")
     private PremisesStatus premisesStatus;
 
     public Premises() {
     }
 
-    public Premises(Integer id, String code, Long price, Integer floor, Long cost, Float area, String description, PremisesStatus premisesStatus) {
+    public Premises(Integer id, String code, Long price, Integer floor, Long cost, Float area, String description, TypePremises typePremises, PremisesStatus premisesStatus) {
         this.id = id;
         this.code = code;
         this.price = price;
@@ -29,6 +32,7 @@ public class Premises {
         this.cost = cost;
         this.area = area;
         this.description = description;
+        this.typePremises = typePremises;
         this.premisesStatus = premisesStatus;
     }
 
@@ -86,6 +90,14 @@ public class Premises {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public TypePremises getTypePremises() {
+        return typePremises;
+    }
+
+    public void setTypePremises(TypePremises typePremises) {
+        this.typePremises = typePremises;
     }
 
     public PremisesStatus getPremisesStatus() {

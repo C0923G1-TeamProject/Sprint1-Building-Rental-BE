@@ -18,6 +18,7 @@ public class Employee {
     private String startDate;
     private String salaryLevel;
     private String department;
+    private String email;
 
     @Column(columnDefinition = "text")
     private String profilePicture;
@@ -25,7 +26,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Integer id, String code, String name, String date, boolean gender, String address, String phoneNumber, String startDate, String salaryLevel, String department, String profilePicture) {
+    public Employee(Integer id, String code, String name, String date, boolean gender, String address, String phoneNumber, String startDate, String salaryLevel, String department, String email, String profilePicture) {
         this.id = id;
         this.code = code;
         this.name = name;
@@ -36,6 +37,7 @@ public class Employee {
         this.startDate = startDate;
         this.salaryLevel = salaryLevel;
         this.department = department;
+        this.email = email;
         this.profilePicture = profilePicture;
     }
 
@@ -117,6 +119,14 @@ public class Employee {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getProfilePicture() {
