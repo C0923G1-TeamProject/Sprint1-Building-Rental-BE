@@ -15,9 +15,9 @@ public class Contract {
 
     private String paymentTerm;
     @OneToOne
-    @JoinColumn(name = "id_premises" )
+    @JoinColumn(name = "id_premises")
     private Premises premises;
-    
+
     @ManyToOne
     @JoinColumn(name = "id_customer")
     private Customer customer;

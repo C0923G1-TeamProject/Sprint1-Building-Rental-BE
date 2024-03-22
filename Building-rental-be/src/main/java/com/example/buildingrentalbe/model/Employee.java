@@ -1,6 +1,7 @@
 package com.example.buildingrentalbe.model;
 
 import jakarta.persistence.*;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Entity
 public class Employee {
@@ -18,11 +19,13 @@ public class Employee {
     private String salaryLevel;
     private String department;
 
+    @Column(columnDefinition = "text")
+    private String profilePicture;
 
     public Employee() {
     }
 
-    public Employee(Integer id, String code, String name, String date, boolean gender, String address, String phoneNumber, String startDate, String salaryLevel, String department) {
+    public Employee(Integer id, String code, String name, String date, boolean gender, String address, String phoneNumber, String startDate, String salaryLevel, String department, String profilePicture) {
         this.id = id;
         this.code = code;
         this.name = name;
@@ -33,6 +36,7 @@ public class Employee {
         this.startDate = startDate;
         this.salaryLevel = salaryLevel;
         this.department = department;
+        this.profilePicture = profilePicture;
     }
 
     public Integer getId() {
@@ -113,5 +117,13 @@ public class Employee {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
     }
 }

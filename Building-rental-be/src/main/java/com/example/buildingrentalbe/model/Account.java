@@ -17,8 +17,6 @@ public class Account {
     @JoinColumn(name = "id_employee")
     private Employee employee;
 
-
-
     public Account() {
     }
 

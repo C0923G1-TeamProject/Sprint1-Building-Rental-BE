@@ -13,13 +13,15 @@ public class Customer {
     private String date;
     private String phoneNumber;
     private String address;
+    @Column(name = "url_website")
     private String url;
     private String company;
+    private String img;
 
     public Customer() {
     }
 
-    public Customer(Integer id, String name, String card, String email, String date, String phoneNumber, String address, String url, String company) {
+    public Customer(Integer id, String name, String card, String email, String date, String phoneNumber, String address, String url, String company, String img) {
         this.id = id;
         this.name = name;
         this.card = card;
@@ -29,6 +31,7 @@ public class Customer {
         this.address = address;
         this.url = url;
         this.company = company;
+        this.img = img;
     }
 
     public Integer getId() {
@@ -101,5 +104,13 @@ public class Customer {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }
