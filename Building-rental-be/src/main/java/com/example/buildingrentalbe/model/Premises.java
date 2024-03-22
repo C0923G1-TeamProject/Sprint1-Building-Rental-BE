@@ -8,10 +8,11 @@ public class Premises {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String code;
-    private String typeOfPremises;
     private Long price;
     private Integer floor;
     private Long cost;
+    private Float area;
+    private String description;
 
     @ManyToOne
     @JoinColumn(columnDefinition = "id_premises_status")
@@ -20,13 +21,14 @@ public class Premises {
     public Premises() {
     }
 
-    public Premises(Integer id, String code, String typeOfPremises, Long price, Integer floor, Long cost, PremisesStatus premisesStatus) {
+    public Premises(Integer id, String code, Long price, Integer floor, Long cost, Float area, String description, PremisesStatus premisesStatus) {
         this.id = id;
         this.code = code;
-        this.typeOfPremises = typeOfPremises;
         this.price = price;
         this.floor = floor;
         this.cost = cost;
+        this.area = area;
+        this.description = description;
         this.premisesStatus = premisesStatus;
     }
 
@@ -44,14 +46,6 @@ public class Premises {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public String getTypeOfPremises() {
-        return typeOfPremises;
-    }
-
-    public void setTypeOfPremises(String typeOfPremises) {
-        this.typeOfPremises = typeOfPremises;
     }
 
     public Long getPrice() {
@@ -76,6 +70,22 @@ public class Premises {
 
     public void setCost(Long cost) {
         this.cost = cost;
+    }
+
+    public Float getArea() {
+        return area;
+    }
+
+    public void setArea(Float area) {
+        this.area = area;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public PremisesStatus getPremisesStatus() {
