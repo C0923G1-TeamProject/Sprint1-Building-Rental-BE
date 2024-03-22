@@ -15,5 +15,6 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Account account) {
         return ResponseEntity.ok("Dang nhap thanh cong");
+
     }
 }
