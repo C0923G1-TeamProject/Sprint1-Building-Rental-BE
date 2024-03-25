@@ -19,6 +19,16 @@ public class AccountService implements IAccountService {
         return this.iAccountRepository.findAccountById(id);
     }
 
+    @Override
+    public Account findAccountByUsername(String username) {
+        return this.iAccountRepository.findAccountByUsername(username);
+    }
+
+    @Override
+    public void changePassword(String encode, Integer id) {
+        this.iAccountRepository.updatePassword(encode,id);
+    }
+
 //    @Override
 //    public Optional<IInformationDto> findAccountDtoById(String accountName) {
 //        return this.iAccountRepository.findAccountDtoById(accountName);

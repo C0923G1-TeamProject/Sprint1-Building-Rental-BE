@@ -12,20 +12,4 @@ import java.util.List;
 public class EmployeeService implements IEmployeeService {
     @Autowired
     private IEmployeeRepository iEmployeeRepository;
-
-
-    @Override
-    public List<IInformationDto> getInfo(String accountName) {
-        return iEmployeeRepository.personalInformation(accountName);
-    }
-
-    @Override
-    public void changePassword(Integer id, String password) {
-        this.iEmployeeRepository.changedPassword(id,password);
-    }
-
-//    @Override
-//    public IInformationDto findAccountById(Integer id) {
-//        return this.iEmployeeRepository.findById(id);
-//    }
 }
