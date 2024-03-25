@@ -9,17 +9,12 @@ public class TypePremises {
     private Integer id;
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "premises_id", referencedColumnName = "id")
-    private Premises premises;
-
-    public TypePremises() {
-    }
-
-    public TypePremises(Integer id, String name, Premises premises) {
+    public TypePremises(Integer id, String name) {
         this.id = id;
         this.name = name;
-        this.premises = premises;
+    }
+
+    public TypePremises() {
     }
 
     public Integer getId() {
@@ -36,13 +31,5 @@ public class TypePremises {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Premises getPremises() {
-        return premises;
-    }
-
-    public void setPremises(Premises premises) {
-        this.premises = premises;
     }
 }
