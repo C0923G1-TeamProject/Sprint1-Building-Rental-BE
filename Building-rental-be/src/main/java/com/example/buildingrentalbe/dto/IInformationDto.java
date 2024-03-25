@@ -13,8 +13,5 @@ public interface IInformationDto {
     String getEmail();
     String getProfilePicture();
     String getUsername();
-    String getCurrentPassword();
-    String getNewPassword();
-    String getConfirmNewPassword();
 
 }
