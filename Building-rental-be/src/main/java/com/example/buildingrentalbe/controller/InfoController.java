@@ -1,15 +1,14 @@
 package com.example.buildingrentalbe.controller;
 
 
-import com.example.buildingrentalbe.dto.InformationDto;
+import com.example.buildingrentalbe.dto.IInformationDto;
+import com.example.buildingrentalbe.model.Account;
+import com.example.buildingrentalbe.service.IAccountService;
 import com.example.buildingrentalbe.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin("*")
@@ -18,11 +17,17 @@ public class InfoController {
     @Autowired
     private IEmployeeService iEmployeeService;
 
+    @Autowired
+    private IAccountService iAccountService;
 
-    @GetMapping("/")
-    public ResponseEntity<?> informationPersonalOfEmpById(){
-
-        return new ResponseEntity<>(HttpStatus.OK);
+   @GetMapping("/account/{id}")
+    public ResponseEntity<?> informationAccountUser(@PathVariable Integer id){
+        Account account = this.iAccountService.findAccountById(id);
+        if (account == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(account,HttpStatus.OK);
     }
+
 
 }
