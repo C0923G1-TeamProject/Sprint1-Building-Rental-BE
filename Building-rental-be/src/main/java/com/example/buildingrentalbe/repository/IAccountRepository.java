@@ -1,7 +1,6 @@
 package com.example.buildingrentalbe.repository;
 
-import com.example.buildingrentalbe.dto.IInformationDto;
-import com.example.buildingrentalbe.dto.InformationDto;
+
 import com.example.buildingrentalbe.model.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
