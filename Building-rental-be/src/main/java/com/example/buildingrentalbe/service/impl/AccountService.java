@@ -2,6 +2,7 @@ package com.example.buildingrentalbe.service.impl;
 
 import com.example.buildingrentalbe.dto.IInformationDto;
 import com.example.buildingrentalbe.model.Account;
+import com.example.buildingrentalbe.model.Employee;
 import com.example.buildingrentalbe.repository.IAccountRepository;
 import com.example.buildingrentalbe.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +30,8 @@ public class AccountService implements IAccountService {
         this.iAccountRepository.updatePassword(encode,id);
     }
 
-//    @Override
-//    public Optional<IInformationDto> findAccountDtoById(String accountName) {
-//        return this.iAccountRepository.findAccountDtoById(accountName);
-//    }
+    @Override
+    public void updateInformationUser(Employee employee) {
+            this.iAccountRepository.updateInformationUser(employee);
+    }
 }
