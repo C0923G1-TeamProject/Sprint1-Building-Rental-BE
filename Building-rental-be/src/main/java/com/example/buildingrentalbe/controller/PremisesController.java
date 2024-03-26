@@ -1,5 +1,4 @@
 package com.example.buildingrentalbe.controller;
-
 import com.example.buildingrentalbe.model.Premises;
 import com.example.buildingrentalbe.service.impl.PremisesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +32,4 @@ public class PremisesController {
         }else {
             return ResponseEntity.noContent().build();
         }
-    }
-}
+    }}

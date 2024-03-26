@@ -1,7 +1,6 @@
 package com.example.buildingrentalbe.service.impl;
 
 import com.example.buildingrentalbe.model.Premises;
-import com.example.buildingrentalbe.model.PremisesStatus;
 import com.example.buildingrentalbe.repository.IPremisesRepository;
 import com.example.buildingrentalbe.service.IPremisesService;
 import jakarta.persistence.criteria.Predicate;
@@ -13,14 +12,19 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class PremisesService implements IPremisesService {
     @Autowired
     private IPremisesRepository premisesRepository;
 
     @Override
-    public List<Premises> findAll() {
-        return premisesRepository.findAllPremises();
+    public Page<Premises> findAll(String searchTypePremises, Pageable pageable, String typePremises) {
+        if (typePremises != null && typePremises != "") {
+            int typePremisesId = Integer.parseInt(typePremises);
+            return premisesRepository.searchWithTypePremises(typePremisesId, pageable);
+        }
+        return premisesRepository.search("%" + searchTypePremises + "%", pageable);
     }
 
     @Override

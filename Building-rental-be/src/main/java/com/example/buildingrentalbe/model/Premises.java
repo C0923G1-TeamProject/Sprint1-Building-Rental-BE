@@ -11,7 +11,7 @@ public class Premises {
     private Long price;
     private Integer floor;
     private Long cost;
-    private Float area;
+    private Float area ;
     private String description;
 
     @ManyToOne
