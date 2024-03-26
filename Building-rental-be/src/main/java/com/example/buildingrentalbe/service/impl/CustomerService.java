@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 public class CustomerService implements ICustomerService {
     @Autowired
     private ICustomerRepository repository;
+
     @Override
     public Page<Customer> getList(Pageable pageable) {
         return repository.findAllCustomer(pageable);
@@ -27,8 +28,19 @@ public class CustomerService implements ICustomerService {
         repository.delete(customer);
     }
 
-//    @Override
-//    public Page<Customer> findByNameCustomerContaining(String name, Pageable pageable) {
-//        return repository.findByNameCustomerContaining(name, pageable);
-//    }
+    @Override
+    public Page<Customer> findByNameContaining(String name, Pageable pageable) {
+        return repository.findByNameContaining(name, pageable);
+    }
+
+    @Override
+    public Page<Customer> findByCardContaining(String card, Pageable pageable) {
+        return repository.findByCardContaining(card, pageable);
+    }
+
+    @Override
+    public Page<Customer> findByNameContainingAndCardContaining(String name, String card, Pageable pageable) {
+        return repository.findByNameContainingAndCardContaining(name, card, pageable);
+    }
+
 }
