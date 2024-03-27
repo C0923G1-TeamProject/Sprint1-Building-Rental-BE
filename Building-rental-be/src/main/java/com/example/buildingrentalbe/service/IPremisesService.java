@@ -3,6 +3,7 @@ package com.example.buildingrentalbe.service;
 import com.example.buildingrentalbe.model.Premises;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -15,5 +16,6 @@ public interface IPremisesService {
 
     Premises findById(int id);
 
+    void updatePremises(int id, Premises premises);
 
 }

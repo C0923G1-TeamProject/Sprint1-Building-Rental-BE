@@ -30,9 +30,9 @@ values("Mặt đứng"),("Mặt hậu"),("Mặt cắt");
 -- insert into customer -- 
 
 insert into customer(name,date,address,card,company,email,img,phone_number,url_website)
-values("Nguyễn Đình Hòa","1992-09-03","Thành phố Hà Nội",343434343112,"Hoa thiên phú","HoaND@gmail.com","https://cdn.sforum.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg",095456789,""),
-("Nguyễn Đình Hòa","1992-09-03","Thành phố Hà Nội","343432432","Nguyễn Ngọc Đông","dongnguyen@gmail.com","https://cdn.sforum.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg",09542131232,""),
-("Nguyễn Đình Hòa","1992-09-03","Thành phố Hà Nội",343432432,"Hoàng Lê Quang","quangHoang@gmail.com","https://cdn.sforum.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg",0954872378,"");
+values("Nguyễn Đình Hòa","1992-09-03","Thành phố Hà Nội",343434343112,"Hoa thiên phú","HoaND@gmail.com","https://cdn.sforum.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg",095456789,"hoaminnzi.com"),
+("Nguyễn Đình Hòa","1992-09-03","Thành phố Hà Nội","343432432","Nguyễn Ngọc Đông","dongnguyen@gmail.com","https://cdn.sforum.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg",09542131232,"hoaminnzi.com"),
+("Nguyễn Đình Hòa","1992-09-03","Thành phố Hà Nội",343432432,"Hoàng Lê Quang","quangHoang@gmail.com","https://cdn.sforum.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg",0954872378,"hoaminnzi.com");
 
 -- insert into Contract --  
 
@@ -43,5 +43,13 @@ insert into contract(code,content,deposit,start_date,end_date,payment_term,id_ac
 values("HD-0001","Bên A đồng ý các thỏa thuận",25000000,"2023-01-01","2024-01-01",25000000,1,1,1,1),
 ("HD-0002","Bên A đồng ý các thỏa thuận",227000000,"2023-02-01","2024-02-01",27000000,2,1,2,2),
 ("HD-0003","Bên A đồng ý các thỏa thuận",30000000,"2023-03-01","2024-03-01",300000000,3,2,3,3);
+
+-- insert into Customer --
+
+insert into customer(name,card,email,date,phone_number,address,url_website,company,img)
+value("Nguyễn Văn Cường", "76598753434", "cuongnv@gmail.com", "2021-03-22", "0988575981", "Cầu Giấy,Hà Nội", "hoahuongduong.com", "Hoa Hướng Dương", "https://studiochupanhdep.com/Upload/Images/Album/anh-the-2024.jpg");
+
+
+  
 
 

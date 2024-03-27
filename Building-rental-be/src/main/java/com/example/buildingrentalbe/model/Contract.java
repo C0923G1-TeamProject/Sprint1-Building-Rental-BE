@@ -2,14 +2,16 @@ package com.example.buildingrentalbe.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 public class Contract {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String code;
-    private String startDate;
-    private String endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private Long deposit;
     private String content;
 
@@ -33,7 +35,7 @@ public class Contract {
     public Contract() {
     }
 
-    public Contract(Integer id, String code, String startDate, String endDate, Long deposit, String content, String paymentTerm, Premises premises, Customer customer, Account account, ContractStatus contractStatus) {
+    public Contract(Integer id, String code, LocalDate startDate, LocalDate endDate, Long deposit, String content, String paymentTerm, Premises premises, Customer customer, Account account, ContractStatus contractStatus) {
         this.id = id;
         this.code = code;
         this.startDate = startDate;
@@ -63,19 +65,19 @@ public class Contract {
         this.code = code;
     }
 
-    public String getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
