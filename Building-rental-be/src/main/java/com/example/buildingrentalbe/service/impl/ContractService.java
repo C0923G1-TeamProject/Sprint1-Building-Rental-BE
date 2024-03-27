@@ -1,4 +1,4 @@
-package com.example.buildingrentalbe.service.ThamService;
+package com.example.buildingrentalbe.service.impl;
 
 import com.example.buildingrentalbe.dto.ContractDto;
 import com.example.buildingrentalbe.dto.IContractDto;
@@ -6,6 +6,7 @@ import com.example.buildingrentalbe.dto.IContractSearchDto;
 import com.example.buildingrentalbe.dto.RequestContractDto;
 import com.example.buildingrentalbe.model.Contract;
 import com.example.buildingrentalbe.repository.ThamRepository.IContractRepository;
+import com.example.buildingrentalbe.service.ThamService.IContractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ContractService implements IContractService{
+public class ContractService implements IContractService {
     @Autowired
     private IContractRepository contractRepository;
     @Override
