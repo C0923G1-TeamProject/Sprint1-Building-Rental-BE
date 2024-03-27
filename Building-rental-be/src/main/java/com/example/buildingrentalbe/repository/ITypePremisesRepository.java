@@ -10,4 +10,3 @@ public interface ITypePremisesRepository extends JpaRepository<TypePremises, Int
     public TypePremises findByNamePremises ();
 
 }
-git
