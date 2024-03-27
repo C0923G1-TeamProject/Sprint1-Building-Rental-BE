@@ -152,6 +152,7 @@ public class InfoRestController_updateInfoUser {
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     /**
      * Author: ViTKT
      * Since: 25/03/2024
@@ -319,17 +320,26 @@ public class InfoRestController_updateInfoUser {
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     /**
      * Author: ViTKT
      * Since: 25/03/2024
-     * JUnit test updateInfoUser with birthday is null
+     * JUnit test updateInfoUser with birthday is empty
      * @throws Exception
      * return status 400 - client error
      */
     @Test
     public void updateInfoUser_79() throws Exception{
         InformationDto informationDto = new InformationDto();
-        informationDto.setDate(null);
+        informationDto.setDate("");
+
+        informationDto.setEmail("abc12@gmail.com");
+        informationDto.setId(1);
+        informationDto.setName("Trần Kim Tiểu Vi");
+        informationDto.setAddress("295 Nguyễn Tất Thành,Quận Thanh Khê, Thành phố Đà Nẵng");
+        informationDto.setGender(false);
+        informationDto.setProfilePicture("https://cdn.sforum.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg");
+
         this.mockMvc.perform(
                         MockMvcRequestBuilders.post("/information/updateInformation")
                                 .header("authorization","Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aXRrdCIsImlhdCI6MTcxMTM5MTAyNiwiZXhwIjoxNzExNDc3NDI2fQ.mwBFXcmCQzIScdhKmW5iih0y8Fcf9s3_vaMtvzOIRYY")

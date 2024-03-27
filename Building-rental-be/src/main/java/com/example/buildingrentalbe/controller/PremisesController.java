@@ -1,7 +1,8 @@
 package com.example.buildingrentalbe.controller;
-
 import com.example.buildingrentalbe.dto.PremisesDTO;
 import com.example.buildingrentalbe.model.Premises;
+
+
 import com.example.buildingrentalbe.service.impl.PremisesService;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,7 +17,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.Objects;
+
 
 @RestController
 @CrossOrigin("*")
@@ -25,6 +28,7 @@ public class PremisesController {
 
     @Autowired
     PremisesService premisesService;
+
 
     @GetMapping("/search")
     public ResponseEntity<Page<Premises>> searchPremises(
@@ -67,5 +71,5 @@ public class PremisesController {
         premisesService.updatePremises(id, existingPremises);
 
         return ResponseEntity.ok("Cập nhật thông tin premises thành công");
-    }
-}
+    }}
+
