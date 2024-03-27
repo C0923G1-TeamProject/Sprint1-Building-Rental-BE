@@ -2,6 +2,7 @@ package com.example.buildingrentalbe.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class PremisesStatus {
