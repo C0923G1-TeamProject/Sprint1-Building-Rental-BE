@@ -1,16 +1,18 @@
 package com.example.buildingrentalbe;
-
-import org.hamcrest.Matchers;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -19,11 +21,9 @@ public class PremisesController_searchPremises {
     private MockMvc mockMvc;
 
     /**
-     * Create by: GiangTL
-     * Date created: 25/03/2024
-     * This method is used to test for function searchPremises with list size = 0
-     *
-     * @return HTTPStatus.NO_CONTENT
+     * Create by: Trần Linh Giang
+     * Date created: 26/03/2024
+     * This method test for function searchPremises (return list premises)
      */
     @Test
     public void getPremises_98() throws Exception {
@@ -34,251 +34,257 @@ public class PremisesController_searchPremises {
     }
 
     /**
-     * This method is used to test for function searchPremises with list size = 0
-     *
-     * @return HTTPStatus.OK
+     * Create by: Trần Linh Giang
+     * Date created: 26/03/2024
+     * check input area="", code="", cost="", description="", floor="", price="", premisesStatus="", TypePremises=""
      */
     @Test
     public void getPremises_97() throws Exception {
         this.mockMvc.perform(
-                        MockMvcRequestBuilders.get("/api/premises/"))
+                        MockMvcRequestBuilders.get("/api/premises/search")
+                                .param("area", "")
+                                .param("code", "")
+                                .param("cost", "")
+                                .param("description", "")
+                                .param("floor", "")
+                                .param("price", "")
+                                .param("premisesStatus", "")
+                                .param("TypePremises", "")
+                )
                 .andDo(print())
-                .andExpect(status().is4xxClientError());
+                .andExpect(status().is2xxSuccessful());
     }
 
     /**
-     * This method is used to test for function searchPremises with list size > 0
-     *
-     * @return HTTPStatus.OK
+     * Create by: Trần Linh Giang
+     * Date created: 26/03/2024
+     * check empty all input DB
      */
     @Test
-    public void getListPremises_96() throws Exception {
+    public void getPremises_96() throws Exception {
         this.mockMvc.perform(
-                        MockMvcRequestBuilders
-                                .get("/api/premises/search"))
+                        MockMvcRequestBuilders.get("/api/premises/search"))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("totalPages").value(1))
-                .andExpect(jsonPath("totalElements").value(7))  // số lượng phần tử có trong db
-
-
-                .andExpect(jsonPath("content[0].id").value("1"))
-                .andExpect(jsonPath("content[0].area").value("100.0"))
+                .andExpect(jsonPath("totalElements").value(4))
+                .andExpect(jsonPath("content[0].id").value(1))
+                .andExpect(jsonPath("content[0].area").value(100))
                 .andExpect(jsonPath("content[0].code").value("MB-0001"))
-                .andExpect(jsonPath("content[0].cost").value("1000"))
-                .andExpect(jsonPath("content[0].description").value("1"))
-                .andExpect(jsonPath("content[0].floor").value("1"))
-                .andExpect(jsonPath("content[0].price").value("12000000"))
-                .andExpect(jsonPath("content[0].typePremises.name").value("mặt đứng"))
-                .andExpect(jsonPath("content[0].premisesStatus.id").value("1"));
-
+                .andExpect(jsonPath("content[0].cost").value(10000))
+                .andExpect(jsonPath("content[0].description").value("đẹp"))
+                .andExpect(jsonPath("content[0].floor").value(2))
+                .andExpect(jsonPath("content[0].price").value(20000))
+                .andExpect(jsonPath("content[0].premisesStatus.name").value("mặt đứng"))
+                .andExpect(jsonPath("content[0].typePremises.name").value("chưa bàn giao"));
     }
 
+
     /**
-     * This method is used to test for function searchPremises with list size > 0
-     *
-     * @return HTTPStatus.OK
+     * Create by: Trần Linh Giang
+     * Date created: 26/03/2024
+     * Check search 'code' is null
      */
     @Test
     public void getPremises_95() throws Exception {
         this.mockMvc.perform(
                         MockMvcRequestBuilders
-                                .get("/api/premises/search"))
+                                .get("/api/premises/search?code=null")
+                )
                 .andDo(print())
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(jsonPath("totalPages").value(1))
-                .andExpect(jsonPath("totalElements").value(7))  // số lượng phần tử có trong db
+                .andExpect(status().is2xxSuccessful());
 
-                .andExpect(jsonPath("content[4].id").value("5"))
-                .andExpect(jsonPath("content[4].area").value("564.0"))
-                .andExpect(jsonPath("content[4].code").value("MB-0005"))
-                .andExpect(jsonPath("content[4].cost").value("233"))
-                .andExpect(jsonPath("content[4].floor").value("2"))
-                .andExpect(jsonPath("content[4].price").value("1123412"))
-                .andExpect(jsonPath("content[0].typePremises.name").value("mặt đứng"))
-                .andExpect(jsonPath("content[0].premisesStatus.name").value("chưa bàn giao"));
     }
 
     /**
-     * This method is used to test for function searchPremises with list size > 0
-     * with description = " "
-     *
-     * @return HTTPStatus.OK
+     * Create by: Trần Linh Giang
+     * Date created: 26/03/2024
+     * check search floor empty
      */
     @Test
-    public void getListPremises_85() throws Exception {
+    public void getPremises_94() throws Exception {
         this.mockMvc.perform(
-                        MockMvcRequestBuilders
-                                .get("/api/premises/search"))
+                        MockMvcRequestBuilders.get("/api/premises/search?floor="))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("totalPages").value(1))
-                .andExpect(jsonPath("totalElements").value(7))  // số lượng phần tử có trong db
-                .andExpect(jsonPath("content[1].id").value("2"))
-                .andExpect(jsonPath("content[1].area").value("200.0"))
-                .andExpect(jsonPath("content[1].code").value("MB-0002"))
-                .andExpect(jsonPath("content[1].cost").value("200"))
-                .andExpect(jsonPath("content[1].description").value(""))
-                .andExpect(jsonPath("content[1].floor").value("2"))
-                .andExpect(jsonPath("content[1].price").value("300000"))
-                .andExpect(jsonPath("content[1].typePremises.id").value("2"))
-                .andExpect(jsonPath("content[1].premisesStatus.id").value("2"));
-    }
-
-    /**
-     * This method is used to test the function searchPremises with display list
-     * with parameter area is null, code = null, area= null, cost= null, description= "", floor=null, price= null
-     *
-     * @return HTTPStatus.OK
-     */
-    @Test
-    public void getListStudent_94() throws Exception {
-        this.mockMvc.perform(
-                        MockMvcRequestBuilders
-                                .get("/api/premises/search"))
-                .andDo(print())
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(jsonPath("totalPages").value(1))
-                .andExpect(jsonPath("totalElements").value(7)) // số lượng phần tử có trong db
-
-
-                .andExpect(jsonPath("content[5].id").value("6"))
-                .andExpect(jsonPath("content[5].area").value(Matchers.nullValue()))
-                .andExpect(jsonPath("content[5].code").value(Matchers.nullValue()))
-                .andExpect(jsonPath("content[5].cost").value(Matchers.nullValue()))
-                .andExpect(jsonPath("content[5].description").value(""))
-                .andExpect(jsonPath("content[5].floor").value(Matchers.nullValue()))
-                .andExpect(jsonPath("content[5].price").value(Matchers.nullValue()));
-    }
-
-    /**
-     * This method is used to test the function searchPremises with search by area and code
-     *
-     * @return HTTPStatus.OK
-     */
-    @Test
-    public void fillAllPremises_93() throws Exception {
-
-        this.mockMvc.perform(
-                        MockMvcRequestBuilders
-                                .get("/api/premises/search?&premisesStatus=&typePremises="))
-                .andDo(print())
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(jsonPath("totalPages").value(1))
-                .andExpect(jsonPath("totalElements").value(7))
-
-                .andExpect(jsonPath("content[0].area").value("100.0"))
+                .andExpect(jsonPath("totalElements").value(4))
+                .andExpect(jsonPath("content[0].id").value(1))
+                .andExpect(jsonPath("content[0].area").value(100))
                 .andExpect(jsonPath("content[0].code").value("MB-0001"))
-                .andExpect(jsonPath("content[0].cost").value("1000"))
-                .andExpect(jsonPath("content[0].description").value("1"))
-                .andExpect(jsonPath("content[0].floor").value("1"))
-                .andExpect(jsonPath("content[0].price").value("12000000"))
-                .andExpect(jsonPath("content[0].premisesStatus.name").value("chưa bàn giao"))
-                .andExpect(jsonPath("content[0].typePremises.name").value("mặt đứng"));
-    }
-
-    /**
-     * This method is used to test the function searchPremises with search by area="" or code= ""
-     *
-     * @return HTTPStatus.OK
-     */
-
-    @Test
-    public void fillAllPremises_87() throws Exception {
-
-        this.mockMvc.perform(
-                        MockMvcRequestBuilders
-                                .get("/api/premises/search?&area="))
-                .andDo(print())
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(jsonPath("totalPages").value(1))
-                .andExpect(jsonPath("totalElements").value(7))
-
-                .andExpect(jsonPath("content[0].area").value("100.0"))
-                .andExpect(jsonPath("content[0].code").value("MB-0001"))
-                .andExpect(jsonPath("content[1].area").value("200.0"))
+                .andExpect(jsonPath("content[0].cost").value(10000))
+                .andExpect(jsonPath("content[0].description").value("đẹp"))
+                .andExpect(jsonPath("content[0].floor").value(2))
+                .andExpect(jsonPath("content[0].price").value(20000))
+                .andExpect(jsonPath("content[0].premisesStatus.name").value("mặt đứng"))
+                .andExpect(jsonPath("content[0].typePremises.name").value("chưa bàn giao"))
+                .andExpect(jsonPath("content[1].id").value(2))
+                .andExpect(jsonPath("content[1].area").value(200))
                 .andExpect(jsonPath("content[1].code").value("MB-0002"))
-                .andExpect(jsonPath("content[2].code").value("MB-0003"))
-                .andExpect(jsonPath("content[2].area").value("300.0"));
-    }
-
-
-    /**
-     * This method is used to test the function searchPremises with paging
-     *
-     * @return HTTPStatus.OK
-     */
-    @Test
-    public void fillAllPremises_90() throws Exception {
-
-        this.mockMvc.perform(
-                        MockMvcRequestBuilders
-                                .get("/api/premises/search"))
-                .andDo(print())
-                .andExpect(status().is2xxSuccessful())
-                /** Test số trang số trang */
-                .andExpect(jsonPath("totalPages").value(1))
-                .andExpect(jsonPath("totalElements").value(7));
+                .andExpect(jsonPath("content[1].cost").value(20000))
+                .andExpect(jsonPath("content[1].description").value("xấu"))
+                .andExpect(jsonPath("content[1].floor").value(1))
+                .andExpect(jsonPath("content[1].price").value(30000))
+                .andExpect(jsonPath("content[1].premisesStatus.name").value("mặt đứng"))
+                .andExpect(jsonPath("content[1].typePremises.name").value("đã bàn giao"));
     }
 
     /**
-     * check for empty value description = " "
-     *
-     * @return HTTPStatus.OK
+     * Create by: Trần Linh Giang
+     * Date created: 26/03/2024
+     * check search code in DB
      */
     @Test
-    public void fillAllPremises_88() throws Exception {
-
+    public void getPremises_93() throws Exception {
         this.mockMvc.perform(
-                        MockMvcRequestBuilders
-                                .get("/api/premises/search"))
-                .andDo(print())
-                .andExpect(status().is2xxSuccessful())
-
-                .andExpect(jsonPath("totalPages").value(1))
-                .andExpect(jsonPath("totalElements").value(7))
-                /** Nhập sai giá trị description */
-                .andExpect(jsonPath("content[2].id").value("3"))
-                .andExpect(jsonPath("content[2].area").value("300.0"))
-                .andExpect(jsonPath("content[2].code").value("MB-0003"))
-                .andExpect(jsonPath("content[2].description").value("9"))
-                .andExpect(jsonPath("content[2].floor").value("3"))
-                .andExpect(jsonPath("content[2].price").value("675272"));
-    }
-
-    /**
-     * check for data that is not in the database
-     *
-     * @return HTTPStatus.OK
-     */
-    @Test
-    public void fillAllPremises_86() throws Exception {
-        this.mockMvc.perform(
-                        MockMvcRequestBuilders
-                                .get("/api/premises/search"))
+                        MockMvcRequestBuilders.get("/api/premises/search?code=MB-0001"))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("totalPages").value(1))
-                .andExpect(jsonPath("totalElements").value(7))
-                .andExpect(jsonPath("content[9]").doesNotExist()); // Kiểm tra xem phần tử thứ 10 có tồn tại không
+                .andExpect(jsonPath("totalElements").value(4))
+                .andExpect(jsonPath("content[0].id").value(1))
+                .andExpect(jsonPath("content[0].area").value(100))
+                .andExpect(jsonPath("content[0].code").value("MB-0001"))
+                .andExpect(jsonPath("content[0].cost").value(10000))
+                .andExpect(jsonPath("content[0].description").value("đẹp"))
+                .andExpect(jsonPath("content[0].floor").value(2))
+                .andExpect(jsonPath("content[0].price").value(20000))
+                .andExpect(jsonPath("content[0].premisesStatus.name").value("mặt đứng"))
+                .andExpect(jsonPath("content[0].typePremises.name").value("chưa bàn giao"));
+    }
+
+    /**
+     * Create by: Trần Linh Giang
+     * Date created: 26/03/2024
+     * Check search 'floor' has in DB
+     */
+    @Test
+    public void getPremises_92() throws Exception {
+        this.mockMvc.perform(
+                        MockMvcRequestBuilders.get("/api/premises/search?floor=2"))
+                .andDo(print())
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("totalPages").value(1))
+                .andExpect(jsonPath("totalElements").value(4))
+                .andExpect(jsonPath("content[0].id").value(1))
+                .andExpect(jsonPath("content[0].area").value(100))
+                .andExpect(jsonPath("content[0].code").value("MB-0001"))
+                .andExpect(jsonPath("content[0].cost").value(10000))
+                .andExpect(jsonPath("content[0].description").value("đẹp"))
+                .andExpect(jsonPath("content[0].floor").value(2))
+                .andExpect(jsonPath("content[0].price").value(20000))
+                .andExpect(jsonPath("content[0].premisesStatus.name").value("mặt đứng"))
+                .andExpect(jsonPath("content[0].typePremises.name").value("chưa bàn giao"));
+    }
+
+    /**
+     * Create by: Trần Linh Giang
+     * Date created: 26/03/2024
+     * Check search 'code' has in DB
+     */
+    @Test
+    public void getPremises_91() throws Exception {
+        this.mockMvc.perform(
+                        MockMvcRequestBuilders.get("/api/premises/search?floor="))
+                .andDo(print())
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("totalPages").value(1))
+                .andExpect(jsonPath("totalElements").value(4))
+                .andExpect(jsonPath("content[0].id").value(1))
+                .andExpect(jsonPath("content[0].area").value(100))
+                .andExpect(jsonPath("content[0].code").value("MB-0001"))
+                .andExpect(jsonPath("content[0].cost").value(10000))
+                .andExpect(jsonPath("content[0].description").value("đẹp"))
+                .andExpect(jsonPath("content[0].floor").value(2))
+                .andExpect(jsonPath("content[0].price").value(20000))
+                .andExpect(jsonPath("content[0].premisesStatus.name").value("mặt đứng"))
+                .andExpect(jsonPath("content[0].typePremises.name").value("chưa bàn giao"))
+                .andExpect(jsonPath("content[1].id").value(2))
+                .andExpect(jsonPath("content[1].area").value(200))
+                .andExpect(jsonPath("content[1].code").value("MB-0002"))
+                .andExpect(jsonPath("content[1].cost").value(20000))
+                .andExpect(jsonPath("content[1].description").value("xấu"))
+                .andExpect(jsonPath("content[1].floor").value(1))
+                .andExpect(jsonPath("content[1].price").value(30000))
+                .andExpect(jsonPath("content[1].premisesStatus.name").value("mặt đứng"))
+                .andExpect(jsonPath("content[1].typePremises.name").value("đã bàn giao"));
     }
 
 
     /**
-     * Check if the data is wrong area= ?
-     *
-     * @return HTTPStatus.OK
+     * Create by: Trần Linh Giang
+     * Date created: 26/03/2024
+     * Check search 'code' not exist in DB
      */
     @Test
-    public void fillAllPremises_85() throws Exception {
-        this.mockMvc.perform(
-                        MockMvcRequestBuilders
-                                .get("/api/premises/search")
-                                .param("area", "invalid_value")) // Giá trị không hợp lệ cho tham số area
+    public void getPremises_90() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/premises/search?code=BHGFGF-523845623874"))
+                .andDo(print())
+                .andExpect(status().isNoContent());
+    }
+
+    /**
+     * Create by: Trần Linh Giang
+     * Date created: 26/03/2024
+     * Check 'cost' null
+     */
+    @Test
+    public void getPremises_89() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/premises/search?cost=null"))
+                .andDo(print())
+                .andExpect(status().is2xxSuccessful());
+    }
+
+    /**
+     * Create by: Trần Linh Giang
+     * Date created: 26/03/2024
+     * Check 'floor' null
+     */
+    @Test
+    public void getPremises_88() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/premises/search?floor=null"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
-    
+
+    /**
+     * Create by: Trần Linh Giang
+     * Date created: 26/03/2024
+     * Check paging
+     */
+    @Test
+    public void getPremises_94_paging() throws Exception {
+        int pageSize = 1; // Số lượng phần tử trên mỗi trang
+        int pageNumber = 0; // Số trang bắt đầu từ 0
+
+        MvcResult result = this.mockMvc.perform(
+                        MockMvcRequestBuilders.get("/api/premises/search")
+                                .param("floor", "")
+                                .param("page", String.valueOf(pageNumber))
+                                .param("size", String.valueOf(pageSize))
+                )
+                .andDo(print())
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("content").isArray())
+                .andReturn();
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode responseJson = objectMapper.readTree(result.getResponse().getContentAsString());
+
+        /* Kiểm tra số lượng trang */
+        int totalPages = responseJson.get("totalPages").asInt();
+        assertEquals(3, totalPages); // Đổi thành số trang thực tế trong DB
+
+        /* Kiểm tra số lượng phần tử trên trang hiện tại*/
+        int actualPageSize = responseJson.get("numberOfElements").asInt();
+        assertEquals(pageSize, actualPageSize);
+
+        /* Kiểm tra nội dung của trang hiện tại */
+        JsonNode contentArray = responseJson.get("content");
+        assertEquals(pageSize, contentArray.size());
+
+    }
+
 
 }
 
