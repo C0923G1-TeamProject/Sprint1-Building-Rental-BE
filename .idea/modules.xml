@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Building-rental-be.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Building-rental-be.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Sprint1-Building-Rental-BE.iml" filepath="$PROJECT_DIR$/.idea/Sprint1-Building-Rental-BE.iml" />
     </modules>
   </component>
