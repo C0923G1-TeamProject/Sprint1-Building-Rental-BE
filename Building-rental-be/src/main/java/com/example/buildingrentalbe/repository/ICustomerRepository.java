@@ -10,7 +10,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
     @Query(value = "select * from customer", nativeQuery = true)
-    Page<Customer> findAllCustomer (Pageable pageable);
-//    Page<Customer> findByNameCustomerContaining(String name, Pageable pageable);
+    Page<Customer> findAllCustomer(Pageable pageable);
+
+    Page<Customer> findByNameContaining(String name, Pageable pageable);
+
+    Page<Customer> findByCardContaining(String card, Pageable pageable);
+
+    Page<Customer> findByNameContainingAndCardContaining(String name, String card, Pageable pageable);
 
 }
