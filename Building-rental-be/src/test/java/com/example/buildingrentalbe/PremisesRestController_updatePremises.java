@@ -128,7 +128,7 @@ public class PremisesRestController_updatePremises {
                 "    \"cost\": 500000,\n" +
                 "    \"area\": 100.0,\n" +
                 "    \"description\": \"\",\n" +
-                "    \"typePremises\": null,\n" + // Trường 'typePremises' là null
+                "    \"typePremises\": null,\n" + // Trường 'typePremises' null
                 "    \"premisesStatus\": {\n" +
                 "        \"id\": 1,\n" +
                 "        \"name\": \"Chưa bàn giao\"\n" +

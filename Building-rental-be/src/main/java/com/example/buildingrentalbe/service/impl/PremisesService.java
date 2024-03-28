@@ -20,6 +20,22 @@ public class PremisesService implements IPremisesService {
     @Autowired
     private IPremisesRepository premisesRepository;
 
+    static List<Integer> listFloor = new ArrayList<>();
+    static {
+        listFloor.add(1);
+        listFloor.add(2);
+        listFloor.add(3);
+        listFloor.add(4);
+        listFloor.add(5);
+        listFloor.add(6);
+        listFloor.add(7);
+        listFloor.add(8);
+        listFloor.add(9);
+    }
+    public static List<Integer> getListFloor(){
+        return new ArrayList<>(listFloor);
+    }
+
     @Override
     public List<Premises> findAll() {
         return premisesRepository.findAllPremises();

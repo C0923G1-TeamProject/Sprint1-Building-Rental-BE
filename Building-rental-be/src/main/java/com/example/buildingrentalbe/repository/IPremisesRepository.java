@@ -14,10 +14,14 @@ public interface IPremisesRepository extends JpaRepository<Premises, Integer>, J
     @Query(value = "select * from premises", nativeQuery = true)
     List<Premises> findAllPremises();
 
-    @Query(value = "select * from premises where id=:id", nativeQuery = true)
+    @Query(value = "SELECT p.id, p.area, p.code, p.description, p.floor, p.price, p.cost, p.premises_status_id, p.id_type_premises, tp.name AS type_name, ps.name AS status_name " +
+            "FROM premises AS p " +
+            "JOIN type_premises AS tp ON p.id_type_premises = tp.id " +
+            "JOIN premises_status AS ps ON p.premises_status_id = ps.id " +
+            "WHERE p.id = :id", nativeQuery = true)
     Premises findById(int id);
 
-    @Query(value = "select * from premises where code=:code", nativeQuery = true)
+    @Query(value = "select * from premises  where code=:code", nativeQuery = true)
     Premises findPremisesByCode(String code);
 
     @Transactional
