@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface IPremisesService {
-    Page<Premises> findAll (String search, Pageable pageable, String typePremisesId);
+    List<Premises> findAll();
 
     public Page<Premises> searchPremises(Integer floor, String code, Float area, String premisesName, Pageable pageable);
 

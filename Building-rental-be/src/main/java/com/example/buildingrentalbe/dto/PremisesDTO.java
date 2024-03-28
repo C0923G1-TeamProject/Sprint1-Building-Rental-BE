@@ -1,7 +1,13 @@
 package com.example.buildingrentalbe.dto;
 
+import com.example.buildingrentalbe.model.PremisesStatus;
+import com.example.buildingrentalbe.model.TypePremises;
 import jakarta.validation.constraints.*;
 import org.springframework.format.annotation.NumberFormat;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class PremisesDTO {
     private Integer id;
@@ -11,36 +17,38 @@ public class PremisesDTO {
     private Integer floor;
 
     @NotNull
-    private Integer typeId;
+    private TypePremises typePremises;
 
     @NotNull
-    private Integer statusId;
+    private PremisesStatus premisesStatus;
 
 
     @DecimalMin(value = "10.0")
     @DecimalMax(value = "999999.9")
     private Float area;
-    @Size(max = 255, message = "Mô tả tối đa 255 kí tự")
+    @Size(max = 1500, message = "Mô tả tối đa 1500 kí tự")
     private String description;
 
     @Min(1000)
     @Max(999999999)
-    @Digits(integer = 9, fraction = 0, message = "Giá thuê phải lớn hơn 1 và < 9,999,999,999")
+    @Digits(integer = 12, fraction = 0, message = "Giá thuê phải lớn hơn 1 và < 9,999,999,999,999")
     private Long price;
 
     @Min(1000)
     @Max(999999999)
-    @Digits(integer = 9, fraction = 0, message = "Phí quản lý phải lớn hơn 1 và < 9,999,999,999")
+    @Digits(integer = 12, fraction = 0, message = "Phí quản lý phải lớn hơn 1 và < 9,999,999,999,999")
     private Long cost;
+
 
     public PremisesDTO() {
     }
 
-    public PremisesDTO(String code, Integer floor, Integer typeId, Integer statusId, Float area, String description, Long price, Long cost) {
+    public PremisesDTO(Integer id, String code, Integer floor, TypePremises typePremises, PremisesStatus premisesStatus, Float area, String description, Long price, Long cost) {
+        this.id = id;
         this.code = code;
         this.floor = floor;
-        this.typeId = typeId;
-        this.statusId = statusId;
+        this.typePremises = typePremises;
+        this.premisesStatus = premisesStatus;
         this.area = area;
         this.description = description;
         this.price = price;
@@ -71,20 +79,20 @@ public class PremisesDTO {
         this.floor = floor;
     }
 
-    public Integer getTypeId() {
-        return typeId;
+    public TypePremises getTypePremises() {
+        return typePremises;
     }
 
-    public void setTypeId(Integer typeId) {
-        this.typeId = typeId;
+    public void setTypePremises(TypePremises typePremises) {
+        this.typePremises = typePremises;
     }
 
-    public Integer getStatusId() {
-        return statusId;
+    public PremisesStatus getPremisesStatus() {
+        return premisesStatus;
     }
 
-    public void setStatusId(Integer statusId) {
-        this.statusId = statusId;
+    public void setPremisesStatus(PremisesStatus premisesStatus) {
+        this.premisesStatus = premisesStatus;
     }
 
     public Float getArea() {
