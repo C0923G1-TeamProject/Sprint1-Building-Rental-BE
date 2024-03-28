@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
 @Service
 public class PremisesService implements IPremisesService {
     @Autowired
@@ -37,8 +38,12 @@ public class PremisesService implements IPremisesService {
     }
 
     @Override
-    public List<Premises> findAll() {
-        return premisesRepository.findAllPremises();
+    public Page<Premises> findAll(String searchTypePremises, Pageable pageable, String typePremises) {
+        if (typePremises != null && typePremises != "") {
+            int typePremisesId = Integer.parseInt(typePremises);
+            return premisesRepository.searchWithTypePremises(typePremisesId, pageable);
+        }
+        return premisesRepository.search("%" + searchTypePremises + "%", pageable);
     }
 
     @Override

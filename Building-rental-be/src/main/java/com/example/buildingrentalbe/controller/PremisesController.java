@@ -1,5 +1,4 @@
 package com.example.buildingrentalbe.controller;
-
 import com.example.buildingrentalbe.dto.PremisesDTO;
 import com.example.buildingrentalbe.model.Premises;
 import com.example.buildingrentalbe.model.PremisesStatus;
@@ -21,7 +20,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 import java.util.Objects;
+
 
 @RestController
 @CrossOrigin("*")
@@ -36,6 +37,7 @@ public class PremisesController {
 
     @Autowired
     TypePremisesService typePremisesService;
+
 
     @GetMapping("/search")
     public ResponseEntity<Page<Premises>> searchPremises(
@@ -78,6 +80,7 @@ public class PremisesController {
         premisesService.updatePremises(id, existingPremises);
 
         return ResponseEntity.ok("Cập nhật thông tin premises thành công");
+
     }
 
     @GetMapping("/find/{id}")
@@ -123,3 +126,7 @@ public class PremisesController {
 
 
 }
+
+    }}
+
+
