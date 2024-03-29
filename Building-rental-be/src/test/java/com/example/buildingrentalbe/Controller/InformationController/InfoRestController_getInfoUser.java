@@ -76,7 +76,7 @@ public class InfoRestController_getInfoUser {
     public void getInfoUser_4() throws Exception {
         this.mockMvc.perform(
                         MockMvcRequestBuilders.get("/information/getInformationUser", "")
-                                .header("authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnaWFuZ2xkcyIsImlhdCI6MTcxMTM1OTM5MCwiZXhwIjoxNzExNDQ1NzkwfQ.QAhgY2HxsIM1OrGXTFfrcXVPljma7NFbbP339aQY7as"))
+                                .header("authorization","Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aXRrdCIsImlhdCI6MTcxMTQzNTM2NCwiZXhwIjoxNzExNTIxNzY0fQ.ePXQAcG3e-8qsENULx-lanQZYCotsd3_9HMmISu86j0"))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful());
     }

@@ -11,6 +11,7 @@ import org.springframework.validation.Validator;
 public class InformationDto implements Validator {
     private Integer id;
 
+    @NotBlank(message = "Ngày sinh không được để trống")
     private String date;
     @NotBlank(message = "Địa chỉ không được để trống")
     @Pattern(regexp = "^[\\p{L}\\p{M}0-9\\s,.]+$",message = "Vui lòng nhập địa chỉ hợp lệ")
