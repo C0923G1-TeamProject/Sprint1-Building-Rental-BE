@@ -34,13 +34,13 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Page<Customer> findByCardContaining(String card, Pageable pageable) {
-        return repository.findByCardContaining(card, pageable);
+    public Page<Customer> findByEmailContaining(String card, Pageable pageable) {
+        return repository.findByEmailContaining(card, pageable);
     }
 
     @Override
-    public Page<Customer> findByNameContainingAndCardContaining(String name, String card, Pageable pageable) {
-        return repository.findByNameContainingAndCardContaining(name, card, pageable);
+    public Page<Customer> findByNameContainingAndEmailContaining(String name, String card, Pageable pageable) {
+        return repository.findByNameContainingAndEmailContaining(name, card, pageable);
     }
 
 }
