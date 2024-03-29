@@ -5,9 +5,11 @@ import com.example.buildingrentalbe.config.security.service.JwtResponse;
 import com.example.buildingrentalbe.config.security.service.JwtService;
 import com.example.buildingrentalbe.config.security.service.UserService;
 import com.example.buildingrentalbe.dto.AccountDto;
+import com.example.buildingrentalbe.dto.AccountInfoDto;
 import com.example.buildingrentalbe.model.Account;
 import com.example.buildingrentalbe.model.Employee;
 import com.example.buildingrentalbe.model.Mail;
+import com.example.buildingrentalbe.service.IAccountService;
 import com.example.buildingrentalbe.service.IEmployeeService;
 import com.example.buildingrentalbe.service.IMailService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -43,6 +46,9 @@ public class AuthController {
     @Autowired
     private IEmployeeService iEmployeeService;
 
+    @Autowired
+    private IAccountService iAccountService;
+
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AccountDto account) {
@@ -56,28 +62,54 @@ public class AuthController {
         return ResponseEntity.ok(new JwtResponse(currentUser.getId(), jwt, userDetails.getUsername(), userDetails.getUsername(), userDetails.getAuthorities()));
     }
 
-    @PreAuthorize("hasAuthority('ROLE_USER')")
+
     @PostMapping("/send-otp")
-    public ResponseEntity<?> sendOtp(@RequestHeader("Authorization") String bearToken) {
+    public ResponseEntity<?> sendOtp(@RequestBody AccountDto account) {
         String otp = generateFiveDigitInteger();
         // lay thong tin user
-        String token = bearToken.substring(7);
-        String username = jwtService.getUsernameFromJwtToken(token);
-        Employee employee = iEmployeeService.findByUserNameAccount(username);
-//        String email = employee.getEmail();
-        String email = "nguyentukhanh2001@gmail.com";
-        // gui mail
-        Mail mail = new Mail();
-        mail.setMailFrom("duyhoangc0923g1@gmail.com");
-        mail.setMailTo(email);
-        mail.setMailSubject("Khanh22");
-        mail.setMailContent("Ma xac nhan cua tai khoan "+username+" la: " + otp);
-        iMailService.sendEmail(mail);
-        return ResponseEntity.ok("da gui thu");
+        Account accountDtoDB = iAccountService.findAccountByUsername(account.getUsername());
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        if (bCryptPasswordEncoder.matches(account.getPassword(), accountDtoDB.getPassword())) {
+            Employee employee = iEmployeeService.findByUserNameAccount(account.getUsername());
+            String email = employee.getEmail();
+            // gui mail
+            Mail mail = new Mail();
+            mail.setMailFrom("duyhoangc0923g1@gmail.com");
+            mail.setMailTo(email);
+            mail.setMailSubject("Khanh22");
+            mail.setMailContent("Ma xac nhan cua tai khoan "+account.getUsername()+" la: " + otp);
+//        iMailService.sendEmail(mail);
+
+            AccountInfoDto accountInfoDto = new AccountInfoDto();
+            accountInfoDto.setOtp(otp);
+            accountInfoDto.setEmail(email);
+            return new ResponseEntity<>(accountInfoDto, HttpStatus.OK);
+        } else {
+            return ResponseEntity.ok("Khong hop le");
+        }
+
+
+
+
+
+
+
 
 
     }
 
+
+
+@PostMapping("/test")
+public ResponseEntity<?> test(@RequestBody AccountDto accountDto){
+        Account accountDtoDB = iAccountService.findAccountByUsername(accountDto.getUsername());
+    BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+    if (bCryptPasswordEncoder.matches(accountDto.getPassword(), accountDtoDB.getPassword())) {
+        return new ResponseEntity<>("true", HttpStatus.OK);
+    } else {
+        return new ResponseEntity<>("false", HttpStatus.OK);
+    }
+}
 
     @PostMapping("/confirm-otp")
     public ResponseEntity<?> confirmOtp(@RequestBody Boolean isValidOtp) {
