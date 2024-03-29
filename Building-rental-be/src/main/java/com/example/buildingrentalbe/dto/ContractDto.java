@@ -15,8 +15,6 @@ import java.time.LocalDate;
 public class ContractDto implements Validator {
 
     private Integer id;
-    @NotBlank(message = "Mã hợp đồng không được để trống")
-    @Pattern(regexp = "^HD-[0-9]{4}$", message = "Nhập đúng định dạng HĐ-xxxx")
     private String code;
 
     @FutureOrPresent(message = "Ngày bắt đầu hợp đồng không được nhỏ hơn ngày hiện tại")

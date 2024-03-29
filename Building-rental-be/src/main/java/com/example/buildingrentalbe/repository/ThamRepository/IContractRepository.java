@@ -132,4 +132,21 @@ public interface IContractRepository extends JpaRepository<Contract, Integer> {
             "VALUES (:#{#contract.code},:#{#contract.content},:#{#contract.deposit},:#{#contract.endDate},:#{#contract.paymentTerm},:#{#contract.startDate},:#{#contract.idAccount}, " +
             ":#{#contract.idContractStatus},:#{#contract.idCustomer},:#{#contract.idPremises} )",nativeQuery = true)
     void saveContract(@Param("contract") ContractDto contract);
+
+
+    /**
+     * Created by: ThamTTH
+     * Date created: 25/03/2024
+     * Select page has param is a requestContractDto
+     */
+    @Query(value = " select ct.id as id, ct.code as code, ct.startDate as startDate, ct.endDate as endDate, ct.deposit as deposit, " +
+            " ct.content as content, ct.paymentTerm as paymentTerm, cs as contractStatus, ac as account, pr as premises, c as customer" +
+            " from Contract ct " +
+            " join ContractStatus cs on ct.contractStatus.id = cs.id " +
+            " join Account ac on ct.account.id = ac.id" +
+            " join Premises pr on ct.premises.id = pr.id" +
+            " join Customer c on ct.customer.id = c.id"+
+            " where c.name like concat('%',:#{#requestContractDto.nameCustomer},'%') " +
+            "and (cs.id = :#{#requestContractDto.idContractStatus} or :#{#requestContractDto.idContractStatus} = -1)")
+    Page<IContractDto> findAllPage(@Param("requestContractDto") RequestContractDto requestContractDto, Pageable pageable);
 }

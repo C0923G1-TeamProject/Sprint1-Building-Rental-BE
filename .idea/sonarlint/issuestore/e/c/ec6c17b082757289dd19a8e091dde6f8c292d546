@@ -1,0 +1,42 @@
+
+>
+java:S5411T"(Use a primitive boolean expression here.(€â§
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813("BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813+"BRemove this field injection and use constructor injection instead.(êæÄŞ
+<
+java:S14520"&Remove usage of generic wildcard type.(Îí©Õ
+@	java:S1067"+Replace this use of System.out by a logger.(™š‡ü
+Q
+java:S1854B"<Remove this useless assignment to local variable "employee".(ãíÈ-
+<
+java:S1452="&Remove usage of generic wildcard type.(¸‹Ë®
+B
+java:S1481B"-Remove this unused "employee" local variable.(ãíÈ-
+Q	java:S125C"<This block of commented-out lines of code should be removed.(Ü§µä
+<
+java:S1452S"&Remove usage of generic wildcard type.(™î€Ä
+<
+java:S1452\"&Remove usage of generic wildcard type.(¾­æ 
+@	java:S106_"+Replace this use of System.out by a logger.(äÎ¬
+<
+java:S1452d"&Remove usage of generic wildcard type.(’»€¦
+A
+java:S1452n"&Remove usage of generic wildcard type.(êèÃ—ûÿÿÿÿ
+<
+java:S1452u"&Remove usage of generic wildcard type.(­ÈÈ›
+A
+java:S1452|"&Remove usage of generic wildcard type.(ÄÿÀıÿÿÿÿ
+E
+java:S2140‚")Use "java.util.Random.nextInt()" instead.(ÚÌŒ¨úÿÿÿÿ
+|
+java:S1128"aRemove this unused import 'com.example.buildingrentalbe.config.security.secConfig.UserPrinciple'.(éùÏÚşÿÿÿÿ
+I
+java:S1128"4Remove this unused import 'java.security.Principal'.(’ÛŞ[

@@ -1,0 +1,17 @@
+
+l
+java:S1066û"/Merge this if statement with the enclosing one.(¿Ù¿ÑJ$9f9268de-0204-48a8-916e-dde50aa5ca86
+|	java:S125"<This block of commented-out lines of code should be removed.(“Âƒõ˚ˇˇˇˇJ$f73f7107-cf8c-4e98-9e30-6cc3a3fd7183
+Ç	java:S107,"BConstructor has 11 parameters, which is greater than 7 authorized.(Íù≠•˛ˇˇˇˇJ$e23b67f9-a37b-416d-997f-97c7d0ebcf61
+à
+java:S1764ù"KCorrect one of the identical sub-expressions on both sides of operator "&&"(·Î∆ÆJ$6251c2f5-26a1-45b1-b419-c77c047dbfbf
+à
+java:S1128"GRemove this unused import 'com.example.buildingrentalbe.model.Account'.(∆ó€¢˝ˇˇˇˇJ$8b212a9b-6ef7-4f9c-a6e1-8f76a5632265
+è
+java:S1128"NRemove this unused import 'com.example.buildingrentalbe.model.ContractStatus'.(î∞˘ü˝ˇˇˇˇJ$2af0b74b-f975-41e1-9c26-26eb5789e93f
+â
+java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Customer'.(™Ç˘µ¯ˇˇˇˇJ$138ae4ea-2f65-40f4-a962-8071940db527
+Ñ
+java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Premises'.(ÆÔ÷îJ$e4b0dfd8-fbb7-4029-98e9-563a653b56c1
+q
+java:S1128"0Remove this unused import 'jakarta.persistence'.(Œ´‘ß˙ˇˇˇˇJ$d7c965ce-c83a-4812-88a9-729a7813a093

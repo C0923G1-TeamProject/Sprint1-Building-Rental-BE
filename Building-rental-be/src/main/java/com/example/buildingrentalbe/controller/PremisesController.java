@@ -25,7 +25,6 @@ import java.util.Objects;
 @CrossOrigin("*")
 @RequestMapping("/api/premises")
 public class PremisesController {
-
     @Autowired
     PremisesService premisesService;
 
