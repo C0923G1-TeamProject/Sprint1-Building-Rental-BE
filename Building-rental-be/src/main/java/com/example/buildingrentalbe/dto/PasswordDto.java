@@ -9,7 +9,7 @@ public class PasswordDto {
     private String currentPassword;
     @NotBlank(message = "Mật khẩu không được bỏ trống")
     @Size(min = 6,max = 24,message = "Mật khẩu có độ dài từ 6-24 kí tự")
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]$", message = "Mật khẩu ít nhất chứa 1 chữ cái thường, 1 chữ cái hoa, 1 số 0-9 và 1 kí tự đặc biệt như(@$!%*?&)")
+//    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]$", message = "Mật khẩu ít nhất chứa 1 chữ cái thường, 1 chữ cái hoa, 1 số 0-9 và 1 kí tự đặc biệt như(@$!%*?&)")
     private String newPassword;
     @NotBlank(message = "Mật khẩu không được bỏ trống")
     @Size(min = 6,max = 24,message = "Mật khẩu có độ dài từ 6-24 kí tự")

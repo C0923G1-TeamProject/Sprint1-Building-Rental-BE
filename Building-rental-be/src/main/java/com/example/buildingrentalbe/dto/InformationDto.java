@@ -23,21 +23,19 @@ public class InformationDto implements Validator {
     private String name;
     private boolean gender;
     @NotBlank(message = "Email Không được để trống")
-    @Pattern(regexp = "^[\\w\\-\\.]+@([\\w-]+\\.)+[\\w-]{2,}$", message = "Email vui lòng nhập đúng định dạng")
+    @Pattern(regexp = "^[\\w\\-\\.]+@([\\w-]+\\.)+[\\w-]{2,}$", message = "Vui lòng nhập email đúng định dạng")
     private String email;
-    private String profilePicture;
 
     public InformationDto() {
     }
 
-    public InformationDto(Integer id, String date, String address, String name, boolean gender, String email, String profilePicture) {
+    public InformationDto(Integer id, String date, String address, String name, boolean gender, String email) {
         this.id = id;
         this.date = date;
         this.address = address;
         this.name = name;
         this.gender = gender;
         this.email = email;
-        this.profilePicture = profilePicture;
     }
 
     public Integer getId() {
@@ -86,14 +84,6 @@ public class InformationDto implements Validator {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getProfilePicture() {
-        return profilePicture;
-    }
-
-    public void setProfilePicture(String profilePicture) {
-        this.profilePicture = profilePicture;
     }
 
     @Override
