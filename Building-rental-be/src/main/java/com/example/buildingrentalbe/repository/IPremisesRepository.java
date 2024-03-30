@@ -34,10 +34,5 @@ public interface IPremisesRepository extends JpaRepository<Premises, Integer>, J
             "WHERE p.id= :id", nativeQuery = true)
     void updatePremises(@Param("id") Integer id, @Param("premises") Premises premises);
 
-    @Query(value = "SELECT p.id, p.area, p.code, p.description, p.floor, p.price, p.cost, p.premises_status_id, p.id_type_premises, tp.name AS type_name, ps.name AS status_name " +
-            "FROM premises AS p " +
-            "JOIN type_premises AS tp ON p.id_type_premises = tp.id " +
-            "JOIN premises_status AS ps ON p.premises_status_id = ps.id " +
-            "WHERE p.premises_status_id = 1", nativeQuery = true)
-    List<Premises> findByStatus();
+
 }
