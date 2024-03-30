@@ -49,7 +49,6 @@ public class PremisesService implements IPremisesService {
     @Override
     public Page<Premises> searchPremises(Integer floor, String code, Float area, String premisesName, Pageable pageable) {
         Specification<Premises> spec = (root, query, criteriaBuilder) -> {
-
             List<Predicate> predicates = new ArrayList<>();
 
             if (floor != null) {
