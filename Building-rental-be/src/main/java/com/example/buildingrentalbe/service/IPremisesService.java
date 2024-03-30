@@ -18,6 +18,4 @@ public interface IPremisesService {
 
     void updatePremises(int id, Premises premises);
 
-
-    List<Premises> findByStatus();
 }

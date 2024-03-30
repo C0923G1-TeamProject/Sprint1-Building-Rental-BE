@@ -29,7 +29,7 @@ public class ContractStatusController {
     }
 
     @GetMapping("/pageStatus")
-    public ResponseEntity<Page<IContractStatusDto>> getContractStatus() {
+    public ResponseEntity<?> getContractStatus() {
         Pageable pageable = PageRequest.of(0, 5);
         Page<IContractStatusDto> contractStatusList = this.contractStatusService.getAll(pageable);
         return new ResponseEntity<>(contractStatusList, HttpStatus.OK);
