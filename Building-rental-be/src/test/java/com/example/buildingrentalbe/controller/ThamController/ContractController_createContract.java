@@ -27,7 +27,7 @@ public class ContractController_createContract {
 
 
     /**
-     * Created by: ThamTth
+     * Created by: ThamTTH
      * Date created: 26/03/2024
      * Check case null code
      */
@@ -40,7 +40,6 @@ public class ContractController_createContract {
         contractDto.setDeposit(100000L);
         contractDto.setContent("Bên A đồng ý các điều khoản bên B");
         contractDto.setPaymentTerm("10000000");
-        //dùng DTO nhưng vì là file của những người khác sẽ ảnh hưởng nên đang dùng tạm clas
 
         contractDto.setIdPremises(4);
         contractDto.setIdCustomer(1);
@@ -70,7 +69,6 @@ public class ContractController_createContract {
         contractDto.setDeposit(100000L);
         contractDto.setContent("Bên A đồng ý các điều khoản bên B");
         contractDto.setPaymentTerm("10000000");
-        //dùng DTO nhưng vì là file của những người khác sẽ ảnh hưởng nên đang dùng tạm clas
 
         contractDto.setIdPremises(4);
         contractDto.setIdCustomer(1);
@@ -99,7 +97,6 @@ public class ContractController_createContract {
         contractDto.setDeposit(100000L);
         contractDto.setContent("Bên A đồng ý các điều khoản bên B");
         contractDto.setPaymentTerm("10000000");
-        //dùng DTO nhưng vì là file của những người khác sẽ ảnh hưởng nên đang dùng tạm clas
 
         contractDto.setIdPremises(4);
         contractDto.setIdCustomer(1);
@@ -128,7 +125,6 @@ public class ContractController_createContract {
         contractDto.setDeposit(null);
         contractDto.setContent("Bên A đồng ý các điều khoản bên B");
         contractDto.setPaymentTerm("10000000");
-        //dùng DTO nhưng vì là file của những người khác sẽ ảnh hưởng nên đang dùng tạm clas
 
         contractDto.setIdPremises(4);
         contractDto.setIdCustomer(1);
@@ -157,7 +153,6 @@ public class ContractController_createContract {
         contractDto.setDeposit(100000L);
         contractDto.setContent(null);
         contractDto.setPaymentTerm("10000000");
-        //dùng DTO nhưng vì là file của những người khác sẽ ảnh hưởng nên đang dùng tạm clas
 
         contractDto.setIdPremises(4);
         contractDto.setIdCustomer(1);
@@ -186,7 +181,6 @@ public class ContractController_createContract {
         contractDto.setDeposit(100000L);
         contractDto.setContent("Test");
         contractDto.setPaymentTerm(null);
-        //dùng DTO nhưng vì là file của những người khác sẽ ảnh hưởng nên đang dùng tạm clas
 
         contractDto.setIdPremises(4);
         contractDto.setIdCustomer(1);
@@ -215,7 +209,6 @@ public class ContractController_createContract {
         contractDto.setDeposit(100000L);
         contractDto.setContent("Test");
         contractDto.setPaymentTerm("10000");
-        //dùng DTO nhưng vì là file của những người khác sẽ ảnh hưởng nên đang dùng tạm clas
 
         contractDto.setIdPremises(null);
         contractDto.setIdCustomer(1);
@@ -244,7 +237,6 @@ public class ContractController_createContract {
         contractDto.setDeposit(100000L);
         contractDto.setContent("Test");
         contractDto.setPaymentTerm("10000");
-        //dùng DTO nhưng vì là file của những người khác sẽ ảnh hưởng nên đang dùng tạm clas
 
         contractDto.setIdPremises(1);
         contractDto.setIdCustomer(null);

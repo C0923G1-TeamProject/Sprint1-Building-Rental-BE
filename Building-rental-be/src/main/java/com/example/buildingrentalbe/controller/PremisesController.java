@@ -28,7 +28,6 @@ import java.util.Objects;
 @CrossOrigin("*")
 @RequestMapping("/api/premises")
 public class PremisesController {
-
     @Autowired
     PremisesService premisesService;
 
@@ -37,6 +36,7 @@ public class PremisesController {
 
     @Autowired
     TypePremisesService typePremisesService;
+
 
 
     @GetMapping("/search")
@@ -120,6 +120,17 @@ public class PremisesController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }else {
             return new ResponseEntity<>(premisesStatusList, HttpStatus.OK);
+        }
+    }
+
+    //laasy mặt bằng chưa cho thuê để hiển thị tạo mới
+    @GetMapping("/createContract")
+    public ResponseEntity<?> findByStatus(){
+        List<Premises> premisesList = premisesService.findByStatus();
+        if(premisesList == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }else {
+            return new ResponseEntity<>(premisesList, HttpStatus.OK);
         }
     }
 }

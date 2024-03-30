@@ -1,13 +1,5 @@
 package com.example.buildingrentalbe.dto;
 
-import com.example.buildingrentalbe.model.Account;
-import com.example.buildingrentalbe.model.ContractStatus;
-import com.example.buildingrentalbe.model.Customer;
-import com.example.buildingrentalbe.model.Premises;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
-
 import java.time.LocalDate;
 
 
