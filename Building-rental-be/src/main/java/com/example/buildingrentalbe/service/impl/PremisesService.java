@@ -88,4 +88,9 @@ public class PremisesService implements IPremisesService {
             premisesRepository.updatePremises(id, premises);
         }
     }
+
+    @Override
+    public List<Premises> findByStatus() {
+        return premisesRepository.findByStatus();
+    }
 }

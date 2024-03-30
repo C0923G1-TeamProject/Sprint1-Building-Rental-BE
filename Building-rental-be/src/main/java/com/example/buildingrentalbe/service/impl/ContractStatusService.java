@@ -1,8 +1,9 @@
-package com.example.buildingrentalbe.service.ThamService;
+package com.example.buildingrentalbe.service.impl;
 
 import com.example.buildingrentalbe.dto.IContractStatusDto;
 import com.example.buildingrentalbe.model.ContractStatus;
 import com.example.buildingrentalbe.repository.ThamRepository.IContractStatusRepository;
+import com.example.buildingrentalbe.service.ThamService.IContractStatusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ContractStatusService implements IContractStatusService{
+public class ContractStatusService implements IContractStatusService {
     @Autowired
     private IContractStatusRepository contractStatusRepository;
     @Override
