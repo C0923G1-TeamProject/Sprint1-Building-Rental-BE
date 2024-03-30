@@ -58,8 +58,9 @@ public class AuthController {
         String jwt = jwtService.generateTokenLogin(authentication);
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         Account currentUser = userService.findByUsername(account.getUsername());
+        Employee employee = iEmployeeService.findByUserNameAccount(account.getUsername());
         System.out.println("kk " + currentUser);
-        return ResponseEntity.ok(new JwtResponse(currentUser.getId(), jwt, userDetails.getUsername(), userDetails.getUsername(), userDetails.getAuthorities()));
+        return ResponseEntity.ok(new JwtResponse(currentUser.getId(), jwt, userDetails.getUsername(), employee.getName(), userDetails.getAuthorities()));
     }
 
 
@@ -78,7 +79,7 @@ public class AuthController {
             mail.setMailTo(email);
             mail.setMailSubject("Khanh22");
             mail.setMailContent("Ma xac nhan cua tai khoan "+account.getUsername()+" la: " + otp);
-//        iMailService.sendEmail(mail);
+        iMailService.sendEmail(mail);
 
             AccountInfoDto accountInfoDto = new AccountInfoDto();
             accountInfoDto.setOtp(otp);
@@ -125,6 +126,7 @@ public ResponseEntity<?> test(@RequestBody AccountDto accountDto){
         String newToken = token.substring(7);
         String userName = jwtService.getUsernameFromJwtToken(newToken);
         System.out.println(userName);
+        String cm = "cm-30-3-24-pm-3-44";
         return ResponseEntity.ok(userName);
     }
 
