@@ -16,6 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/customer")
 public class CustomerController {
     @Autowired
@@ -23,15 +24,15 @@ public class CustomerController {
 
     @GetMapping("/show")
     public ResponseEntity<?> show(@RequestParam(required = false) String name,
-                                  @RequestParam(required = false) String card,
-                                  @PageableDefault(value = 3) Pageable pageable) {
+                                  @RequestParam(required = false) String email,
+                                  @PageableDefault(value = 5) Pageable pageable) {
         Page<Customer> customers;
-        if (name != null && !name.isEmpty() && (card == null || card.isEmpty())) {
+        if (name != null && !name.isEmpty() && (email == null || email.isEmpty())) {
             customers = service.findByNameContaining(name, pageable);
-        } else if (card != null && !card.isEmpty() && (name == null || name.isEmpty())) {
-            customers = service.findByCardContaining(card, pageable);
+        } else if (email != null && !email.isEmpty() && (name == null || name.isEmpty())) {
+            customers = service.findByEmailContaining(email, pageable);
         } else if (name != null && !name.isEmpty()) {
-            customers = service.findByNameContainingAndCardContaining(name, card, pageable);
+            customers = service.findByNameContainingAndEmailContaining(name, email, pageable);
         } else {
             customers = service.getList(pageable);
         }
