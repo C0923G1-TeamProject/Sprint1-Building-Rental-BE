@@ -20,10 +20,7 @@ public class PremisesService implements IPremisesService {
     @Autowired
     private IPremisesRepository premisesRepository;
 
-
-
     static List<Integer> listFloor = new ArrayList<>();
-
     static {
         listFloor.add(1);
         listFloor.add(2);
@@ -35,8 +32,7 @@ public class PremisesService implements IPremisesService {
         listFloor.add(8);
         listFloor.add(9);
     }
-
-    public static List<Integer> getListFloor() {
+    public static List<Integer> getListFloor(){
         return new ArrayList<>(listFloor);
     }
 
@@ -49,6 +45,7 @@ public class PremisesService implements IPremisesService {
     @Override
     public Page<Premises> searchPremises(Integer floor, String code, Float area, String premisesName, Pageable pageable) {
         Specification<Premises> spec = (root, query, criteriaBuilder) -> {
+
             List<Predicate> predicates = new ArrayList<>();
 
             if (floor != null) {
@@ -84,7 +81,7 @@ public class PremisesService implements IPremisesService {
 
     @Override
     public void updatePremises(int id, Premises premises) {
-        if (Objects.equals(premises.getCode(), findById(id).getCode()) || (findById(id) != null && findPremisesByCode(premises.getCode()) == null)) {
+        if (Objects.equals(premises.getCode(), findById(id).getCode()) || (findById(id)!=null && findPremisesByCode(premises.getCode())==null)){
             premisesRepository.updatePremises(id, premises);
         }
     }
