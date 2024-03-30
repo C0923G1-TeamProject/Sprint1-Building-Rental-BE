@@ -49,19 +49,6 @@ public interface IContractRepository extends JpaRepository<Contract, Integer> {
             " join Customer c on ct.customer.id = c.id")
     Page<IContractDto> findAllListContract(Pageable pageable);
 
-//    @Query(value = " select ct.id as id, ct.code as code, ct.startDate as startDate, ct.endDate as endDate, ct.deposit as deposit, " +
-//            " ct.content as content, ct.paymentTerm as paymentTerm, cs as contractStatus, ac as account, pr as premises, c as customer" +
-//            " from Contract ct " +
-//            " join ContractStatus cs on ct.contractStatus.id = cs.id " +
-//            " join Account ac on ct.account.id = ac.id" +
-//            " join Premises pr on ct.premises.id = pr.id" +
-//            " join Customer c on ct.customer.id = c.id"+
-//            " where ct.customer.name like concat('%',:#{#requestContractDto.nameCustomer},'%')"
-//    )
-//            " and ct.premises.")
-//    Page<IContractDto> findAllPage(@Param("requestContractDto") RequestContractDto requestContractDto, Pageable pageable);
-
-
     /**
      * Created by: ThamTTH
      * Date created: 25/03/2024

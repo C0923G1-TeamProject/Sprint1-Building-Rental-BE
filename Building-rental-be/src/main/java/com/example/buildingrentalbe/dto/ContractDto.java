@@ -38,7 +38,6 @@ public class ContractDto implements Validator {
     private Integer idCustomer;
     @NotNull(message = "Nội dung nay không được để trống")
     private Integer idAccount;
-    @NotNull(message = "Nội dung nay không được để trống")
     private Integer idContractStatus;
 
     public ContractDto(Integer id, String code, LocalDate startDate, LocalDate endDate, Long deposit, String content, String paymentTerm, Integer idPremises, Integer idCustomer, Integer idAccount, Integer idContractStatus) {
