@@ -39,7 +39,6 @@ public class PremisesController {
     TypePremisesService typePremisesService;
 
 
-
     @GetMapping("/search")
     public ResponseEntity<Page<Premises>> searchPremises(
             @RequestParam( required = false) Integer floor,
