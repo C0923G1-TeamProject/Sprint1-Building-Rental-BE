@@ -85,7 +85,7 @@ public class PremisesController {
         return new ResponseEntity<>(premisesDTO, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+
     @GetMapping("/find/{id}")
     public ResponseEntity<PremisesDTO> findPremisesById(@PathVariable("id") Integer id){
         Premises premises = premisesService.findById(id);
@@ -97,7 +97,7 @@ public class PremisesController {
         return new ResponseEntity<>(premisesDTO, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+
     @GetMapping("/getListFloor")
         public ResponseEntity<List<Integer>> getAllFloor(){
             List<Integer> listFloor = PremisesService.getListFloor();
@@ -108,7 +108,7 @@ public class PremisesController {
             }
         }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+
     @GetMapping("/getListType")
     public ResponseEntity<List<TypePremises>> getAllType() {
         List<TypePremises> typePremisesList = typePremisesService.findAllType();
@@ -119,7 +119,7 @@ public class PremisesController {
         }
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+
     @GetMapping("/getListStatus")
     public ResponseEntity<List<PremisesStatus>> getAllStatus() {
         List<PremisesStatus> premisesStatusList = premisesStatusService.findAllPremisesStatus();
