@@ -1,42 +1,42 @@
 
-E
-java:S5411t"(Use a primitive boolean expression here.(€â§8ş­†é1
-_
-java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞ8ú®†é1
-_
-java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ8û®†é1
-_
-java:S6813("BRemove this field injection and use constructor injection instead.(êæÄŞ8û®†é1
-_
-java:S6813+"BRemove this field injection and use constructor injection instead.(êæÄŞ8ü®†é1
-_
-java:S6813."BRemove this field injection and use constructor injection instead.(êæÄŞ8ü®†é1
-_
-java:S68131"BRemove this field injection and use constructor injection instead.(êæÄŞ8ı®†é1
-i
-java:S14526"&Remove usage of generic wildcard type.(Îí©Õ8âÏ÷é1J$efc3ee80-2e12-49ff-985d-452d7a4a4678
-G	java:S106="+Replace this use of System.out by a logger.(™š‡ü8 ¯†é1
-i
-java:S1452C"&Remove usage of generic wildcard type.(¶ÜªÓ8äÏ÷é1J$cd0cc06c-8a08-4ce4-9d60-d3982ac14dff
-X	java:S125Q"<This block of commented-out lines of code should be removed.(¿İöë8¾¯†é1
-i
-java:S1452h"&Remove usage of generic wildcard type.(èĞ¦Ú8åÏ÷é1J$1d811493-87d6-452a-acd2-c82f4dfbb578
-C
-java:S1452s"&Remove usage of generic wildcard type.(™î€Ä8Ï¯†é1
-C
-java:S1452|"&Remove usage of generic wildcard type.(¾­æ 8Ó¯†é1
-G	java:S106"+Replace this use of System.out by a logger.(äÎ¬8Ú¯†é1
-D
-java:S1452„"&Remove usage of generic wildcard type.(’»€¦8Ü¯†é1
-I
-java:S1452"&Remove usage of generic wildcard type.(êèÃ—ûÿÿÿÿ8à¯†é1
-D
-java:S1452•"&Remove usage of generic wildcard type.(­ÈÈ›8ã¯†é1
-I
-java:S1452œ"&Remove usage of generic wildcard type.(ÄÿÀıÿÿÿÿ8é¯†é1
 k
-java:S2140¢")Use "java.util.Random.nextInt()" instead.(ÚÌŒ¨úÿÿÿÿJ$d79ecce3-df82-4b9e-a786-e984628e3a0c
-ƒ
-java:S1128"aRemove this unused import 'com.example.buildingrentalbe.config.security.secConfig.UserPrinciple'.(éùÏÚşÿÿÿÿ8Œ°†é1
-P
-java:S1128"4Remove this unused import 'java.security.Principal'.(’ÛŞ[8°†é1
+java:S5411t"(Use a primitive boolean expression here.(€â§8ş­†é1J$e26ed9db-1fd6-4092-aec3-6fb958d56b57
+…
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞ8ú®†é1J$1231a636-0320-4a1d-9c98-0340e11aef85
+…
+java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ8û®†é1J$6b76be7a-1da7-4401-9ca4-2852b5ff30c0
+…
+java:S6813("BRemove this field injection and use constructor injection instead.(êæÄŞ8û®†é1J$a809002f-d9d8-4e3d-8c72-eccf9d1dc197
+…
+java:S6813+"BRemove this field injection and use constructor injection instead.(êæÄŞ8ü®†é1J$5e8a6b5d-2614-4044-8855-af3888f66e76
+…
+java:S6813."BRemove this field injection and use constructor injection instead.(êæÄŞ8ü®†é1J$4acb22d6-cd7e-4083-80bd-90acc4d6778f
+…
+java:S68131"BRemove this field injection and use constructor injection instead.(êæÄŞ8ı®†é1J$2d8b59de-e981-478c-928f-5e596f6f400b
+i
+java:S14526"&Remove usage of generic wildcard type.(Îí©Õ8âÏ÷é1J$9bee6334-f2d3-4a76-b080-6a126c314426
+m	java:S106="+Replace this use of System.out by a logger.(™š‡ü8 ¯†é1J$eea13a32-9aef-4973-84f8-6420b8446048
+i
+java:S1452C"&Remove usage of generic wildcard type.(¶ÜªÓ8äÏ÷é1J$c36a5fdb-efe5-4edd-bcfd-a48b49b63388
+~	java:S125Q"<This block of commented-out lines of code should be removed.(¿İöë8¾¯†é1J$709dc9cf-a587-4f88-8da1-f4b7c2c8121f
+i
+java:S1452h"&Remove usage of generic wildcard type.(èĞ¦Ú8åÏ÷é1J$4844214c-3655-4731-bfda-ef4df7e41a1f
+i
+java:S1452s"&Remove usage of generic wildcard type.(™î€Ä8Ï¯†é1J$3e7e153a-3897-4765-b34e-71068e00e94c
+i
+java:S1452|"&Remove usage of generic wildcard type.(¾­æ 8Ó¯†é1J$7aac314d-8e5a-490d-94bb-6b8423efe24a
+m	java:S106"+Replace this use of System.out by a logger.(äÎ¬8Ú¯†é1J$a265ff87-d6bc-4a1e-aa52-a701e3f6d7b7
+j
+java:S1452„"&Remove usage of generic wildcard type.(’»€¦8Ü¯†é1J$50182cde-ad52-48d3-9e1d-9e70308568a6
+o
+java:S1452"&Remove usage of generic wildcard type.(êèÃ—ûÿÿÿÿ8à¯†é1J$27084d82-62fd-42ea-b7eb-7ed29e63ba78
+j
+java:S1452•"&Remove usage of generic wildcard type.(­ÈÈ›8ã¯†é1J$6dc37c3c-e038-44cc-a10d-9c00d0495e22
+o
+java:S1452œ"&Remove usage of generic wildcard type.(ÄÿÀıÿÿÿÿ8é¯†é1J$4ebca8ed-4a89-4dbe-a72d-f6122a457f64
+k
+java:S2140¢")Use "java.util.Random.nextInt()" instead.(ÚÌŒ¨úÿÿÿÿJ$850c4eba-56d1-4749-9041-9c5a03cf8176
+©
+java:S1128"aRemove this unused import 'com.example.buildingrentalbe.config.security.secConfig.UserPrinciple'.(éùÏÚşÿÿÿÿ8Œ°†é1J$150b6502-150d-45ab-8292-6a73d44788a7
+v
+java:S1128"4Remove this unused import 'java.security.Principal'.(’ÛŞ[8°†é1J$d47215b9-7ca0-46dd-8da4-f3e4e017b3f8

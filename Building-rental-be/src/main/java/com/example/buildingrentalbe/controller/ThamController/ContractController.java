@@ -100,6 +100,4 @@ public class ContractController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-
-
 }

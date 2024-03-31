@@ -1,24 +1,24 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(°Ë¶‚8îÈåé1J$34a8dda4-fede-40da-b1d9-d5e3a3a2e856
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(°Ë¶‚8îÈåé1J$0b89b8a3-8664-4b92-8fac-e8f7befb88b8
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¢Éåé1J$303f4b7b-5bad-4ed1-bf2f-1ecbcb56eb1c
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¢Éåé1J$2e398ecc-4636-4883-958d-6c820e1e1b8e
 …
-java:S6813!"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÕÆæé1J$ac968e80-c62e-4275-b6bb-9e9b5839b786
-ƒ	java:S125&"<This block of commented-out lines of code should be removed.(£Ğˆåÿÿÿÿÿ8°Éåé1J$fa472d83-f23b-4c63-ab6d-6580c0866c04
-~	java:S125<"<This block of commented-out lines of code should be removed.(¬å’º8¶Éåé1J$dc6d539c-6832-496c-a924-a5d93c44f257
+java:S6813!"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÕÆæé1J$6a202dc2-db0f-407f-8232-969b8eee841a
+ƒ	java:S125&"<This block of commented-out lines of code should be removed.(£Ğˆåÿÿÿÿÿ8°Éåé1J$40b619bf-0e4c-467f-abd2-437037f4aff4
+~	java:S125<"<This block of commented-out lines of code should be removed.(¬å’º8¶Éåé1J$e57d6382-396d-429a-afb0-1475a4396358
 i
-java:S1452["&Remove usage of generic wildcard type.(Ï©ô”8ÀÉåé1J$c485d135-6428-4e4d-b6fd-73712f3d2f56
-l
-java:S1128"PRemove this unused import 'com.example.buildingrentalbe.dto.IContractSearchDto'.(¤ó³8è–òé1
-e
-java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Premises'.(®ïÖ”8è–òé1
-ˆ
-java:S1128	"kRemove this unused import 'com.example.buildingrentalbe.service.ThamService.annotation.DateRangeValidator'.(£î Æ8é–òé1
-e
-java:S1128"HRemove this unused import 'org.springframework.data.domain.PageRequest'.(ºêâÚ8é–òé1
-g
-java:S1128"ERemove this unused import 'org.springframework.data.domain.Pageable'.(‡ë‚Öıÿÿÿÿ8ê–òé1
-e
-java:S1128"IRemove this unused import 'org.springframework.data.web.PageableDefault'.(¯’Î<8ë–òé1
-i
-java:S1128"GRemove this unused import 'org.springframework.web.bind.WebDataBinder'.(Æ¬á³ùÿÿÿÿ8ì–òé1
+java:S1452["&Remove usage of generic wildcard type.(Ï©ô”8ÀÉåé1J$4654f520-ae6e-4cd2-a2ee-1a86df1f1dbe
+’
+java:S1128"PRemove this unused import 'com.example.buildingrentalbe.dto.IContractSearchDto'.(¤ó³8è–òé1J$cbb644b9-d1ef-4c12-98c4-cafb1d69e39e
+‹
+java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Premises'.(®ïÖ”8è–òé1J$1509ca36-4cd4-485b-9851-7426353576dd
+®
+java:S1128	"kRemove this unused import 'com.example.buildingrentalbe.service.ThamService.annotation.DateRangeValidator'.(£î Æ8é–òé1J$93675945-261f-4b5c-a6e7-111403212531
+‹
+java:S1128"HRemove this unused import 'org.springframework.data.domain.PageRequest'.(ºêâÚ8é–òé1J$5c96a9f6-4ce9-431f-93cc-8591683646d3
+
+java:S1128"ERemove this unused import 'org.springframework.data.domain.Pageable'.(‡ë‚Öıÿÿÿÿ8ê–òé1J$d792d17c-c571-4d94-9791-8b4dce3fdb4a
+‹
+java:S1128"IRemove this unused import 'org.springframework.data.web.PageableDefault'.(¯’Î<8ë–òé1J$4beeb19c-8c3b-4674-a0a1-28e87af0e1c8
+
+java:S1128"GRemove this unused import 'org.springframework.web.bind.WebDataBinder'.(Æ¬á³ùÿÿÿÿ8ì–òé1J$91aa8486-9609-4f98-8229-730b02088dd6
