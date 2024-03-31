@@ -17,6 +17,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,7 +40,7 @@ public class PremisesController {
     TypePremisesService typePremisesService;
 
 
-
+    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/search")
     public ResponseEntity<Page<Premises>> searchPremises(
             @RequestParam( required = false) Integer floor,
@@ -47,7 +48,7 @@ public class PremisesController {
             @RequestParam( required = false) Float area,
             @RequestParam( required = false) String premisesName,
             @RequestParam( defaultValue = "0") int page,
-            @RequestParam( defaultValue = "3") int size) {
+            @RequestParam( defaultValue = "10") int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<Premises> result = premisesService.searchPremises(floor, code, area, premisesName, pageable);
         if(result.getTotalPages() > 0){
@@ -57,32 +58,34 @@ public class PremisesController {
         }
     }
 
-    @PatchMapping("update/{id}")
-    public ResponseEntity<?> updatePremises(@PathVariable("id") int id,
+    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+    @PatchMapping("/update/{id}")
+    public ResponseEntity<PremisesDTO> updatePremises(@PathVariable("id") int id,
                                             @Valid @RequestBody PremisesDTO premisesDTO,
                                             BindingResult bindingResult) {
 
         if (bindingResult.hasFieldErrors()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(bindingResult.getAllErrors());
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
         Premises existingPremises = premisesService.findById(id);
         if (existingPremises == null) {
-            return ResponseEntity.notFound().build();
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
         if (!Objects.equals(existingPremises.getCode(), premisesDTO.getCode()) &&
                 premisesService.findPremisesByCode(premisesDTO.getCode()) != null) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Mã mặt bằng đã tồn tại");
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
         BeanUtils.copyProperties(premisesDTO, existingPremises, "id");
 
         premisesService.updatePremises(id, existingPremises);
 
-        return ResponseEntity.ok("Cập nhật thông tin premises thành công");
+        return new ResponseEntity<>(premisesDTO, HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/find/{id}")
     public ResponseEntity<PremisesDTO> findPremisesById(@PathVariable("id") Integer id){
         Premises premises = premisesService.findById(id);
@@ -94,8 +97,9 @@ public class PremisesController {
         return new ResponseEntity<>(premisesDTO, HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/getListFloor")
-        public ResponseEntity<?> getAllFloor(){
+        public ResponseEntity<List<Integer>> getAllFloor(){
             List<Integer> listFloor = PremisesService.getListFloor();
             if (listFloor == null){
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -104,8 +108,9 @@ public class PremisesController {
             }
         }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/getListType")
-    public ResponseEntity<?> getAllType() {
+    public ResponseEntity<List<TypePremises>> getAllType() {
         List<TypePremises> typePremisesList = typePremisesService.findAllType();
         if(typePremisesList == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -114,8 +119,9 @@ public class PremisesController {
         }
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/getListStatus")
-    public ResponseEntity<?> getAllStatus() {
+    public ResponseEntity<List<PremisesStatus>> getAllStatus() {
         List<PremisesStatus> premisesStatusList = premisesStatusService.findAllPremisesStatus();
         if(premisesStatusList == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
