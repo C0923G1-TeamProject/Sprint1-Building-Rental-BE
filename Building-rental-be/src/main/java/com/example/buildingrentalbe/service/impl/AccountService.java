@@ -1,5 +1,6 @@
 package com.example.buildingrentalbe.service.impl;
 
+import com.example.buildingrentalbe.dto.ImageDto;
 import com.example.buildingrentalbe.model.Account;
 import com.example.buildingrentalbe.model.Employee;
 import com.example.buildingrentalbe.repository.IAccountRepository;
@@ -7,6 +8,7 @@ import com.example.buildingrentalbe.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -33,4 +35,13 @@ public class AccountService implements IAccountService {
     public void updateInformationUser(Employee employee) {
             this.iAccountRepository.updateInformationUser(employee);
     }
+
+
+    @Override
+    public void updateImage(ImageDto imageDto) {
+        this.iAccountRepository.updateImageUser(imageDto);
+    }
+
+
+
 }

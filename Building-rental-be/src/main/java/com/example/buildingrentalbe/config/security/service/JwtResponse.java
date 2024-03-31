@@ -13,12 +13,20 @@ public class JwtResponse {
     private String name;
     private final Collection<? extends GrantedAuthority> authorities;
 
-    public JwtResponse(Integer id, String token, String username, String name, Collection<? extends GrantedAuthority> authorities) {
+    private String otp;
+    private String statusLogin;
+
+    private String email;
+
+    public JwtResponse(Integer id, String token, String username, String name, Collection<? extends GrantedAuthority> authorities, String otp, String statusLogin, String email) {
         this.id = id;
         this.token = token;
         this.username = username;
         this.name = name;
         this.authorities = authorities;
+        this.otp = otp;
+        this.statusLogin = statusLogin;
+        this.email = email;
     }
 
     public String getName() {
@@ -65,4 +73,19 @@ public class JwtResponse {
         return authorities;
     }
 
+    public String getOtp() {
+        return otp;
+    }
+
+    public void setOtp(String otp) {
+        this.otp = otp;
+    }
+
+    public String getStatusLogin() {
+        return statusLogin;
+    }
+
+    public void setStatusLogin(String statusLogin) {
+        this.statusLogin = statusLogin;
+    }
 }
