@@ -1,0 +1,24 @@
+
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ
+A
+java:S1452<"&Remove usage of generic wildcard type.(‚—•ãûÿÿÿÿ
+<
+java:S1452a"&Remove usage of generic wildcard type.(‘•Â
+<
+java:S1452k"&Remove usage of generic wildcard type.(ˆ«í±
+<
+java:S1452u"&Remove usage of generic wildcard type.(ì¿®Ç
+B
+java:S1452€"&Remove usage of generic wildcard type.(å§¾ùÿÿÿÿ
+X
+java:S1128
+"=Remove this unused import 'jakarta.servlet.http.HttpServlet'.(‘²şäıÿÿÿÿ
+Y
+java:S1128"DRemove this unused import 'jakarta.servlet.http.HttpServletRequest'.(õ3
+E
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ

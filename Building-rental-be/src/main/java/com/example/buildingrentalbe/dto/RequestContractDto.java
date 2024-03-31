@@ -6,4 +6,55 @@ public class RequestContractDto {
     private String nameCustomer;
     private String namePremises;
     private Integer idContractStatus;
+
+    public RequestContractDto(Integer page, Integer size, String nameCustomer, String namePremises, Integer idContractStatus) {
+        this.page = page;
+        this.size = size;
+        this.nameCustomer = nameCustomer;
+        this.namePremises = namePremises;
+        this.idContractStatus = idContractStatus;
+    }
+
+    public RequestContractDto() {
+    }
+
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public String getNameCustomer() {
+        return nameCustomer;
+    }
+
+    public void setNameCustomer(String nameCustomer) {
+        this.nameCustomer = nameCustomer;
+    }
+
+    public String getNamePremises() {
+        return namePremises;
+    }
+
+    public void setNamePremises(String namePremises) {
+        this.namePremises = namePremises;
+    }
+
+    public Integer getIdContractStatus() {
+        return idContractStatus;
+    }
+
+    public void setIdContractStatus(Integer idContractStatus) {
+        this.idContractStatus = idContractStatus;
+    }
 }

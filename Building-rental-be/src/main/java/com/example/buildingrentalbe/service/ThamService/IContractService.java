@@ -29,4 +29,7 @@ public interface IContractService {
     Page<IContractSearchDto> findAllPageContract(Pageable pageable);
 
     void save(ContractDto contract);
+
+
+    Page<IContractDto> findAllPage(RequestContractDto requestContractDto);
 }
