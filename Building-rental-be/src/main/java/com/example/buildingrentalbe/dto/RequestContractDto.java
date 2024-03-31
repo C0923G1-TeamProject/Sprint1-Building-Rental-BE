@@ -4,14 +4,14 @@ public class RequestContractDto {
     private Integer page;
     private Integer size;
     private String nameCustomer;
-    private String namePremises;
+    private String nameEmployee;
     private Integer idContractStatus;
 
-    public RequestContractDto(Integer page, Integer size, String nameCustomer, String namePremises, Integer idContractStatus) {
+    public RequestContractDto(Integer page, Integer size, String nameCustomer, String nameEmployee, Integer idContractStatus) {
         this.page = page;
         this.size = size;
         this.nameCustomer = nameCustomer;
-        this.namePremises = namePremises;
+        this.nameEmployee = nameEmployee;
         this.idContractStatus = idContractStatus;
     }
 
@@ -42,12 +42,12 @@ public class RequestContractDto {
         this.nameCustomer = nameCustomer;
     }
 
-    public String getNamePremises() {
-        return namePremises;
+    public String getNameEmployee() {
+        return nameEmployee;
     }
 
-    public void setNamePremises(String namePremises) {
-        this.namePremises = namePremises;
+    public void setNameEmployee(String nameEmployee) {
+        this.nameEmployee = nameEmployee;
     }
 
     public Integer getIdContractStatus() {
