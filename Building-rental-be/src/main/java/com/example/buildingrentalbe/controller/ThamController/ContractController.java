@@ -49,7 +49,7 @@ public class ContractController {
 
     //search dto
     @PostMapping("")
-    public ResponseEntity<?> showAllContract(@RequestBody RequestContractDto requestContractDto){
+    public ResponseEntity<Page<IContractDto>> showAllContract(@RequestBody RequestContractDto requestContractDto){
         Page<IContractDto> contractDtoPage = contractService.findAllPage(requestContractDto);
         return new ResponseEntity<>(contractDtoPage,HttpStatus.OK);
     }
@@ -77,7 +77,7 @@ public class ContractController {
 
     //là nhân viên
     @GetMapping("/employee")
-    public ResponseEntity<?> showYourOwnContract(){
+    public ResponseEntity<List<IContractDto>> showYourOwnContract(){
     // lấy account
         Integer idAccount = 1;
         List<IContractDto> contractList = contractService.findContractByAccount(idAccount);
