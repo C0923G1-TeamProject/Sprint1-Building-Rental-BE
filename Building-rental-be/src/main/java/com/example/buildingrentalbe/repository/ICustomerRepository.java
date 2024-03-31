@@ -18,4 +18,10 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
 
     Page<Customer> findByNameContainingAndEmailContaining(String name, String email, Pageable pageable);
 
+    @Query(value = "select count(*) from customer where email = ?1", nativeQuery = true)
+    int countByEmail(String email);
+    @Query(value = "select count(*) from customer where card = ?1", nativeQuery = true)
+    int countByCard(String card);
+    @Query(value = "select count(*) from customer where phone_number = ?1", nativeQuery = true)
+    int countByPhoneNumber(String phone);
 }
