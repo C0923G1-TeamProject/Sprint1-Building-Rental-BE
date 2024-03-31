@@ -25,7 +25,7 @@ public class CustomerController {
     @GetMapping("/show")
     public ResponseEntity<?> show(@RequestParam(required = false) String name,
                                   @RequestParam(required = false) String email,
-                                  @PageableDefault(value = 5) Pageable pageable) {
+                                  @PageableDefault(value = 10) Pageable pageable) {
         Page<Customer> customers;
         if (name != null && !name.isEmpty() && (email == null || email.isEmpty())) {
             customers = service.findByNameContaining(name, pageable);
@@ -45,9 +45,21 @@ public class CustomerController {
             return new ResponseEntity<>(bindingResult.getFieldErrors(),
                     HttpStatus.NOT_ACCEPTABLE);
         }
+        if (service.countByEmail(customerDto.getEmail()) > 0) {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body("email");
+        }
+        if (service.countByCard(customerDto.getCard()) > 0) {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body("card");
+        }
+        if (service.countByPhoneNumber(customerDto.getPhoneNumber()) > 0) {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body("phone");
+        }
         Customer customer = new Customer();
         BeanUtils.copyProperties(customerDto, customer);
         service.save(customer);
-        return ResponseEntity.ok("Thêm thành công");
+        return ResponseEntity.ok("ok");
     }
 }

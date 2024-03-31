@@ -16,4 +16,10 @@ public interface ICustomerService {
     Page<Customer> findByEmailContaining(String email, Pageable pageable);
 
     Page<Customer> findByNameContainingAndEmailContaining(String name, String email, Pageable pageable);
+
+    int countByEmail(String email);
+
+    int countByCard(String card);
+
+    int countByPhoneNumber(String phone);
 }
