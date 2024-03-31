@@ -14,7 +14,7 @@ public interface IContractService {
     List<Contract> findAll();
 
 
-    List<IContractDto> findContractByAccount(Integer idAccount);
+
 
     Page<IContractDto> findAllContract(Pageable pageable);
 
@@ -32,4 +32,6 @@ public interface IContractService {
 
 
     Page<IContractDto> findAllPage(RequestContractDto requestContractDto);
+
+    List<IContractDto> findContractByAccount(RequestContractDto requestContractDto, Integer idAccount);
 }

@@ -1,23 +1,18 @@
 package com.example.buildingrentalbe.controller.ThamController;
 
-import com.example.buildingrentalbe.dto.ContractDto;
-import com.example.buildingrentalbe.dto.IContractDto;
-import com.example.buildingrentalbe.dto.IContractSearchDto;
-import com.example.buildingrentalbe.dto.RequestContractDto;
-import com.example.buildingrentalbe.model.Premises;
+import com.example.buildingrentalbe.config.security.service.JwtService;
+import com.example.buildingrentalbe.dto.*;
+import com.example.buildingrentalbe.model.Employee;
+import com.example.buildingrentalbe.service.IAccountService;
+import com.example.buildingrentalbe.service.IEmployeeService;
 import com.example.buildingrentalbe.service.IPremisesService;
-import com.example.buildingrentalbe.service.ThamService.annotation.DateRangeValidator;
 import com.example.buildingrentalbe.service.ThamService.IContractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -32,6 +27,15 @@ public class ContractController {
     private IContractService contractService;
     @Autowired
     private IPremisesService premisesService;
+
+    @Autowired
+    private JwtService jwtService;
+
+    @Autowired
+    private IEmployeeService employeeService;
+
+    @Autowired
+    private IAccountService accountService;
 
 
 //    @GetMapping
@@ -53,37 +57,19 @@ public class ContractController {
         Page<IContractDto> contractDtoPage = contractService.findAllPage(requestContractDto);
         return new ResponseEntity<>(contractDtoPage,HttpStatus.OK);
     }
-//    @GetMapping("/search")
-//    public ResponseEntity<?> getAllContract(
-//            @RequestParam(value = "nameCustomer",required = false) String nameCustomer,
-//            @RequestParam(value = "statusContract",required = false) Integer statusContract
-//            ) {
-//
-//        Pageable pageable = PageRequest.of(0,5);
-//        Page<IContractSearchDto> page = null;
-//        if(nameCustomer != null && statusContract ==null){
-//            page = contractService.findPageByNameCustomer(nameCustomer,pageable);
-//        } else if (nameCustomer == null&& statusContract != null) {
-//            page = contractService.findPageByStatusContract(statusContract,pageable);
-//        } else if (nameCustomer != null) {
-//            page = contractService.findPageByStatusContractAndNameCustomer(nameCustomer,statusContract,pageable);
-//        }else {
-//            page = contractService.findAllPageContract(pageable);
-//        }
-//
-//        return new ResponseEntity<>(page, HttpStatus.OK);
-//    }
+
 
 
     //là nhân viên
-    @GetMapping("/employee")
-    public ResponseEntity<List<IContractDto>> showYourOwnContract(){
+    @PostMapping("/employee")
+    public ResponseEntity<List<IContractDto>> showYourOwnContract(@RequestHeader("Authorization")String token,@RequestBody RequestContractDto requestContractDto){
         // lấy account
-        Integer idAccount = 1;
-        List<IContractDto> contractList = contractService.findContractByAccount(idAccount);
+        String newToken = token.substring(7);
+        String username = jwtService.getUsernameFromJwtToken(newToken);
+        Integer idAccount = accountService.findAccountByUsername(username).getId();
+        List<IContractDto> contractList = contractService.findContractByAccount(requestContractDto,idAccount);
         return new ResponseEntity<>(contractList,HttpStatus.OK);
     }
-
 
 
     //thêm mới
@@ -96,10 +82,27 @@ public class ContractController {
         if(contractDto.getStartDate().isAfter(contractDto.getEndDate())){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+
         contractService.save(contractDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+    @PostMapping("/getInfo")
+    public ResponseEntity<?> getInfo(@RequestHeader("Authorization")String token){
+        String newToken = token.substring(7);
+        String username = jwtService.getUsernameFromJwtToken(newToken);
+        Employee employee = employeeService.findByUserNameAccount(username);
+        String name = employee.getName();
+        Integer idAccount = accountService.findAccountByUsername(username).getId();
+        InfoAccountContractDto infoAccountContractDto = new InfoAccountContractDto(name,idAccount);
+        return new ResponseEntity<>(infoAccountContractDto,HttpStatus.OK);
 
+    }
+    @GetMapping("/getAllEmployee")
+    public ResponseEntity<Employee> getAllEmployee(String username){
+        Employee employee = employeeService.findByUserNameAccount(username);
+        return new ResponseEntity<>(employee,HttpStatus.OK);
+
+    }
 
 
 }

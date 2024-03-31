@@ -1,19 +1,17 @@
 
-F
-java:S1066†"/Merge this if statement with the enclosing one.(¿Ù¿Ñ
-V	java:S125"<This block of commented-out lines of code should be removed.(“Âƒõ˚ˇˇˇˇ
-\	java:S107."BConstructor has 11 parameters, which is greater than 7 authorized.(Íù≠•˛ˇˇˇˇ
-W
-java:S6353"<Use concise character class syntax '\\d' instead of '[0-9]'.(˛úä◊˙ˇˇˇˇ
-b
-java:S1764ü"KCorrect one of the identical sub-expressions on both sides of operator "&&"(·Î∆Æ
-b
-java:S1128"GRemove this unused import 'com.example.buildingrentalbe.model.Account'.(∆ó€¢˝ˇˇˇˇ
-i
-java:S1128"NRemove this unused import 'com.example.buildingrentalbe.model.ContractStatus'.(î∞˘ü˝ˇˇˇˇ
-c
-java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Customer'.(™Ç˘µ¯ˇˇˇˇ
-^
-java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Premises'.(ÆÔ÷î
-K
-java:S1128"0Remove this unused import 'jakarta.persistence'.(Œ´‘ß˙ˇˇˇˇ
+l
+java:S1066û"/Merge this if statement with the enclosing one.(¿Ù¿ÑJ$e6d81e56-840c-4264-8511-8d617e77944e
+|	java:S125"<This block of commented-out lines of code should be removed.(“Âƒõ˚ˇˇˇˇJ$2752c0ec-cfe1-429f-ada3-dd7c48fbd0e4
+Ç	java:S107,"BConstructor has 11 parameters, which is greater than 7 authorized.(Íù≠•˛ˇˇˇˇJ$9fc6e2b8-631a-446a-9ba4-bd2c4e91de9f
+à
+java:S1764ù"KCorrect one of the identical sub-expressions on both sides of operator "&&"(·Î∆ÆJ$453eb448-a6ac-4d05-84c7-d7ba3508f7f4
+à
+java:S1128"GRemove this unused import 'com.example.buildingrentalbe.model.Account'.(∆ó€¢˝ˇˇˇˇJ$0d9259c3-65ce-4087-a11b-29976fa398bb
+è
+java:S1128"NRemove this unused import 'com.example.buildingrentalbe.model.ContractStatus'.(î∞˘ü˝ˇˇˇˇJ$1ed45ae8-c44d-453b-8c69-bd1acd12e32a
+â
+java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Customer'.(™Ç˘µ¯ˇˇˇˇJ$433223bd-f94b-4766-ab99-3586a6898679
+Ñ
+java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Premises'.(ÆÔ÷îJ$f3cc6e54-f87b-4b23-838f-13ff244b1864
+q
+java:S1128"0Remove this unused import 'jakarta.persistence'.(Œ´‘ß˙ˇˇˇˇJ$b6e940b4-0042-43f6-a3d0-adf4879f6593
