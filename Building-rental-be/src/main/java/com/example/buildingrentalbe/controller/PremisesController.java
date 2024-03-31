@@ -47,7 +47,7 @@ public class PremisesController {
             @RequestParam( required = false) Float area,
             @RequestParam( required = false) String premisesName,
             @RequestParam( defaultValue = "0") int page,
-            @RequestParam( defaultValue = "3") int size) {
+            @RequestParam( defaultValue = "5") int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<Premises> result = premisesService.searchPremises(floor, code, area, premisesName, pageable);
         if(result.getTotalPages() > 0){
@@ -57,30 +57,30 @@ public class PremisesController {
         }
     }
 
-    @PatchMapping("update/{id}")
-    public ResponseEntity<?> updatePremises(@PathVariable("id") int id,
+    @PatchMapping("/update/{id}")
+    public ResponseEntity<PremisesDTO> updatePremises(@PathVariable("id") int id,
                                             @Valid @RequestBody PremisesDTO premisesDTO,
                                             BindingResult bindingResult) {
 
         if (bindingResult.hasFieldErrors()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(bindingResult.getAllErrors());
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
         Premises existingPremises = premisesService.findById(id);
         if (existingPremises == null) {
-            return ResponseEntity.notFound().build();
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
         if (!Objects.equals(existingPremises.getCode(), premisesDTO.getCode()) &&
                 premisesService.findPremisesByCode(premisesDTO.getCode()) != null) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Mã mặt bằng đã tồn tại");
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
         BeanUtils.copyProperties(premisesDTO, existingPremises, "id");
 
         premisesService.updatePremises(id, existingPremises);
 
-        return ResponseEntity.ok("Cập nhật thông tin premises thành công");
+        return new ResponseEntity<>(premisesDTO, HttpStatus.OK);
     }
 
     @GetMapping("/find/{id}")
@@ -95,7 +95,7 @@ public class PremisesController {
     }
 
     @GetMapping("/getListFloor")
-        public ResponseEntity<?> getAllFloor(){
+        public ResponseEntity<List<Integer>> getAllFloor(){
             List<Integer> listFloor = PremisesService.getListFloor();
             if (listFloor == null){
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -105,7 +105,7 @@ public class PremisesController {
         }
 
     @GetMapping("/getListType")
-    public ResponseEntity<?> getAllType() {
+    public ResponseEntity<List<TypePremises>> getAllType() {
         List<TypePremises> typePremisesList = typePremisesService.findAllType();
         if(typePremisesList == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -115,7 +115,7 @@ public class PremisesController {
     }
 
     @GetMapping("/getListStatus")
-    public ResponseEntity<?> getAllStatus() {
+    public ResponseEntity<List<PremisesStatus>> getAllStatus() {
         List<PremisesStatus> premisesStatusList = premisesStatusService.findAllPremisesStatus();
         if(premisesStatusList == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
