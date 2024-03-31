@@ -1,0 +1,24 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(°Ë¶‚8îÈåé1J$34a8dda4-fede-40da-b1d9-d5e3a3a2e856
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¢Éåé1J$303f4b7b-5bad-4ed1-bf2f-1ecbcb56eb1c
+…
+java:S6813!"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÕÆæé1J$ac968e80-c62e-4275-b6bb-9e9b5839b786
+ƒ	java:S125&"<This block of commented-out lines of code should be removed.(£Ğˆåÿÿÿÿÿ8°Éåé1J$fa472d83-f23b-4c63-ab6d-6580c0866c04
+~	java:S125<"<This block of commented-out lines of code should be removed.(¬å’º8¶Éåé1J$dc6d539c-6832-496c-a924-a5d93c44f257
+i
+java:S1452["&Remove usage of generic wildcard type.(Ï©ô”8ÀÉåé1J$c485d135-6428-4e4d-b6fd-73712f3d2f56
+l
+java:S1128"PRemove this unused import 'com.example.buildingrentalbe.dto.IContractSearchDto'.(¤ó³8è–òé1
+e
+java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Premises'.(®ïÖ”8è–òé1
+ˆ
+java:S1128	"kRemove this unused import 'com.example.buildingrentalbe.service.ThamService.annotation.DateRangeValidator'.(£î Æ8é–òé1
+e
+java:S1128"HRemove this unused import 'org.springframework.data.domain.PageRequest'.(ºêâÚ8é–òé1
+g
+java:S1128"ERemove this unused import 'org.springframework.data.domain.Pageable'.(‡ë‚Öıÿÿÿÿ8ê–òé1
+e
+java:S1128"IRemove this unused import 'org.springframework.data.web.PageableDefault'.(¯’Î<8ë–òé1
+i
+java:S1128"GRemove this unused import 'org.springframework.web.bind.WebDataBinder'.(Æ¬á³ùÿÿÿÿ8ì–òé1
