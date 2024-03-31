@@ -1,0 +1,24 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(°Ë¶‚8°¡ùžé1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8ú£ùžé1
+_
+java:S6813!"BRemove this field injection and use constructor injection instead.(êæÄÞ8ú£ùžé1
+]	java:S125&"<This block of commented-out lines of code should be removed.(£Ðˆåÿÿÿÿÿ8œ¤ùžé1
+X	java:S125<"<This block of commented-out lines of code should be removed.(¬å’º8«¤ùžé1
+C
+java:S1452["&Remove usage of generic wildcard type.(Ï©ô”8µ¤ùžé1
+l
+java:S1128"PRemove this unused import 'com.example.buildingrentalbe.dto.IContractSearchDto'.(¤ó³8½¤ùžé1
+e
+java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Premises'.(®ïÖ”8½¤ùžé1
+ˆ
+java:S1128	"kRemove this unused import 'com.example.buildingrentalbe.service.ThamService.annotation.DateRangeValidator'.(£î Æ8¾¤ùžé1
+e
+java:S1128"HRemove this unused import 'org.springframework.data.domain.PageRequest'.(ºêâÚ8¾¤ùžé1
+g
+java:S1128"ERemove this unused import 'org.springframework.data.domain.Pageable'.(‡ë‚Öýÿÿÿÿ8¿¤ùžé1
+e
+java:S1128"IRemove this unused import 'org.springframework.data.web.PageableDefault'.(¯’Î<8¿¤ùžé1
+i
+java:S1128"GRemove this unused import 'org.springframework.web.bind.WebDataBinder'.(Æ¬á³ùÿÿÿÿ8À¤ùžé1

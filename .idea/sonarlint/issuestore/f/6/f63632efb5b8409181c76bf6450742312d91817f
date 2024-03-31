@@ -1,0 +1,19 @@
+
+F
+java:S1066†"/Merge this if statement with the enclosing one.(¿Ù¿Ñ
+V	java:S125"<This block of commented-out lines of code should be removed.(“Âƒõ˚ˇˇˇˇ
+\	java:S107."BConstructor has 11 parameters, which is greater than 7 authorized.(Íù≠•˛ˇˇˇˇ
+W
+java:S6353"<Use concise character class syntax '\\d' instead of '[0-9]'.(˛úä◊˙ˇˇˇˇ
+b
+java:S1764ü"KCorrect one of the identical sub-expressions on both sides of operator "&&"(·Î∆Æ
+b
+java:S1128"GRemove this unused import 'com.example.buildingrentalbe.model.Account'.(∆ó€¢˝ˇˇˇˇ
+i
+java:S1128"NRemove this unused import 'com.example.buildingrentalbe.model.ContractStatus'.(î∞˘ü˝ˇˇˇˇ
+c
+java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Customer'.(™Ç˘µ¯ˇˇˇˇ
+^
+java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Premises'.(ÆÔ÷î
+K
+java:S1128"0Remove this unused import 'jakarta.persistence'.(Œ´‘ß˙ˇˇˇˇ
