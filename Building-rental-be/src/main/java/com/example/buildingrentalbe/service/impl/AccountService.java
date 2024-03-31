@@ -1,5 +1,6 @@
 package com.example.buildingrentalbe.service.impl;
 
+import com.example.buildingrentalbe.dto.ImageDto;
 import com.example.buildingrentalbe.model.Account;
 import com.example.buildingrentalbe.model.Employee;
 import com.example.buildingrentalbe.repository.IAccountRepository;
@@ -34,5 +35,13 @@ public class AccountService implements IAccountService {
     public void updateInformationUser(Employee employee) {
             this.iAccountRepository.updateInformationUser(employee);
     }
+
+
+    @Override
+    public void updateImage(ImageDto imageDto) {
+        this.iAccountRepository.updateImageUser(imageDto);
+    }
+
+
 
 }

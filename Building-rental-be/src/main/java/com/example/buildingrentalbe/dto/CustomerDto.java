@@ -34,7 +34,7 @@ public class CustomerDto implements Validator {
     @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "Dob định dạng không hợp lệ")
     private String date;
     @NotBlank(message = "Trường bắt buộc nhập")
-    @Pattern(regexp = "^[0-9]{10}$", message = "SĐT không hợp lệ")
+    @Pattern(regexp = "^[0-9]{10,11}$", message = "SĐT không hợp lệ")
     private String phoneNumber;
     @NotBlank(message = "Trường bắt buộc nhập")
     private String address;
@@ -43,7 +43,6 @@ public class CustomerDto implements Validator {
     private String url;
     @NotBlank(message = "Trường bắt buộc nhập")
     private String company;
-    @NotBlank(message = "Trường bắt buộc nhập")
     private String img;
 
     @Override
