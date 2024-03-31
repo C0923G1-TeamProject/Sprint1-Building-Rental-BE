@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface IAccountRepository extends JpaRepository<Account,Integer> {
@@ -31,4 +32,6 @@ public interface IAccountRepository extends JpaRepository<Account,Integer> {
     @Query(value = "update employee set name = :#{#employee.name},address = :#{#employee.address},date = :#{#employee.date}, " +
             "email= :#{#employee.email}, gender= :#{#employee.gender} where id= :#{#employee.id}",nativeQuery = true)
     void updateInformationUser(@Param("employee") Employee employee);
+
+
 }

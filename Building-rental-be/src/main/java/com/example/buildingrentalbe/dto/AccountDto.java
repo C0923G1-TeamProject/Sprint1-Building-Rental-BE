@@ -13,15 +13,18 @@ public class AccountDto {
 
     private Employee employee;
 
+    private String isVisited;
+
     public AccountDto() {
     }
 
-    public AccountDto(Integer id, String username, String password, Role role, Employee employee) {
+    public AccountDto(Integer id, String username, String password, Role role, Employee employee, String isVisited) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.role = role;
         this.employee = employee;
+        this.isVisited = isVisited;
     }
 
     public Integer getId() {
@@ -62,5 +65,13 @@ public class AccountDto {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    public String getIsVisited() {
+        return isVisited;
+    }
+
+    public void setIsVisited(String isVisited) {
+        this.isVisited = isVisited;
     }
 }

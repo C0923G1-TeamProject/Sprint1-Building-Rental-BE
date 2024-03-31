@@ -3,6 +3,7 @@ package com.example.buildingrentalbe.controller;
 import com.example.buildingrentalbe.config.security.secConfig.UserPrinciple;
 import com.example.buildingrentalbe.config.security.service.JwtResponse;
 import com.example.buildingrentalbe.config.security.service.JwtService;
+import com.example.buildingrentalbe.config.security.service.LoginResponse;
 import com.example.buildingrentalbe.config.security.service.UserService;
 import com.example.buildingrentalbe.dto.AccountDto;
 import com.example.buildingrentalbe.dto.AccountInfoDto;
@@ -25,6 +26,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 @RestController
 @CrossOrigin("*")
@@ -52,15 +54,67 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AccountDto account) {
+        boolean isVisited = false;
+        String statusLogin = "";
+        if (account.getIsVisited() != null) {
+            String arr = account.getIsVisited();
+            String[] listVisited = arr.split(",");
+
+
+            Integer idAccount = iAccountService.findAccountByUsername(account.getUsername()).getId();
+
+            for (int i = 0; i < listVisited.length; i++) {
+                if (idAccount == Integer.valueOf(listVisited[i])) {
+                    isVisited = true;
+                    break;
+                }
+            }
+        }
+
+
+        Account accountDtoDB = iAccountService.findAccountByUsername(account.getUsername());
+        Employee employee = iEmployeeService.findByUserNameAccount(account.getUsername());
+
+
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        Boolean isValidPass = bCryptPasswordEncoder.matches(account.getPassword(), accountDtoDB.getPassword());
+        if (isValidPass && isVisited) {
+            Authentication authentication
+                    = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(account.getUsername(), account.getPassword()));
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            String jwt = jwtService.generateTokenLogin(authentication);
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            Account currentUser = userService.findByUsername(account.getUsername());
+
+            System.out.println("kk " + currentUser);
+
+            return ResponseEntity.ok(new JwtResponse(currentUser.getId(), jwt, userDetails.getUsername(), employee.getName(), userDetails.getAuthorities(), "", "direct-access", ""));
+        } else if (isValidPass && !isVisited) {
+            String otp = generateFiveDigitInteger();
+            // gui mail
+            Mail mail = new Mail();
+            mail.setMailFrom("duyhoangc0923g1@gmail.com");
+            mail.setMailTo(employee.getEmail());
+            mail.setMailSubject("Khanh22");
+            mail.setMailContent("Ma xac nhan cua tai khoan " + account.getUsername() + " la: " + otp);
+//            iMailService.sendEmail(mail);
+            return ResponseEntity.ok(new LoginResponse(otp, "redirect-to-otp", employee.getEmail()));
+
+        } else {
+            return ResponseEntity.ok(new LoginResponse("", "wrong-password", ""));
+        }
+    }
+
+    @PostMapping("/login-otp")
+    public ResponseEntity<?> loginOtp(@RequestBody AccountDto account) {
         Authentication authentication
                 = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(account.getUsername(), account.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtService.generateTokenLogin(authentication);
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         Account currentUser = userService.findByUsername(account.getUsername());
-        Employee employee = iEmployeeService.findByUserNameAccount(account.getUsername());
         System.out.println("kk " + currentUser);
-        return ResponseEntity.ok(new JwtResponse(currentUser.getId(), jwt, userDetails.getUsername(), employee.getName(), userDetails.getAuthorities()));
+        return ResponseEntity.ok(new JwtResponse(currentUser.getId(), jwt, userDetails.getUsername(), userDetails.getUsername(), userDetails.getAuthorities(), "", "", ""));
     }
 
 
@@ -78,8 +132,8 @@ public class AuthController {
             mail.setMailFrom("duyhoangc0923g1@gmail.com");
             mail.setMailTo(email);
             mail.setMailSubject("Khanh22");
-            mail.setMailContent("Ma xac nhan cua tai khoan "+account.getUsername()+" la: " + otp);
-        iMailService.sendEmail(mail);
+            mail.setMailContent("Ma xac nhan cua tai khoan " + account.getUsername() + " la: " + otp);
+//        iMailService.sendEmail(mail);
 
             AccountInfoDto accountInfoDto = new AccountInfoDto();
             accountInfoDto.setOtp(otp);
@@ -89,55 +143,43 @@ public class AuthController {
             return ResponseEntity.ok("Khong hop le");
         }
 
-
-
-
-
-
-
-
-
     }
 
 
-
-@PostMapping("/test")
-public ResponseEntity<?> test(@RequestBody AccountDto accountDto){
+    @PostMapping("/test")
+    public ResponseEntity<?> test(@RequestBody AccountDto accountDto) {
         Account accountDtoDB = iAccountService.findAccountByUsername(accountDto.getUsername());
-    BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-    if (bCryptPasswordEncoder.matches(accountDto.getPassword(), accountDtoDB.getPassword())) {
-        return new ResponseEntity<>("true", HttpStatus.OK);
-    } else {
-        return new ResponseEntity<>("false", HttpStatus.OK);
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        if (bCryptPasswordEncoder.matches(accountDto.getPassword(), accountDtoDB.getPassword())) {
+            return new ResponseEntity<>("true", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("false", HttpStatus.OK);
+        }
     }
-}
 
     @PostMapping("/confirm-otp")
     public ResponseEntity<?> confirmOtp(@RequestBody Boolean isValidOtp) {
-        if(isValidOtp) {
+        if (isValidOtp) {
             return ResponseEntity.ok("Thanh cong");
         } else {
-            return new ResponseEntity<>("that bai",HttpStatus.NOT_ACCEPTABLE);
+            return new ResponseEntity<>("that bai", HttpStatus.NOT_ACCEPTABLE);
         }
     }
 
     @GetMapping("/getInfo")
-    public ResponseEntity<?> getInfo(@RequestHeader("Authorization")String token) {
+    public ResponseEntity<?> getInfo(@RequestHeader("Authorization") String token) {
         String newToken = token.substring(7);
         String userName = jwtService.getUsernameFromJwtToken(newToken);
         System.out.println(userName);
-        String cm = "cm-30-3-24-pm-3-44";
         return ResponseEntity.ok(userName);
     }
 
     @PostMapping("/logout")
-    public ResponseEntity<?> logoutSuccessful(@RequestHeader("Authorization")String token){
+    public ResponseEntity<?> logoutSuccessful(@RequestHeader("Authorization") String token) {
         String newToken = token.substring(7);
         jwtService.addToBlackList(newToken);
         return ResponseEntity.ok("ok dang xuat");
     }
-
-
 
 
     @GetMapping("/k")
