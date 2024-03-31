@@ -1,0 +1,15 @@
+
+
+java:S1128"GRemove this unused import 'com.example.buildingrentalbe.model.Account'.(Æ—Û¢ıÿÿÿÿ8õšº¦é1J$cac3e604-7858-4452-9095-c43837d93150
+–
+java:S1128"NRemove this unused import 'com.example.buildingrentalbe.model.ContractStatus'.(”°ùŸıÿÿÿÿ8öšº¦é1J$fab394f5-c8e0-46bd-92df-c092ab74d835
+
+java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Customer'.(ª‚ùµøÿÿÿÿ8÷šº¦é1J$34b3a425-cef7-46a8-8180-9d9343d606d2
+‹
+java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Premises'.(®ïÖ”8÷šº¦é1J$ffd917f0-5b1c-491c-82d3-81e42ab3ad3f
+~
+java:S1128";Remove this unused import 'jakarta.persistence.JoinColumn'.(İçÆ•8øšº¦é1J$762b5df0-4892-4e1f-8ef1-ea4c49811c71
+‚
+java:S1128":Remove this unused import 'jakarta.persistence.ManyToOne'.(áîÖãùÿÿÿÿ8øšº¦é1J$d89292ea-59fb-43be-81e6-1f6b391b3e10
+
+java:S1128	"9Remove this unused import 'jakarta.persistence.OneToOne'.(Ç­É™üÿÿÿÿ8ùšº¦é1J$e146bec5-a6dc-4e9d-96ab-18e3efdac968
