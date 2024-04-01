@@ -87,10 +87,12 @@ public class SecurityConfig {
 //                                .requestMatchers(HttpMethod.POST, "/api/customers**").hasAnyAuthority("ROLE_ADMIN")
 //                                .requestMatchers(HttpMethod.DELETE, "/api/customers**").hasAnyAuthority("ROLE_ADMIN")
 //                                .requestMatchers(HttpMethod.GET, "/api/auth/getInfo", "/api/auth/ad").hasAnyAuthority("ROLE_ADMIN")
-                                .requestMatchers("/api/auth/*").authenticated()
+                                .requestMatchers("/api/auth/**").authenticated()
 
 
                 )
+
+
 
                 .exceptionHandling(customizer -> customizer.accessDeniedHandler(customAccessDeniedHandler()))
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
