@@ -25,6 +25,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+
+
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/premises")
@@ -40,7 +43,10 @@ public class PremisesController {
     TypePremisesService typePremisesService;
 
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+
+
+//    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+
     @GetMapping("/search")
     public ResponseEntity<Page<Premises>> searchPremises(
             @RequestParam( required = false) Integer floor,
@@ -48,7 +54,8 @@ public class PremisesController {
             @RequestParam( required = false) Float area,
             @RequestParam( required = false) String premisesName,
             @RequestParam( defaultValue = "0") int page,
-            @RequestParam( defaultValue = "10") int size) {
+            @RequestParam( defaultValue = "7") int size) {
+
         Pageable pageable = PageRequest.of(page, size);
         Page<Premises> result = premisesService.searchPremises(floor, code, area, premisesName, pageable);
         if(result.getTotalPages() > 0){
@@ -85,7 +92,7 @@ public class PremisesController {
         return new ResponseEntity<>(premisesDTO, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+
     @GetMapping("/find/{id}")
     public ResponseEntity<PremisesDTO> findPremisesById(@PathVariable("id") Integer id){
         Premises premises = premisesService.findById(id);
@@ -97,7 +104,7 @@ public class PremisesController {
         return new ResponseEntity<>(premisesDTO, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+
     @GetMapping("/getListFloor")
         public ResponseEntity<List<Integer>> getAllFloor(){
             List<Integer> listFloor = PremisesService.getListFloor();
@@ -108,7 +115,7 @@ public class PremisesController {
             }
         }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+
     @GetMapping("/getListType")
     public ResponseEntity<List<TypePremises>> getAllType() {
         List<TypePremises> typePremisesList = typePremisesService.findAllType();
@@ -119,10 +126,11 @@ public class PremisesController {
         }
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+
     @GetMapping("/getListStatus")
     public ResponseEntity<List<PremisesStatus>> getAllStatus() {
         List<PremisesStatus> premisesStatusList = premisesStatusService.findAllPremisesStatus();
+
         if(premisesStatusList == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }else {
