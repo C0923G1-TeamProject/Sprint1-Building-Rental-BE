@@ -54,7 +54,7 @@ public class PremisesController {
             @RequestParam( required = false) Float area,
             @RequestParam( required = false) String premisesName,
             @RequestParam( defaultValue = "0") int page,
-            @RequestParam( defaultValue = "7") int size) {
+            @RequestParam( defaultValue = "6") int size) {
 
         Pageable pageable = PageRequest.of(page, size);
         Page<Premises> result = premisesService.searchPremises(floor, code, area, premisesName, pageable);
