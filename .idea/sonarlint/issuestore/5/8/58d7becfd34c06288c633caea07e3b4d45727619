@@ -1,24 +1,17 @@
 
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(°Ë¶‚8°¡ùžé1
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8ú£ùžé1
-_
-java:S6813!"BRemove this field injection and use constructor injection instead.(êæÄÞ8ú£ùžé1
-]	java:S125&"<This block of commented-out lines of code should be removed.(£Ðˆåÿÿÿÿÿ8œ¤ùžé1
-X	java:S125<"<This block of commented-out lines of code should be removed.(¬å’º8«¤ùžé1
-C
-java:S1452["&Remove usage of generic wildcard type.(Ï©ô”8µ¤ùžé1
-l
-java:S1128"PRemove this unused import 'com.example.buildingrentalbe.dto.IContractSearchDto'.(¤ó³8½¤ùžé1
-e
-java:S1128"HRemove this unused import 'com.example.buildingrentalbe.model.Premises'.(®ïÖ”8½¤ùžé1
-ˆ
-java:S1128	"kRemove this unused import 'com.example.buildingrentalbe.service.ThamService.annotation.DateRangeValidator'.(£î Æ8¾¤ùžé1
-e
-java:S1128"HRemove this unused import 'org.springframework.data.domain.PageRequest'.(ºêâÚ8¾¤ùžé1
-g
-java:S1128"ERemove this unused import 'org.springframework.data.domain.Pageable'.(‡ë‚Öýÿÿÿÿ8¿¤ùžé1
-e
-java:S1128"IRemove this unused import 'org.springframework.data.web.PageableDefault'.(¯’Î<8¿¤ùžé1
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(°Ë¶‚8·íä¤é1J$5f2d0ab1-8292-4166-ae04-66db032a7748
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Ëíä¤é1J$a3b0b0c3-04c6-48e5-b222-51b3896dff36
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Ëíä¤é1J$30a17d42-86ee-4afc-8474-fd6676e8207e
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Ëíä¤é1J$9f7ef4f5-9f55-47c2-ac18-4d0b38226c75
+…
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄÞ8Ëíä¤é1J$2b753c9f-0662-488d-b9dc-4f2224573223
+…
+java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄÞ8Ëíä¤é1J$904c04d6-d81b-49c8-af3f-5e0b4c19d6ce
+ƒ	java:S125*"<This block of commented-out lines of code should be removed.(£Ðˆåÿÿÿÿÿ8Ðíä¤é1J$252616ba-4414-48f6-a0ca-52edf26c2a00
 i
-java:S1128"GRemove this unused import 'org.springframework.web.bind.WebDataBinder'.(Æ¬á³ùÿÿÿÿ8À¤ùžé1
+java:S1452M"&Remove usage of generic wildcard type.(Ï©ô”8Ôíä¤é1J$cb43ea19-b27c-40c2-951d-98bdcb68b58b
+i
+java:S1452Z"&Remove usage of generic wildcard type.(¾­æ 8Õíä¤é1J$46550057-0869-4cec-a86a-f718bd333917

@@ -29,8 +29,6 @@ public class PremisesService implements IPremisesService {
         listFloor.add(5);
         listFloor.add(6);
         listFloor.add(7);
-        listFloor.add(8);
-        listFloor.add(9);
     }
     public static List<Integer> getListFloor(){
         return new ArrayList<>(listFloor);
@@ -84,5 +82,10 @@ public class PremisesService implements IPremisesService {
         if (Objects.equals(premises.getCode(), findById(id).getCode()) || (findById(id)!=null && findPremisesByCode(premises.getCode())==null)){
             premisesRepository.updatePremises(id, premises);
         }
+    }
+
+    @Override
+    public List<Premises> findByStatus() {
+        return premisesRepository.findByStatus();
     }
 }
