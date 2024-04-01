@@ -30,10 +30,7 @@ public class ContractService implements IContractService {
     }
 
 
-    @Override
-    public List<IContractDto> findContractByAccount(Integer idAccount) {
-        return contractRepository.findContractByAccount(idAccount);
-    }
+
 
     @Override
     public Page<IContractDto> findAllContract(Pageable pageable) {
@@ -78,7 +75,7 @@ public class ContractService implements IContractService {
         assert premises != null;
         premises.setPremisesStatus(new PremisesStatus(2,"Đã bàn giao"));
         premisesRepository.updatePremises(premises.getId(), premises);
-        System.out.println(premises);
+
         contract.setCode(createCodeContract());
         contract.setIdContractStatus(1);
         contractRepository.saveContract(contract);
@@ -88,6 +85,12 @@ public class ContractService implements IContractService {
     public Page<IContractDto> findAllPage(RequestContractDto requestContractDto) {
         Pageable pageable = PageRequest.of(requestContractDto.getPage(), requestContractDto.getSize());
         return contractRepository.findAllPage(requestContractDto,pageable);
+    }
+
+    @Override
+    public List<IContractDto> findContractByAccount(RequestContractDto requestContractDto, Integer idAccount) {
+        Pageable pageable = PageRequest.of(requestContractDto.getPage(), requestContractDto.getSize());
+        return contractRepository.findContractByAccount(requestContractDto,idAccount,pageable);
     }
 
 

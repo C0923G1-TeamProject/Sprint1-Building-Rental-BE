@@ -43,4 +43,19 @@ public class CustomerService implements ICustomerService {
         return repository.findByNameContainingAndEmailContaining(name, card, pageable);
     }
 
+    @Override
+    public int countByEmail(String email) {
+        return repository.countByEmail(email);
+    }
+
+    @Override
+    public int countByCard(String card) {
+        return repository.countByCard(card);
+    }
+
+    @Override
+    public int countByPhoneNumber(String phone) {
+        return repository.countByPhoneNumber(phone);
+    }
+
 }
