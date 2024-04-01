@@ -33,5 +33,5 @@ public interface IContractService {
 
     Page<IContractDto> findAllPage(RequestContractDto requestContractDto);
 
-    List<IContractDto> findContractByAccount(RequestContractDto requestContractDto, Integer idAccount);
+    List<IContractDto> findContractByAccount(Integer idAccount);
 }

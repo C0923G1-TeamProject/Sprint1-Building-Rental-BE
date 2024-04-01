@@ -1,17 +1,17 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(°Ë¶‚8·íä¤é1J$8989da79-ba44-448f-b8d6-51a84cdba917
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(°Ë¶‚8·íä¤é1J$5f2d0ab1-8292-4166-ae04-66db032a7748
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$90ce2d5c-6c79-4bd3-856a-ec4040a7736c
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$a3b0b0c3-04c6-48e5-b222-51b3896dff36
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$37c0e071-95d5-4cba-b87b-90704ba30ebb
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$30a17d42-86ee-4afc-8474-fd6676e8207e
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$8dcefdc7-b86f-42c5-90ff-5765a2282aa6
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$9f7ef4f5-9f55-47c2-ac18-4d0b38226c75
 …
-java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$f5e093e1-f45e-4bd1-b248-8cf34644dc9e
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$2b753c9f-0662-488d-b9dc-4f2224573223
 …
-java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$dec05dd5-ab8b-40a9-817e-f06d76a587a7
-ƒ	java:S125*"<This block of commented-out lines of code should be removed.(£Ğˆåÿÿÿÿÿ8Ğíä¤é1J$f0be41e8-3c48-4a48-9889-08b65adfac24
+java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$904c04d6-d81b-49c8-af3f-5e0b4c19d6ce
+ƒ	java:S125*"<This block of commented-out lines of code should be removed.(£Ğˆåÿÿÿÿÿ8Ğíä¤é1J$252616ba-4414-48f6-a0ca-52edf26c2a00
 i
-java:S1452M"&Remove usage of generic wildcard type.(Ï©ô”8Ôíä¤é1J$1aad54e2-2789-4482-b105-238b2d7db70c
+java:S1452M"&Remove usage of generic wildcard type.(Ï©ô”8Ôíä¤é1J$cb43ea19-b27c-40c2-951d-98bdcb68b58b
 i
-java:S1452Z"&Remove usage of generic wildcard type.(¾­æ 8Õíä¤é1J$70a15fa7-9882-4647-8ac6-3c0c1ed371d4
+java:S1452Z"&Remove usage of generic wildcard type.(¾­æ 8Õíä¤é1J$46550057-0869-4cec-a86a-f718bd333917

@@ -23,8 +23,6 @@ $.idea/modules/Building-rental-be.iml,8\a\8a9d32ad13385e01d8506b57c828aabdcf992
 tBuilding-rental-be/src/main/java/com/example/buildingrentalbe/service/ThamService/annotation/DateRangeValidator.java,1\6\166762f17c67ff582b2b033f134c0922e434799a
 ó
 gBuilding-rental-be/src/main/java/com/example/buildingrentalbe/service/ThamService/IContractService.java,0\7\070b7dc3babaeff4b313248e8a6963d6d8d2a567
-ñ
-fBuilding-rental-be/src/main/java/com/example/buildingrentalbe/service/ThamService/ContractService.java,2\6\26415f12ac8d6a53422dc5d3fab8aa87f0b026b6
 †
 pBuilding-rental-be/src/main/java/com/example/buildingrentalbe/repository/ThamRepository/IContractRepository.java,b\b\bbbb9069439de661937d0f593228e078e964dcca
 ò
@@ -37,8 +35,6 @@ YBuilding-rental-be/src/main/java/com/example/buildingrentalbe/dto/RequestContra
 aBuilding-rental-be/src/main/java/com/example/buildingrentalbe/repository/IPremisesRepository.java,a\b\abc0de35cee1585949dabd24c7a77c2355a0a036
 ã
 [Building-rental-be/src/main/java/com/example/buildingrentalbe/service/IPremisesService.java,7\7\7714317df33045c756ca44e935b1e2bdcd887d85
-ä
-ZBuilding-rental-be/src/main/java/com/example/buildingrentalbe/dto/InfoAccountContract.java,f\5\f55241161fc65efb71841b8a3a38942fa790faba
 ç
 ]Building-rental-be/src/main/java/com/example/buildingrentalbe/dto/InfoAccountContractDto.java,f\e\fed594276fb0da46c21f8b3d530e780df9e04ff2
 Ç
