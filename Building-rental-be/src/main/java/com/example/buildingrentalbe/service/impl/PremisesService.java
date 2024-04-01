@@ -29,8 +29,6 @@ public class PremisesService implements IPremisesService {
         listFloor.add(5);
         listFloor.add(6);
         listFloor.add(7);
-        listFloor.add(8);
-        listFloor.add(9);
     }
     public static List<Integer> getListFloor(){
         return new ArrayList<>(listFloor);

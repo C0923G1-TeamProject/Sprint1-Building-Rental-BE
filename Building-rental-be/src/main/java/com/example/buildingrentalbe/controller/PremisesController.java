@@ -48,7 +48,7 @@ public class PremisesController {
             @RequestParam( required = false) Float area,
             @RequestParam( required = false) String premisesName,
             @RequestParam( defaultValue = "0") int page,
-            @RequestParam( defaultValue = "10") int size) {
+            @RequestParam( defaultValue = "7") int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<Premises> result = premisesService.searchPremises(floor, code, area, premisesName, pageable);
         if(result.getTotalPages() > 0){
@@ -123,6 +123,7 @@ public class PremisesController {
     @GetMapping("/getListStatus")
     public ResponseEntity<List<PremisesStatus>> getAllStatus() {
         List<PremisesStatus> premisesStatusList = premisesStatusService.findAllPremisesStatus();
+
         if(premisesStatusList == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }else {
