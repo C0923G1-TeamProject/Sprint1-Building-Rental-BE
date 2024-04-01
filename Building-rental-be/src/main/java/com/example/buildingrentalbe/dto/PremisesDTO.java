@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class PremisesDTO {
     private Integer id;
-    @Pattern(regexp = "^MB-[0-9]{4}+$",message = "Mã mặt bằng phải có dạng MB-XXXX")
+    @Pattern(regexp = "^MB-[0-9]{4}$",message = "Mã mặt bằng phải có dạng MB-XXXX")
     private String code;
     @NotNull
     private Integer floor;
