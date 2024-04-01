@@ -90,7 +90,7 @@ public class SecurityConfig {
 
                                 .requestMatchers("/api/auth/**").authenticated()
                                 .requestMatchers("/information/**").authenticated()
-                                .requestMatchers("/api/premises/**").authenticated()                        
+                                .requestMatchers("/api/premises/**").authenticated()
 
 
 
