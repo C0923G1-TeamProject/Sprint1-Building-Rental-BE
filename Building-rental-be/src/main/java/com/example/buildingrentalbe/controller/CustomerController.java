@@ -25,7 +25,7 @@ public class CustomerController {
     @GetMapping("/show")
     public ResponseEntity<?> show(@RequestParam(required = false) String name,
                                   @RequestParam(required = false) String email,
-                                  @PageableDefault(value = 10) Pageable pageable) {
+                                  @PageableDefault(value = 7) Pageable pageable) {
         Page<Customer> customers;
         if (name != null && !name.isEmpty() && (email == null || email.isEmpty())) {
             customers = service.findByNameContaining(name, pageable);
