@@ -42,6 +42,10 @@ public class AccountService implements IAccountService {
         this.iAccountRepository.updateImageUser(imageDto);
     }
 
+//    @Override
+//    public boolean isEmailExists(String email) {
+//        return this.iAccountRepository.existsByEmail(email);
+//    }
 
 
 }
