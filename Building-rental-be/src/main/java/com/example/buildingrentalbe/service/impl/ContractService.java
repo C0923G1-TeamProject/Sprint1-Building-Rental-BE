@@ -88,9 +88,8 @@ public class ContractService implements IContractService {
     }
 
     @Override
-    public List<IContractDto> findContractByAccount(RequestContractDto requestContractDto, Integer idAccount) {
-        Pageable pageable = PageRequest.of(requestContractDto.getPage(), requestContractDto.getSize());
-        return contractRepository.findContractByAccount(requestContractDto,idAccount,pageable);
+    public List<IContractDto> findContractByAccount(Integer idAccount) {
+        return contractRepository.findContractByAccount(idAccount);
     }
 
 

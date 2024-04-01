@@ -138,11 +138,10 @@ public interface IContractRepository extends JpaRepository<Contract, Integer> {
             " join Account ac on ct.account.id = ac.id" +
             " join Premises pr on ct.premises.id = pr.id" +
             " join Customer c on ct.customer.id = c.id"+
-            " join Employee e on ac.employee.id = e.id"+
-            " where c.name like concat('%',:#{#requestContractDto.nameCustomer},'%') " +
-            "and (cs.id = :#{#requestContractDto.idContractStatus} or :#{#requestContractDto.idContractStatus} = -1)" +
-            " and (ct.account.id = :#{#idAccount})")
-    List<IContractDto> findContractByAccount(@Param("requestContractDto") RequestContractDto requestContractDto, @Param("idAccount")Integer idAccount, Pageable pageable);
+            " join Employee e on ac.employee.id = e.id" +
+            " where ac.id = :#{#idAccount}"
+            )
+    List<IContractDto> findContractByAccount( @Param("idAccount")Integer idAccount);
 
 
 }

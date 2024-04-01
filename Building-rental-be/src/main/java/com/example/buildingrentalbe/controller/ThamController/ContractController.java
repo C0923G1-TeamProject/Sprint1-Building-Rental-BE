@@ -62,12 +62,12 @@ public class ContractController {
 
     //là nhân viên
     @PostMapping("/employee")
-    public ResponseEntity<List<IContractDto>> showYourOwnContract(@RequestHeader("Authorization")String token,@RequestBody RequestContractDto requestContractDto){
+    public ResponseEntity<List<IContractDto>> showYourOwnContract(@RequestHeader("Authorization")String token){
         // lấy account
         String newToken = token.substring(7);
         String username = jwtService.getUsernameFromJwtToken(newToken);
         Integer idAccount = accountService.findAccountByUsername(username).getId();
-        List<IContractDto> contractList = contractService.findContractByAccount(requestContractDto,idAccount);
+        List<IContractDto> contractList = contractService.findContractByAccount(idAccount);
         return new ResponseEntity<>(contractList,HttpStatus.OK);
     }
 
