@@ -17,12 +17,16 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+
+
+
 
 @RestController
 @CrossOrigin("*")
@@ -40,6 +44,7 @@ public class PremisesController {
 
 
 
+//    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/search")
     public ResponseEntity<Page<Premises>> searchPremises(
             @RequestParam( required = false) Integer floor,
@@ -47,7 +52,7 @@ public class PremisesController {
             @RequestParam( required = false) Float area,
             @RequestParam( required = false) String premisesName,
             @RequestParam( defaultValue = "0") int page,
-            @RequestParam( defaultValue = "3") int size) {
+            @RequestParam( defaultValue = "6") int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<Premises> result = premisesService.searchPremises(floor, code, area, premisesName, pageable);
         if(result.getTotalPages() > 0){
