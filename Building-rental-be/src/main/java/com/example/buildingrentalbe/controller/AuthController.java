@@ -1,6 +1,6 @@
 package com.example.buildingrentalbe.controller;
 
-import com.example.buildingrentalbe.config.security.secConfig.UserPrinciple;
+
 import com.example.buildingrentalbe.config.security.service.JwtResponse;
 import com.example.buildingrentalbe.config.security.service.JwtService;
 import com.example.buildingrentalbe.config.security.service.LoginResponse;
@@ -25,8 +25,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
-import java.util.List;
+
 
 @RestController
 @CrossOrigin("*")
@@ -53,9 +52,9 @@ public class AuthController {
 
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody AccountDto account) {
+    public ResponseEntity<Object> login(@RequestBody AccountDto account) {
         boolean isVisited = false;
-        String statusLogin = "";
+
         if (account.getIsVisited() != null) {
             String arr = account.getIsVisited();
             String[] listVisited = arr.split(",");
@@ -89,14 +88,14 @@ public class AuthController {
             System.out.println("kk " + currentUser);
 
             return ResponseEntity.ok(new JwtResponse(currentUser.getId(), jwt, userDetails.getUsername(), employee.getName(), userDetails.getAuthorities(), "", "direct-access", ""));
-        } else if (isValidPass && !isVisited) {
+        } else if (isValidPass) {
             String otp = generateFiveDigitInteger();
             // gui mail
             Mail mail = new Mail();
             mail.setMailFrom("duyhoangc0923g1@gmail.com");
             mail.setMailTo(employee.getEmail());
             mail.setMailSubject("Xác nhận đăng nhập tại Diamond Time");
-//            mail.setMailContent("Ma xac nhan cua tai khoan " + account.getUsername() + " la: " + otp);
+
             mail.setMailContent("<html lang=\"en\">\n" +
                     "\n" +
                     "<head>\n" +
@@ -140,7 +139,7 @@ public class AuthController {
     }
 
     @PostMapping("/login-otp")
-    public ResponseEntity<?> loginOtp(@RequestBody AccountDto account) {
+    public ResponseEntity<Object> loginOtp(@RequestBody AccountDto account) {
         Authentication authentication
                 = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(account.getUsername(), account.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -153,7 +152,7 @@ public class AuthController {
 
 
     @PostMapping("/resend-otp")
-    public ResponseEntity<?> sendOtp(@RequestBody AccountDto account) {
+    public ResponseEntity<Object> sendOtp(@RequestBody AccountDto account) {
         String otp = generateFiveDigitInteger();
         // lay thong tin user
         Account accountDtoDB = iAccountService.findAccountByUsername(account.getUsername());
@@ -215,7 +214,7 @@ public class AuthController {
 
 
     @PostMapping("/test")
-    public ResponseEntity<?> test(@RequestBody AccountDto accountDto) {
+    public ResponseEntity<Object> test(@RequestBody AccountDto accountDto) {
         Account accountDtoDB = iAccountService.findAccountByUsername(accountDto.getUsername());
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         if (bCryptPasswordEncoder.matches(accountDto.getPassword(), accountDtoDB.getPassword())) {
@@ -226,7 +225,7 @@ public class AuthController {
     }
 
     @PostMapping("/confirm-otp")
-    public ResponseEntity<?> confirmOtp(@RequestBody Boolean isValidOtp) {
+    public ResponseEntity<Object> confirmOtp(@RequestBody Boolean isValidOtp) {
         if (isValidOtp) {
             return ResponseEntity.ok("Thanh cong");
         } else {
@@ -235,16 +234,15 @@ public class AuthController {
     }
 
     @GetMapping("/getInfo")
-    public ResponseEntity<?> getInfo(@RequestHeader("Authorization") String token) {
+    public ResponseEntity<Object> getInfo(@RequestHeader("Authorization") String token) {
         String newToken = token.substring(7);
         String userName = jwtService.getUsernameFromJwtToken(newToken);
-        System.out.println(userName);
+
         return ResponseEntity.ok(userName);
     }
 
     @PostMapping("/logout")
-    public ResponseEntity<?> logoutSuccessful(@RequestHeader("Authorization") String token) {
-        String newToken = token.substring(7);
+    public ResponseEntity<Object> logoutSuccessful(@RequestHeader("Authorization") String token) {
 
 //        SecurityContextHolder.getContext().setAuthentication(null);
         SecurityContextHolder.clearContext();
@@ -253,21 +251,21 @@ public class AuthController {
 
 
     @GetMapping("/k")
-    public ResponseEntity<?> k(@RequestBody Account account) {
+    public ResponseEntity<Object> k(@RequestBody Account account) {
         return ResponseEntity.ok("trang chu");
 
     }
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/ad")
-    public ResponseEntity<?> kad() {
+    public ResponseEntity<Object> kad() {
         return ResponseEntity.ok("trang ad");
 
     }
 
     @PreAuthorize("hasAuthority('ROLE_USER')")
     @GetMapping("/onlyUser")
-    public ResponseEntity<?> uu() {
+    public ResponseEntity<Object> uu() {
         return ResponseEntity.ok("trang user");
 
     }
