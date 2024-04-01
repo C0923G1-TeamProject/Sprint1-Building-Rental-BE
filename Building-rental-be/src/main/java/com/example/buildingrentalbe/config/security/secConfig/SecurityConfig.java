@@ -88,6 +88,7 @@ public class SecurityConfig {
 //                                .requestMatchers(HttpMethod.DELETE, "/api/customers**").hasAnyAuthority("ROLE_ADMIN")
 //                                .requestMatchers(HttpMethod.GET, "/api/auth/getInfo", "/api/auth/ad").hasAnyAuthority("ROLE_ADMIN")
                                 .requestMatchers("/api/auth/*").authenticated()
+                                .requestMatchers("/information/**").authenticated()
 
 
                 )
