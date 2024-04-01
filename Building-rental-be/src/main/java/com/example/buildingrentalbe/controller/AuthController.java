@@ -245,8 +245,10 @@ public class AuthController {
     @PostMapping("/logout")
     public ResponseEntity<?> logoutSuccessful(@RequestHeader("Authorization") String token) {
         String newToken = token.substring(7);
-        jwtService.addToBlackList(newToken);
-        return ResponseEntity.ok("ok dang xuat");
+
+//        SecurityContextHolder.getContext().setAuthentication(null);
+        SecurityContextHolder.clearContext();
+        return ResponseEntity.ok("logout-successfully");
     }
 
 
@@ -258,14 +260,14 @@ public class AuthController {
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/ad")
-    public ResponseEntity<?> kad(@RequestBody Account account) {
+    public ResponseEntity<?> kad() {
         return ResponseEntity.ok("trang ad");
 
     }
 
     @PreAuthorize("hasAuthority('ROLE_USER')")
     @GetMapping("/onlyUser")
-    public ResponseEntity<?> uu(@RequestBody Account account) {
+    public ResponseEntity<?> uu() {
         return ResponseEntity.ok("trang user");
 
     }
