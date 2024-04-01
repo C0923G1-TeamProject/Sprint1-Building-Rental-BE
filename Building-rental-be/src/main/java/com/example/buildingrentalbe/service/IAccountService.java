@@ -14,4 +14,5 @@ public interface IAccountService {
 
     void updateImage(ImageDto imageDto);
 
+//    boolean isEmailExists(String email);
 }
