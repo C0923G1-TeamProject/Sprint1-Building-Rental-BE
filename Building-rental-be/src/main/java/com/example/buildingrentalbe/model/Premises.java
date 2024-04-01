@@ -11,7 +11,9 @@ public class Premises {
     private Long price;
     private Integer floor;
     private Long cost;
-    private Float area ;
+    private Float area;
+
+    private String image;
 
     @Column(columnDefinition = "longtext")
 
@@ -27,7 +29,7 @@ public class Premises {
     public Premises() {
     }
 
-    public Premises(Integer id, String code, Long price, Integer floor, Long cost, Float area, String description, TypePremises typePremises, PremisesStatus premisesStatus) {
+    public Premises(Integer id, String code, Long price, Integer floor, Long cost, Float area, String description, TypePremises typePremises, PremisesStatus premisesStatus, String image) {
         this.id = id;
         this.code = code;
         this.price = price;
@@ -37,14 +39,25 @@ public class Premises {
         this.description = description;
         this.typePremises = typePremises;
         this.premisesStatus = premisesStatus;
+        this.image = image;
     }
+
 
     public Integer getId() {
         return id;
     }
 
+
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public void setId(String image) {
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
     }
 
     public String getCode() {

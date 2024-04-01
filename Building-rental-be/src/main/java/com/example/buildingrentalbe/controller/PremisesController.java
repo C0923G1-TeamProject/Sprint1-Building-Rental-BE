@@ -25,6 +25,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+
+
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/premises")
@@ -40,7 +43,10 @@ public class PremisesController {
     TypePremisesService typePremisesService;
 
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+
+
+//    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+
     @GetMapping("/search")
     public ResponseEntity<Page<Premises>> searchPremises(
             @RequestParam( required = false) Integer floor,
@@ -49,6 +55,7 @@ public class PremisesController {
             @RequestParam( required = false) String premisesName,
             @RequestParam( defaultValue = "0") int page,
             @RequestParam( defaultValue = "7") int size) {
+
         Pageable pageable = PageRequest.of(page, size);
         Page<Premises> result = premisesService.searchPremises(floor, code, area, premisesName, pageable);
         if(result.getTotalPages() > 0){
