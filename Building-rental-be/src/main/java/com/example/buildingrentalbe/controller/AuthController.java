@@ -95,9 +95,43 @@ public class AuthController {
             Mail mail = new Mail();
             mail.setMailFrom("duyhoangc0923g1@gmail.com");
             mail.setMailTo(employee.getEmail());
-            mail.setMailSubject("Khanh22");
-            mail.setMailContent("Ma xac nhan cua tai khoan " + account.getUsername() + " la: " + otp);
-//            iMailService.sendEmail(mail);
+            mail.setMailSubject("Xác nhận đăng nhập tại Diamond Time");
+//            mail.setMailContent("Ma xac nhan cua tai khoan " + account.getUsername() + " la: " + otp);
+            mail.setMailContent("<html lang=\"en\">\n" +
+                    "\n" +
+                    "<head>\n" +
+                    "    <meta charset=\"UTF-8\">\n" +
+                    "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                    "    <title>Document</title>\n" +
+                    "</head>\n" +
+                    "\n" +
+                    "<body>\n" +
+                    "    <div style=\"font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2\">\n" +
+                    "        <div style=\"margin:50px auto;width:70%;padding:20px 0\">\n" +
+                    "            <div\n" +
+                    "                style=\"border-bottom:1px solid #eee; display: flex; justify-content: center; background: #e9c9a6; align-items: center\">\n" +
+                    "                <a href=\"\" style=\"font-size:1.4em;color: #63101094;text-decoration:none;font-weight:600;justify-content: center;\n" +
+                    "    align-items: center;\">DIAMOND TIME</a>\n" +
+                    "            </div>\n" +
+                    "\n" +
+                    "            <p style=\"font-size:1.2em; color: black;\">Xin chào "+employee.getName()+"</p>\n" +
+                    "            <p style=\"font-size:1.2em; color: black;\">Hãy nhập mã bên dưới để xác nhận đăng nhập hệ thống cho thiết bị mới</p>\n" +
+                    "            <h2\n" +
+                    "                style=\"background: #e4a25acf;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;\">\n" +
+                    "                "+otp+"</h2>\n" +
+                    "            <p style=\"font-size:1.1em; color: black;\">Vui lòng không chia sẻ mã này cho người bên ngoài,<br />Cảm ơn</p>\n" +
+                    "            <hr style=\"border:none;border-top:1px solid #eee\" />\n" +
+                    "            <div style=\"float:left;padding:8px 0;color:#aaa;font-size:1.0em;line-height:1;font-weight:300\">\n" +
+                    "                <p>Diamond time</p>\n" +
+                    "                <p>15 Thái Phiên, phường Phước Ninh, quận Hải Châu, Đà Nẵng</p>\n" +
+                    "                <p>Việt Nam</p>\n" +
+                    "            </div>\n" +
+                    "        </div>\n" +
+                    "    </div>\n" +
+                    "</body>\n" +
+                    "\n" +
+                    "</html>");
+            iMailService.sendEmail(mail);
             return ResponseEntity.ok(new LoginResponse(otp, "redirect-to-otp", employee.getEmail()));
 
         } else {
@@ -118,7 +152,7 @@ public class AuthController {
     }
 
 
-    @PostMapping("/send-otp")
+    @PostMapping("/resend-otp")
     public ResponseEntity<?> sendOtp(@RequestBody AccountDto account) {
         String otp = generateFiveDigitInteger();
         // lay thong tin user
@@ -131,9 +165,43 @@ public class AuthController {
             Mail mail = new Mail();
             mail.setMailFrom("duyhoangc0923g1@gmail.com");
             mail.setMailTo(email);
-            mail.setMailSubject("Khanh22");
-            mail.setMailContent("Ma xac nhan cua tai khoan " + account.getUsername() + " la: " + otp);
-//        iMailService.sendEmail(mail);
+            mail.setMailSubject("Xác nhận đăng nhập tại Diamond Time");
+            mail.setMailContent("<html lang=\"en\">\n" +
+                    "\n" +
+                    "<head>\n" +
+                    "    <meta charset=\"UTF-8\">\n" +
+                    "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                    "    <title>Document</title>\n" +
+                    "</head>\n" +
+                    "\n" +
+                    "<body>\n" +
+                    "    <div style=\"font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2\">\n" +
+                    "        <div style=\"margin:50px auto;width:70%;padding:20px 0\">\n" +
+                    "            <div\n" +
+                    "                style=\"border-bottom:1px solid #eee; display: flex; justify-content: center; background: #e9c9a6; align-items: center\">\n" +
+                    "                <a href=\"\" style=\"font-size:1.4em;color: #63101094;text-decoration:none;font-weight:600;justify-content: center;\n" +
+                    "    align-items: center;\">DIAMOND TIME</a>\n" +
+                    "            </div>\n" +
+                    "\n" +
+                    "            <p style=\"font-size:1.2em; color: black;\">Xin chào "+employee.getName()+"</p>\n" +
+                    "            <p style=\"font-size:1.2em; color: black;\">Hãy nhập mã bên dưới để xác nhận đăng nhập hệ thống cho thiết bị mới</p>\n" +
+                    "            <h2\n" +
+                    "                style=\"background: #e4a25acf;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;\">\n" +
+                    "                "+otp+"</h2>\n" +
+                    "            <p style=\"font-size:1.1em; color: black;\">Vui lòng không chia sẻ mã này cho người bên ngoài,<br />Cảm ơn</p>\n" +
+                    "            <hr style=\"border:none;border-top:1px solid #eee\" />\n" +
+                    "            <div style=\"float:left;padding:8px 0;color:#aaa;font-size:1.0em;line-height:1;font-weight:300\">\n" +
+                    "                <p>Diamond time</p>\n" +
+                    "                <p>15 Thái Phiên, phường Phước Ninh, quận Hải Châu, Đà Nẵng</p>\n" +
+                    "                <p>Việt Nam</p>\n" +
+                    "            </div>\n" +
+                    "        </div>\n" +
+                    "    </div>\n" +
+                    "</body>\n" +
+                    "\n" +
+                    "</html>");
+
+        iMailService.sendEmail(mail);
 
             AccountInfoDto accountInfoDto = new AccountInfoDto();
             accountInfoDto.setOtp(otp);
@@ -177,8 +245,10 @@ public class AuthController {
     @PostMapping("/logout")
     public ResponseEntity<?> logoutSuccessful(@RequestHeader("Authorization") String token) {
         String newToken = token.substring(7);
-        jwtService.addToBlackList(newToken);
-        return ResponseEntity.ok("ok dang xuat");
+
+//        SecurityContextHolder.getContext().setAuthentication(null);
+        SecurityContextHolder.clearContext();
+        return ResponseEntity.ok("logout-successfully");
     }
 
 
@@ -190,14 +260,14 @@ public class AuthController {
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/ad")
-    public ResponseEntity<?> kad(@RequestBody Account account) {
+    public ResponseEntity<?> kad() {
         return ResponseEntity.ok("trang ad");
 
     }
 
     @PreAuthorize("hasAuthority('ROLE_USER')")
     @GetMapping("/onlyUser")
-    public ResponseEntity<?> uu(@RequestBody Account account) {
+    public ResponseEntity<?> uu() {
         return ResponseEntity.ok("trang user");
 
     }

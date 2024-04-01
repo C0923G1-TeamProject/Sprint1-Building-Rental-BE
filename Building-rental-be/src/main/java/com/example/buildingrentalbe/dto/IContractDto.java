@@ -46,4 +46,8 @@ public interface IContractDto {
         Integer getId();
         String getName();
     }
+
+        Integer getIdEmployee();
+        String getNameEmployee();
+
 }
