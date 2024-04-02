@@ -53,6 +53,7 @@ public class PremisesDTO {
         this.description = description;
         this.price = price;
         this.cost = cost;
+
     }
 
     public Integer getId() {
@@ -126,4 +127,5 @@ public class PremisesDTO {
     public void setCost(Long cost) {
         this.cost = cost;
     }
+
 }
