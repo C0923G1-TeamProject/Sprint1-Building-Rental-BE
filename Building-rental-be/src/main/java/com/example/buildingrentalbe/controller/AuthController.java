@@ -147,7 +147,8 @@ public class AuthController {
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         Account currentUser = userService.findByUsername(account.getUsername());
         System.out.println("kk " + currentUser);
-        return ResponseEntity.ok(new JwtResponse(currentUser.getId(), jwt, userDetails.getUsername(), userDetails.getUsername(), userDetails.getAuthorities(), "", "", ""));
+        Employee employee = iEmployeeService.findByUserNameAccount(account.getUsername());
+        return ResponseEntity.ok(new JwtResponse(currentUser.getId(), jwt, userDetails.getUsername(), employee.getName(), userDetails.getAuthorities(), "", "", ""));
     }
 
 
