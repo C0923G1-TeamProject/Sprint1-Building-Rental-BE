@@ -1,9 +1,6 @@
 package com.example.buildingrentalbe.service.impl;
 
-import com.example.buildingrentalbe.dto.ContractDto;
-import com.example.buildingrentalbe.dto.IContractDto;
-import com.example.buildingrentalbe.dto.IContractSearchDto;
-import com.example.buildingrentalbe.dto.RequestContractDto;
+import com.example.buildingrentalbe.dto.*;
 import com.example.buildingrentalbe.model.Contract;
 import com.example.buildingrentalbe.model.Premises;
 import com.example.buildingrentalbe.model.PremisesStatus;
@@ -90,6 +87,12 @@ public class ContractService implements IContractService {
     @Override
     public List<IContractDto> findContractByAccount(Integer idAccount) {
         return contractRepository.findContractByAccount(idAccount);
+    }
+
+    @Override
+    public Page<IContractDto> findPageByAccount(RequestContractEmployeeDto requestContractEmployeeDto) {
+        Pageable pageable = PageRequest.of(requestContractEmployeeDto.getPage(), requestContractEmployeeDto.getSize());
+        return contractRepository.findPageByAccount(requestContractEmployeeDto,pageable);
     }
 
 

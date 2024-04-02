@@ -104,5 +104,10 @@ public class ContractController {
 
     }
 
+    @PostMapping("/accountEmployee")
+    public ResponseEntity<Page<IContractDto>> getContractByUser(@RequestBody RequestContractEmployeeDto requestContractEmployeeDto){
+        Page<IContractDto> contractDtoPage = contractService.findPageByAccount(requestContractEmployeeDto);
+        return new ResponseEntity<>(contractDtoPage,HttpStatus.OK);
+    }
 
 }
