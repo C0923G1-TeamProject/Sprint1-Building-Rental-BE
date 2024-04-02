@@ -119,7 +119,8 @@ public interface IContractRepository extends JpaRepository<Contract, Integer> {
             " join Employee e on ac.employee.id = e.id"+
             " where c.name like concat('%',:#{#requestContractDto.nameCustomer},'%') " +
             " and e.name like concat('%',:#{#requestContractDto.nameEmployee},'%') " +
-            "and (cs.id = :#{#requestContractDto.idContractStatus} or :#{#requestContractDto.idContractStatus} = -1)")
+            " and (cs.id = :#{#requestContractDto.idContractStatus} or :#{#requestContractDto.idContractStatus} = -1)" +
+            " ORDER BY ct.id")
     Page<IContractDto> findAllPage(@Param("requestContractDto") RequestContractDto requestContractDto, Pageable pageable);
 
 
