@@ -15,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/customer")
@@ -25,7 +27,7 @@ public class CustomerController {
     @GetMapping("/show")
     public ResponseEntity<?> show(@RequestParam(required = false) String name,
                                   @RequestParam(required = false) String email,
-                                  @PageableDefault(value = 7) Pageable pageable) {
+                                  @PageableDefault(value = 6) Pageable pageable) {
         Page<Customer> customers;
         if (name != null && !name.isEmpty() && (email == null || email.isEmpty())) {
             customers = service.findByNameContaining(name, pageable);
@@ -61,5 +63,11 @@ public class CustomerController {
         BeanUtils.copyProperties(customerDto, customer);
         service.save(customer);
         return ResponseEntity.ok("ok");
+    }
+
+    @GetMapping("/getCustomers")
+    public ResponseEntity<List<Customer>> getCustomers (){
+        List<Customer> newList = service.getAllList();
+        return new ResponseEntity<>(newList, HttpStatus.OK);
     }
 }
