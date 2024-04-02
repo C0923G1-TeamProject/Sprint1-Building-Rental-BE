@@ -1,17 +1,16 @@
 
 …
-java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞ8‚åŸé1J$7530102f-3bf0-4f33-82d0-558d7782e930
+java:S6813$"BRemove this field injection and use constructor injection instead.(êæÄŞ8‚åŸé1J$7530102f-3bf0-4f33-82d0-558d7782e930
 …
-java:S6813#"BRemove this field injection and use constructor injection instead.(êæÄŞ8„åŸé1J$e5cab506-1223-4737-beeb-8478b2affa56
+java:S6813'"BRemove this field injection and use constructor injection instead.(êæÄŞ8„åŸé1J$e5cab506-1223-4737-beeb-8478b2affa56
 …
-java:S6813&"BRemove this field injection and use constructor injection instead.(êæÄŞ8…åŸé1J$e0e537c9-67a1-491e-8dc0-bb8322afd5c0
-n
-java:S1452="&Remove usage of generic wildcard type.(‚—•ãûÿÿÿÿ8ÆåŸé1J$3a58bdac-a5ac-4d3d-8a25-51ebbc502b3d
-i
-java:S1452b"&Remove usage of generic wildcard type.(‘•Â8âåŸé1J$3042bf42-2c96-4c74-bd90-cc7ae9f82c63
-i
-java:S1452l"&Remove usage of generic wildcard type.(ˆ«í±8èåŸé1J$3e73ecf6-e8d5-4afd-818c-1329aaa5195a
-i
-java:S1452v"&Remove usage of generic wildcard type.(ì¿®Ç8íåŸé1J$525ba9ae-9288-439f-99b1-278df0b8ae6f
+java:S6813*"BRemove this field injection and use constructor injection instead.(êæÄŞ8…åŸé1J$e0e537c9-67a1-491e-8dc0-bb8322afd5c0
 I
-java:S1452"&Remove usage of generic wildcard type.(å§¾ùÿÿÿÿ8‹æŸé1
+java:S1452"&Remove usage of generic wildcard type.(å§¾ùÿÿÿÿ8‹æŸé1
+_
+java:S1128
+"=Remove this unused import 'jakarta.servlet.http.HttpServlet'.(‘²şäıÿÿÿÿ8ôÙ®Äé1
+`
+java:S1128"DRemove this unused import 'jakarta.servlet.http.HttpServletRequest'.(õ38÷Ù®Äé1
+L
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8øÙ®Äé1

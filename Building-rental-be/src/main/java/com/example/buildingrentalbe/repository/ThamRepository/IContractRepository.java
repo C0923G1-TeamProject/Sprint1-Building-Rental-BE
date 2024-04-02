@@ -1,9 +1,6 @@
 package com.example.buildingrentalbe.repository.ThamRepository;
 
-import com.example.buildingrentalbe.dto.ContractDto;
-import com.example.buildingrentalbe.dto.IContractDto;
-import com.example.buildingrentalbe.dto.IContractSearchDto;
-import com.example.buildingrentalbe.dto.RequestContractDto;
+import com.example.buildingrentalbe.dto.*;
 import com.example.buildingrentalbe.model.Contract;
 import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
@@ -122,7 +119,8 @@ public interface IContractRepository extends JpaRepository<Contract, Integer> {
             " join Employee e on ac.employee.id = e.id"+
             " where c.name like concat('%',:#{#requestContractDto.nameCustomer},'%') " +
             " and e.name like concat('%',:#{#requestContractDto.nameEmployee},'%') " +
-            "and (cs.id = :#{#requestContractDto.idContractStatus} or :#{#requestContractDto.idContractStatus} = -1)")
+            " and (cs.id = :#{#requestContractDto.idContractStatus} or :#{#requestContractDto.idContractStatus} = -1)" +
+            " ORDER BY ct.id")
     Page<IContractDto> findAllPage(@Param("requestContractDto") RequestContractDto requestContractDto, Pageable pageable);
 
 
@@ -143,5 +141,18 @@ public interface IContractRepository extends JpaRepository<Contract, Integer> {
             )
     List<IContractDto> findContractByAccount( @Param("idAccount")Integer idAccount);
 
+    @Query(value = " select ct.id as id, ct.code as code, ct.startDate as startDate, ct.endDate as endDate, ct.deposit as deposit, e.id as idEmployee,e.name as nameEmployee," +
+            " ct.content as content, ct.paymentTerm as paymentTerm, cs as contractStatus, ac as account, pr as premises, c as customer" +
+            " from Contract ct " +
+            " join ContractStatus cs on ct.contractStatus.id = cs.id " +
+            " join Account ac on ct.account.id = ac.id" +
+            " join Premises pr on ct.premises.id = pr.id" +
+            " join Customer c on ct.customer.id = c.id"+
+            " join Employee e on ac.employee.id = e.id"+
+            " where c.name like concat('%',:#{#requestContractEmployeeDto.nameCustomer},'%') " +
+            " and e.name like concat('%',:#{#requestContractEmployeeDto.nameEmployee},'%') " +
+            "and (cs.id = :#{#requestContractEmployeeDto.idContractStatus} or :#{#requestContractEmployeeDto.idContractStatus} = -1)" +
+            " and ac.id = :#{#requestContractEmployeeDto.idAccount}")
+    Page<IContractDto> findPageByAccount(@Param("requestContractEmployeeDto") RequestContractEmployeeDto requestContractEmployeeDto, Pageable pageable);
 
 }
