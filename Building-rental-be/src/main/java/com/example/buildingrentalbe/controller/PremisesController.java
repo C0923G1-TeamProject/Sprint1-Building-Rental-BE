@@ -1,6 +1,7 @@
 package com.example.buildingrentalbe.controller;
 
 import com.example.buildingrentalbe.dto.PremisesDTO;
+import com.example.buildingrentalbe.dto.PremisesDetailDTO;
 import com.example.buildingrentalbe.model.Premises;
 import com.example.buildingrentalbe.model.PremisesStatus;
 import com.example.buildingrentalbe.model.TypePremises;
@@ -147,5 +148,16 @@ public class PremisesController {
         }else {
             return new ResponseEntity<>(premisesList, HttpStatus.OK);
         }
+    }
+
+    @GetMapping("/get/{id}")
+    public ResponseEntity<PremisesDetailDTO> findPremisesDetailById(@PathVariable("id") Integer id){
+        Premises premises = premisesService.findById(id);
+        if (premises == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        PremisesDetailDTO PremisesDetailDTO = new PremisesDetailDTO();
+        BeanUtils.copyProperties(premises, PremisesDetailDTO);
+        return new ResponseEntity<>(PremisesDetailDTO, HttpStatus.OK);
     }
 }
