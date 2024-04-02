@@ -28,16 +28,16 @@ public interface IAccountRepository extends JpaRepository<Account, Integer> {
     @Query(value = "update account set password = :password where account.id = :id", nativeQuery = true)
     void updatePassword(@Param("password") String encode, @Param("id") Integer id);
 
-    @Transactional
-    @Modifying
-    @Query(value = "update employee set name = :#{#employee.name},address = :#{#employee.address},date = :#{#employee.date}, " +
-            "email= :#{#employee.email}, gender= :#{#employee.gender} where id= :#{#employee.id}", nativeQuery = true)
-    void updateInformationUser(@Param("employee") Employee employee);
+//    @Transactional
+//    @Modifying
+//    @Query(value = "update employee set name = :#{#employee.name},address = :#{#employee.address},date = :#{#employee.date}, " +
+//            "email= :#{#employee.email}, gender= :#{#employee.gender} where id= :#{#employee.id}", nativeQuery = true)
+//    void updateInformationUser(@Param("employee") Employee employee);
 
 
-    @Transactional
-    @Modifying
-    @Query(value = "update employee set profile_picture = :#{#imageDto.imageUrl} where id = :#{#imageDto.id}", nativeQuery = true)
-    void updateImageUser(@Param("imageDto") ImageDto imageDto);
+//    @Transactional
+//    @Modifying
+//    @Query(value = "update employee set profile_picture = :#{#imageDto.imageUrl} where id = :#{#imageDto.id}", nativeQuery = true)
+//    void updateImageUser(@Param("imageDto") ImageDto imageDto);
 
 }

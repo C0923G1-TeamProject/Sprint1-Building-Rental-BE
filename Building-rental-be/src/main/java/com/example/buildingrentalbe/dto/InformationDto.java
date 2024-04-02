@@ -4,6 +4,7 @@ package com.example.buildingrentalbe.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
@@ -97,18 +98,20 @@ public class InformationDto implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-            InformationDto informationDto = (InformationDto) target;
-            String pattern = "yyyy-MM-dd";
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
-            try {
-                LocalDate birthday = LocalDate.parse(informationDto.getDate().toString(), formatter);
-                LocalDate now = LocalDate.now();
-                int age = Period.between(birthday, now).getYears();
-                if (age < 18){
-                    errors.rejectValue("date","","Bạn chưa đủ 18 tuổi!");
-                }
-            } catch (Exception e) {
-                errors.rejectValue("date", "", "age");
+        InformationDto informationDto = (InformationDto) target;
+        String pattern = "yyyy-MM-dd";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+        try {
+            LocalDate birthday = LocalDate.parse(informationDto.getDate().toString(), formatter);
+            LocalDate now = LocalDate.now();
+            int age = Period.between(birthday, now).getYears();
+            if (age < 18) {
+                errors.rejectValue("date", "", "Bạn chưa đủ 18 tuổi!");
             }
+        } catch (Exception e) {
+            errors.rejectValue("date", "", "age");
+        }
+
+
     }
 }
