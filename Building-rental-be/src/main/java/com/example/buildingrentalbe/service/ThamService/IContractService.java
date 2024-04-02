@@ -1,9 +1,6 @@
 package com.example.buildingrentalbe.service.ThamService;
 
-import com.example.buildingrentalbe.dto.ContractDto;
-import com.example.buildingrentalbe.dto.IContractDto;
-import com.example.buildingrentalbe.dto.IContractSearchDto;
-import com.example.buildingrentalbe.dto.RequestContractDto;
+import com.example.buildingrentalbe.dto.*;
 import com.example.buildingrentalbe.model.Contract;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -34,4 +31,6 @@ public interface IContractService {
     Page<IContractDto> findAllPage(RequestContractDto requestContractDto);
 
     List<IContractDto> findContractByAccount(Integer idAccount);
+
+    Page<IContractDto> findPageByAccount(RequestContractEmployeeDto requestContractEmployeeDto);
 }
