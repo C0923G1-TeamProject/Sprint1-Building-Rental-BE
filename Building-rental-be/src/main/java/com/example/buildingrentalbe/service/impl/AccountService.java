@@ -33,13 +33,13 @@ public class AccountService implements IAccountService {
 
     @Override
     public void updateInformationUser(Employee employee) {
-            this.iAccountRepository.updateInformationUser(employee);
+//            this.iAccountRepository.updateInformationUser(employee);
     }
 
 
     @Override
     public void updateImage(ImageDto imageDto) {
-        this.iAccountRepository.updateImageUser(imageDto);
+//        this.iAccountRepository.updateImageUser(imageDto);
     }
 
 //    @Override
