@@ -121,13 +121,17 @@ public class InfoRestController {
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
         }
+        Employee employee = new Employee();
+        BeanUtils.copyProperties(informationDto, employee);
         Employee existingEmployee = this.iEmployeeService.findAccountByEmail(informationDto.getEmail());
         if (existingEmployee != null) {
             return new ResponseEntity<>("Email đã tồn tại!", HttpStatus.BAD_REQUEST);
         }
-        Employee employee = new Employee();
-        BeanUtils.copyProperties(informationDto, employee);
-        this.iEmployeeService.updateInformationUser(employee);
+//        if (existingEmployee.getId().equals(informationDto.getId())) {
+//            this.iEmployeeService.updateInformationUser(employee);
+//        } else if (existingEmployee != null) {
+//            return new ResponseEntity<>("Email đã tồn tại!", HttpStatus.BAD_REQUEST);
+//        }
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
