@@ -10,7 +10,7 @@ import java.util.List;
 public interface IPremisesService {
     List<Premises> findAll();
 
-    public Page<Premises> searchPremises(Integer floor, String code, Float area, String premisesName, Pageable pageable);
+    Page<Premises> searchPremises(Integer floor, String code, Float area, String premisesName, Pageable pageable);
 
     Premises findPremisesByCode(String code);
 
