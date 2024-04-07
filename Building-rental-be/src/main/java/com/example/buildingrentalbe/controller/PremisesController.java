@@ -66,7 +66,7 @@ public class PremisesController {
         }
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+//    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
     @PatchMapping("/update/{id}")
     public ResponseEntity<PremisesDTO> updatePremises(@PathVariable("id") int id,
                                             @Valid @RequestBody PremisesDTO premisesDTO,
@@ -86,7 +86,7 @@ public class PremisesController {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
-        BeanUtils.copyProperties(premisesDTO, existingPremises, "id");
+        BeanUtils.copyProperties(premisesDTO, existingPremises, "id", "image");
 
         premisesService.updatePremises(id, existingPremises);
 
