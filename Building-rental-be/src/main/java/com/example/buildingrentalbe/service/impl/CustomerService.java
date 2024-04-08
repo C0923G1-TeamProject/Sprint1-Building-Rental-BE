@@ -15,6 +15,7 @@ public class CustomerService implements ICustomerService {
     @Autowired
     private ICustomerRepository repository;
 
+
     @Override
     public Page<Customer> getList(Pageable pageable) {
         return repository.findAllCustomer(pageable);
@@ -63,6 +64,11 @@ public class CustomerService implements ICustomerService {
     @Override
     public List<Customer> getAllList() {
         return repository.getAllList();
+    }
+
+    @Override
+    public Customer findById(Integer id) {
+        return repository.findById(id).orElse(null);
     }
 
 }

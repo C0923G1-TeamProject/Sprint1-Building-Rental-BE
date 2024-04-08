@@ -1,9 +1,7 @@
 
 X
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
 <
-java:S1452"&Remove usage of generic wildcard type.(¨èš
+java:S1452"&Remove usage of generic wildcard type.(¨èš
 A
-java:S1452+"&Remove usage of generic wildcard type.(İ²ç†ùÿÿÿÿ
-T
-java:S1128"9Remove this unused import 'org.springframework.ui.Model'.(ê†ıÿÿÿÿ
+java:S1452-"&Remove usage of generic wildcard type.(İ²ç†ùÿÿÿÿ
