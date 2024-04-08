@@ -1,17 +1,0 @@
-
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(°Ë¶‚8·íä¤é1J$2c91d8e8-e1de-43f3-a52c-1b2d0be00a4b
-…
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$01e88de1-3621-4b44-ab46-f5fde32bb3a5
-…
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$eba2e091-1d98-4088-b905-a906c384d7f1
-…
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$1fe20df8-8072-4217-a497-73fd85ac776f
-…
-java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$494293e5-306d-489c-b8d5-b0b38e0401c2
-…
-java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ëíä¤é1J$83c3ac62-706a-4cf1-a7ce-149072a5c749
-ƒ	java:S125*"<This block of commented-out lines of code should be removed.(£Ğˆåÿÿÿÿÿ8Ğíä¤é1J$02acfd00-e6df-47fb-998f-0a37dd8db58b
-i
-java:S1452M"&Remove usage of generic wildcard type.(Ï©ô”8Ôíä¤é1J$10469044-abfc-48e7-8256-082e76d5a9d4
-i
-java:S1452Z"&Remove usage of generic wildcard type.(¾­æ 8Õíä¤é1J$2879085a-1b1f-4808-afa1-31ffe6a25372

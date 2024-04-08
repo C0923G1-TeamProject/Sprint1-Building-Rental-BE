@@ -1,50 +1,29 @@
 
+œ
+java:S1192r"TDefine a constant instead of duplicating this literal "            </div>
+" 4 times.(ÆŒ©£ùÿÿÿÿ8„Íûûé1J$31d63844-1a4c-4281-8fab-fc0c995de18c
 p
-java:S5411Q"(Use a primitive boolean expression here.(®×ˆúûÿÿÿÿ8šî¼é1J$7374fd75-91a0-49b8-9feb-a52deae744a0
-j
-java:S5411\"(Use a primitive boolean expression here.(‹ÉÙ8Ñî¼é1J$a05606e3-cc41-450c-b4f5-153bd40523bb
+java:S5411P"(Use a primitive boolean expression here.(®×ˆúûÿÿÿÿ8šî¼é1J$156a8d71-7be8-4809-8318-39c5fbc9af2f
+p
+java:S5411["(Use a primitive boolean expression here.(É¤ÊÃşÿÿÿÿ8šÍûûé1J$04189caf-13b7-4cfa-8be1-1cb9ca7b175c
 l
-java:S5411¢"(Use a primitive boolean expression here.(€â§8Õî¼é1J$dd0c9671-f5a2-46b4-98bb-fc9959056024
+java:S5411æ"(Use a primitive boolean expression here.(€â§8Õî¼é1J$cc6dc465-d1d8-4580-8cdc-c373d42fda4e
 „
-java:S4973C"<Strings and Boxed types should be compared using "equals()".( ¨ª©ùÿÿÿÿ8ğ¼é1J$cbea89b8-0108-4af6-8927-0fda20d11efd
+java:S4973B"<Strings and Boxed types should be compared using "equals()".( ¨ª©ùÿÿÿÿ8ğ¼é1J$613bbfa5-3958-4d4b-acc0-abfec88be966
 …
-java:S6813$"BRemove this field injection and use constructor injection instead.(êæÄŞ8™ñ¼é1J$fc940d0e-bae8-488f-b126-51c9296ccdeb
+java:S6813#"BRemove this field injection and use constructor injection instead.(êæÄŞ8™ñ¼é1J$a114c692-49c9-499a-8e7c-1c77bc360292
 …
-java:S6813'"BRemove this field injection and use constructor injection instead.(êæÄŞ8šñ¼é1J$98cfc43b-995f-451b-8d97-181942f52642
+java:S6813&"BRemove this field injection and use constructor injection instead.(êæÄŞ8šñ¼é1J$f94f6e19-dfb5-4849-96bc-8348dd049649
 …
-java:S6813*"BRemove this field injection and use constructor injection instead.(êæÄŞ8šñ¼é1J$4b87c523-a5e5-4a15-b8dc-dd6c76dd6739
+java:S6813)"BRemove this field injection and use constructor injection instead.(êæÄŞ8šñ¼é1J$41e6a93a-4ba4-42e6-890f-c88781320606
 …
-java:S6813-"BRemove this field injection and use constructor injection instead.(êæÄŞ8›ñ¼é1J$f694f3ba-0708-436d-a423-bbb10d0af352
+java:S6813,"BRemove this field injection and use constructor injection instead.(êæÄŞ8›ñ¼é1J$5b8a2bc7-24aa-4ea5-a20b-ec91a5198f65
 …
-java:S68130"BRemove this field injection and use constructor injection instead.(êæÄŞ8›ñ¼é1J$e2b18f86-f091-47b9-9c89-ad6c48306d36
+java:S6813/"BRemove this field injection and use constructor injection instead.(êæÄŞ8›ñ¼é1J$a7e95a02-5d8c-4cf1-85db-e935a941556b
 …
-java:S68133"BRemove this field injection and use constructor injection instead.(êæÄŞ8¬ñ¼é1J$2a407563-2b7c-418d-8037-4928c8869f8c
-i
-java:S14528"&Remove usage of generic wildcard type.(Îí©Õ8à¯†é1J$219ba9e9-3847-4834-98cf-01db03c0c2d2
-s
-java:S1481:"0Remove this unused "statusLogin" local variable.(Öœ—ü8†ò¼é1J$010a0e69-868c-4a57-806b-b4d03a17a814
-m	java:S106Y"+Replace this use of System.out by a logger.(™š‡ü8Ÿò¼é1J$6fac6bec-f28c-4ada-8826-d204a60dd8ee
-~	java:S125d"<This block of commented-out lines of code should be removed.(¿İöë8­ò¼é1J$2d120760-8d7e-4198-ab5b-1a3b40b6e3ee
-i
-java:S1452m"&Remove usage of generic wildcard type.(çş…8ã¯†é1J$214b0b86-9eeb-484b-a0c6-ad235a35f96c
-m	java:S106t"+Replace this use of System.out by a logger.(™š‡ü8µò¼é1J$6aa2090f-452a-41e9-b1b7-3ce0fc47dc72
-i
-java:S1452z"&Remove usage of generic wildcard type.(¶ÜªÓ8é¯†é1J$3a000d11-f4c7-4701-95ba-9e6dd4a4aeda
-	java:S125ˆ"<This block of commented-out lines of code should be removed.(¿İöë8Åò¼é1J$09e0526f-4390-4f6d-b530-8b816aa831df
-j
-java:S1452–"&Remove usage of generic wildcard type.(èĞ¦Ú8Óò¼é1J$0af238d7-6dd9-41f8-bbde-d8e671ba98cc
-j
-java:S1452¡"&Remove usage of generic wildcard type.(™î€Ä8Şò¼é1J$15b90100-94e7-4b49-8311-b1c95cb5c73f
-j
-java:S1452ª"&Remove usage of generic wildcard type.(¾­æ 8äò¼é1J$3d647be1-6ff9-4c88-b337-8f14c6e0e04d
-n	java:S106­"+Replace this use of System.out by a logger.(äÎ¬8çò¼é1J$dc8248f2-7183-452d-898e-316d9270ac3f
-j
-java:S1452²"&Remove usage of generic wildcard type.(’»€¦8êò¼é1J$8f6cde19-0d3f-449f-9d60-a17f9532d204
-o
-java:S1452º"&Remove usage of generic wildcard type.(êèÃ—ûÿÿÿÿ8øò¼é1J$3f913f2f-9f63-4bd2-82dc-63fe8ab6c6cf
-j
-java:S1452Á"&Remove usage of generic wildcard type.(­ÈÈ›8şò¼é1J$431df709-9456-4238-ae75-937ec9a5cfed
-o
-java:S1452È"&Remove usage of generic wildcard type.(ÄÿÀıÿÿÿÿ8‚ó¼é1J$dc6ec341-6a3f-41ba-8c41-cdbcb61f12c3
+java:S68132"BRemove this field injection and use constructor injection instead.(êæÄŞ8¬ñ¼é1J$68427f99-0e05-4b85-9c50-9259d9fee48e
+m	java:S106X"+Replace this use of System.out by a logger.(™š‡ü8Ÿò¼é1J$2339770d-779a-464d-aeb1-155eec558488
+n	java:S106•"+Replace this use of System.out by a logger.(™š‡ü8µò¼é1J$e2c0a456-8fbd-48c7-a9d1-fd5cf824cb2d
+	java:S125ø"<This block of commented-out lines of code should be removed.(ÄîÅº8‡Ñûûé1J$80d76e2d-353d-4173-b022-2539d0318e1b
 k
-java:S2140Î")Use "java.util.Random.nextInt()" instead.(ÚÌŒ¨úÿÿÿÿJ$e5e78c36-67a3-4b4e-9333-5612615c90b3
+java:S2140“")Use "java.util.Random.nextInt()" instead.(ÚÌŒ¨úÿÿÿÿJ$0d68d600-c01a-4862-b4c8-6b840da6d1b8

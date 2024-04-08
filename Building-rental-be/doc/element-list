@@ -1,10 +1,10 @@
 com.example.buildingrentalbe
 com.example.buildingrentalbe.controller
-com.example.buildingrentalbe.controller.ThamController
+com.example.buildingrentalbe.controller.contractController
 com.example.buildingrentalbe.dto
 com.example.buildingrentalbe.model
 com.example.buildingrentalbe.repository
-com.example.buildingrentalbe.repository.ThamRepository
+com.example.buildingrentalbe.repository.contractRepository
 com.example.buildingrentalbe.service
 com.example.buildingrentalbe.service.impl
-com.example.buildingrentalbe.service.ThamService
+com.example.buildingrentalbe.service.contractService

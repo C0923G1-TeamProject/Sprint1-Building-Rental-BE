@@ -27,7 +27,7 @@ public class MailService implements IMailService {
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
 
             mimeMessageHelper.setSubject(mail.getMailSubject());
-            mimeMessageHelper.setFrom(new InternetAddress(mail.getMailFrom(), "duyhoangc0923g1@gmail.com"));
+            mimeMessageHelper.setFrom(new InternetAddress(mail.getMailFrom(), "tranthihongtham1604@gmail.com"));
             mimeMessageHelper.setTo(mail.getMailTo());
             mimeMessageHelper.setText(mail.getMailContent(), true);
 

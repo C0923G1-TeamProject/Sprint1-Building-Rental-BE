@@ -1,0 +1,7 @@
+
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$32e93eda-52c4-400c-90a0-ae84da17bd8c
+—
+java:S3305"TInject this field value directly into "getMailSender", the only method that uses it.(«ª“ø8þì£¸ê1J$5f02df55-7f40-409f-bfd8-fc1f0651c31a
+_
+java:S1128"Remove this duplicated import.(¬²ÚäþÿÿÿÿJ$8cd25ca9-ea62-425c-981d-b71bf700158f

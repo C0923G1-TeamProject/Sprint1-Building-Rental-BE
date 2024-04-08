@@ -26,4 +26,6 @@ public interface ICustomerService {
     int countByPhoneNumber(String phone);
 
     List<Customer> getAllList();
+
+    Customer findById(Integer id);
 }
