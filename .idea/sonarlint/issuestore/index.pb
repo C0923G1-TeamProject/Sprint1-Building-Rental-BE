@@ -73,3 +73,5 @@ pBuilding-rental-be/src/main/java/com/example/buildingrentalbe/service/contractS
 kBuilding-rental-be/src/main/java/com/example/buildingrentalbe/service/contractService/IContractService.java,5\6\569316d7ec7217d2f4fc1b2f3132c34175cde624
 §
 tBuilding-rental-be/src/main/java/com/example/buildingrentalbe/repository/contractRepository/IContractRepository.java,1\e\1e844ed8793daa357ca79ecc9f535413fba1d5bf
+ê
+`Building-rental-be/src/main/java/com/example/buildingrentalbe/controller/InfoRestController.java,2\d\2d9521d95c0d33256efa0708bad84be7078a066c

@@ -29,11 +29,13 @@ public class PremisesDTO {
     @Size(max = 1500, message = "Mô tả tối đa 1500 kí tự")
     private String description;
 
+    @NotNull
     @Min(1000)
     @Max(999999999)
     @Digits(integer = 12, fraction = 0, message = "Giá thuê phải lớn hơn 1 và < 9,999,999,999,999")
     private Long price;
 
+    @NotNull
     @Min(1000)
     @Max(999999999)
     @Digits(integer = 12, fraction = 0, message = "Phí quản lý phải lớn hơn 1 và < 9,999,999,999,999")

@@ -1,0 +1,19 @@
+
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$f4aa15a2-0e3a-475b-b4aa-fc742ae9b0a0
+~
+java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞJ$c4be1e60-ef53-4fd0-b8a2-cdbc4c5271c1
+b
+java:S1452."&Remove usage of generic wildcard type.(ñÇÇÔJ$ad734986-3cbd-4d4c-9248-fe46b1b77645
+b
+java:S14526"&Remove usage of generic wildcard type.(êÛÈ®J$4fa1fdb6-6450-4f9b-9f18-80d898a80dd3
+g
+java:S1452Q"&Remove usage of generic wildcard type.(ÓÅâşÿÿÿÿJ$f3ff7a56-e590-4473-b618-ffc4b402581e
+k	java:S106_"+Replace this use of System.out by a logger.(ÓÄçâşÿÿÿÿJ$333d319f-4b92-476f-a33e-cb9a94e6a237
+k	java:S106c"+Replace this use of System.out by a logger.(›ì‡ıùÿÿÿÿJ$830f45f8-d3e4-4ba2-97eb-e52133deca06
+k	java:S106g"+Replace this use of System.out by a logger.(Ì±ŸüÿÿÿÿJ$52e6ac4d-42af-4bde-a0e0-d449e984c0bb
+g
+java:S1452x"&Remove usage of generic wildcard type.(éá„ˆıÿÿÿÿJ$115afe78-4580-40f2-a920-1beba7167acc
+x	java:S125‚"<This block of commented-out lines of code should be removed.(ø´êÉJ$b4be5483-3eb2-4bc5-b7fe-c9568e1760cf
+h
+java:S1452•"&Remove usage of generic wildcard type.(ËÎíšüÿÿÿÿJ$82ecdd47-63a0-44a6-8ce9-fcf7cb8f663b
