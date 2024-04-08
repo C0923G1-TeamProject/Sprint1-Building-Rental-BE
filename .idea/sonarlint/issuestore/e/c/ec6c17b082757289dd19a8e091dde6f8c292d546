@@ -1,29 +1,29 @@
 
 œ
 java:S1192r"TDefine a constant instead of duplicating this literal "            </div>
-" 4 times.(ÆŒ©£ùÿÿÿÿ8„Íûûé1J$b61a9230-1c26-49aa-99be-e5187a1a51f5
+" 4 times.(ÆŒ©£ùÿÿÿÿ8„Íûûé1J$31d63844-1a4c-4281-8fab-fc0c995de18c
 p
-java:S5411P"(Use a primitive boolean expression here.(®×ˆúûÿÿÿÿ8šî¼é1J$1924ed35-5196-4ec5-9c44-49d5ea503857
+java:S5411P"(Use a primitive boolean expression here.(®×ˆúûÿÿÿÿ8šî¼é1J$156a8d71-7be8-4809-8318-39c5fbc9af2f
 p
-java:S5411["(Use a primitive boolean expression here.(É¤ÊÃşÿÿÿÿ8šÍûûé1J$1a1a1468-4674-44f7-9147-e5619ee5d1eb
+java:S5411["(Use a primitive boolean expression here.(É¤ÊÃşÿÿÿÿ8šÍûûé1J$04189caf-13b7-4cfa-8be1-1cb9ca7b175c
 l
-java:S5411æ"(Use a primitive boolean expression here.(€â§8Õî¼é1J$80c5ecab-207d-4f51-8021-ff4d051fa107
+java:S5411æ"(Use a primitive boolean expression here.(€â§8Õî¼é1J$cc6dc465-d1d8-4580-8cdc-c373d42fda4e
 „
-java:S4973B"<Strings and Boxed types should be compared using "equals()".( ¨ª©ùÿÿÿÿ8ğ¼é1J$0ea21af1-26a7-45f6-91da-1028680e9d94
+java:S4973B"<Strings and Boxed types should be compared using "equals()".( ¨ª©ùÿÿÿÿ8ğ¼é1J$613bbfa5-3958-4d4b-acc0-abfec88be966
 …
-java:S6813#"BRemove this field injection and use constructor injection instead.(êæÄŞ8™ñ¼é1J$1b6ac1b1-8390-4d8f-af19-77e44de0412a
+java:S6813#"BRemove this field injection and use constructor injection instead.(êæÄŞ8™ñ¼é1J$a114c692-49c9-499a-8e7c-1c77bc360292
 …
-java:S6813&"BRemove this field injection and use constructor injection instead.(êæÄŞ8šñ¼é1J$3df3f59b-8780-4db8-8e4b-a56c2ad4ecbb
+java:S6813&"BRemove this field injection and use constructor injection instead.(êæÄŞ8šñ¼é1J$f94f6e19-dfb5-4849-96bc-8348dd049649
 …
-java:S6813)"BRemove this field injection and use constructor injection instead.(êæÄŞ8šñ¼é1J$c1425d3b-284d-4765-bfef-2c241264c9f3
+java:S6813)"BRemove this field injection and use constructor injection instead.(êæÄŞ8šñ¼é1J$41e6a93a-4ba4-42e6-890f-c88781320606
 …
-java:S6813,"BRemove this field injection and use constructor injection instead.(êæÄŞ8›ñ¼é1J$516687ad-c6dd-4949-aeb0-3c48f6de552b
+java:S6813,"BRemove this field injection and use constructor injection instead.(êæÄŞ8›ñ¼é1J$5b8a2bc7-24aa-4ea5-a20b-ec91a5198f65
 …
-java:S6813/"BRemove this field injection and use constructor injection instead.(êæÄŞ8›ñ¼é1J$13c2b63e-e2e2-468d-89e0-da7fccdb8fd4
+java:S6813/"BRemove this field injection and use constructor injection instead.(êæÄŞ8›ñ¼é1J$a7e95a02-5d8c-4cf1-85db-e935a941556b
 …
-java:S68132"BRemove this field injection and use constructor injection instead.(êæÄŞ8¬ñ¼é1J$ca9d46b1-33eb-4049-aa22-3a2494c8b1a6
-m	java:S106X"+Replace this use of System.out by a logger.(™š‡ü8Ÿò¼é1J$1abe9f8a-4206-4393-b7a5-84516b533c90
-n	java:S106•"+Replace this use of System.out by a logger.(™š‡ü8µò¼é1J$0a62bbb0-6baf-40a7-a5d9-253a3112061d
-	java:S125ø"<This block of commented-out lines of code should be removed.(ÄîÅº8‡Ñûûé1J$3eaa3410-1559-400b-955f-b2f7a7c2bb1a
+java:S68132"BRemove this field injection and use constructor injection instead.(êæÄŞ8¬ñ¼é1J$68427f99-0e05-4b85-9c50-9259d9fee48e
+m	java:S106X"+Replace this use of System.out by a logger.(™š‡ü8Ÿò¼é1J$2339770d-779a-464d-aeb1-155eec558488
+n	java:S106•"+Replace this use of System.out by a logger.(™š‡ü8µò¼é1J$e2c0a456-8fbd-48c7-a9d1-fd5cf824cb2d
+	java:S125ø"<This block of commented-out lines of code should be removed.(ÄîÅº8‡Ñûûé1J$80d76e2d-353d-4173-b022-2539d0318e1b
 k
-java:S2140“")Use "java.util.Random.nextInt()" instead.(ÚÌŒ¨úÿÿÿÿJ$471324c9-32bc-4e4d-8962-fe50db62fd40
+java:S2140“")Use "java.util.Random.nextInt()" instead.(ÚÌŒ¨úÿÿÿÿJ$0d68d600-c01a-4862-b4c8-6b840da6d1b8

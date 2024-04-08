@@ -92,7 +92,7 @@ public class AuthController {
             String otp = generateFiveDigitInteger();
             // gui mail
             Mail mail = new Mail();
-            mail.setMailFrom("duyhoangc0923g1@gmail.com");
+            mail.setMailFrom("tranthihongtham1604@gmail.com");
             mail.setMailTo(employee.getEmail());
             mail.setMailSubject("Xác nhận đăng nhập tại Diamond Time");
 
@@ -163,7 +163,7 @@ public class AuthController {
             String email = employee.getEmail();
             // gui mail
             Mail mail = new Mail();
-            mail.setMailFrom("duyhoangc0923g1@gmail.com");
+            mail.setMailFrom("tranthihongtham1604@gmail.com");
             mail.setMailTo(email);
             mail.setMailSubject("Xác nhận đăng nhập tại Diamond Time");
             mail.setMailContent("<html lang=\"en\">\n" +
